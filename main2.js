@@ -85,7 +85,9 @@ var getScriptPromisify = (src) => {
         series,
         timeline
       }
-      // console.log(data)
+      
+      console.log(">>> inside JS")
+      console.log(data)
       // $.get('https://cdn.jsdelivr.net/gh/apache/incubator-echarts-website@asf-site/examples' + '/data/asset/data/life-expectancy.json', function (data) {
       //   console.log(data)
       // })
