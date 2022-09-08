@@ -4,6 +4,7 @@ var getScriptPromisify = (src) => {
   })
 }
 
+
 (function () {
   const template = document.createElement('template')
   template.innerHTML = `
