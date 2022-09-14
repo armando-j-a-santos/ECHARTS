@@ -13,7 +13,7 @@ var loadJSLibraries = (src) => {
     </div>
     `
   
-  class NewChartsV6 extends HTMLElement {
+  class NewChartsV7 extends HTMLElement {
     constructor () {
       super()
 
@@ -230,5 +230,5 @@ var loadJSLibraries = (src) => {
     } // closing: async render () {
   } // closing: class SampleLifeExpectancy2 extends HTMLElement {
 
-  customElements.define('com-sap-sample-asantos-new-chartsv6', NewChartsV6)
+  customElements.define('com-sap-sample-asantos-new-chartsv7', NewChartsV7)
 })() // closing: (function () {
