@@ -23,7 +23,7 @@ var getScriptPromisify = (src) => {
     <div id="chartdiv"></div>
     `
   
-  class SampleChartsV1 extends HTMLElement {
+  class NewChartsV1 extends HTMLElement {
     constructor () {
       super()
 
@@ -232,5 +232,5 @@ var getScriptPromisify = (src) => {
     } // closing: async render () {
   } // closing: class SampleLifeExpectancy2 extends HTMLElement {
 
-  customElements.define('com-sap-sample-asantos-chartsV1', SampleChartsV1)
+  customElements.define('com-sap-sample-asantos-new-chartsv1', NewChartsV1)
 })() // closing: (function () {
