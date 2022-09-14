@@ -9,18 +9,18 @@ var loadJSLibraries = (src) => {
   const template = document.createElement('template')
   template.innerHTML = `
     <div id="root" style="width: 100%; height: 100%;">
-    <div id="mychart"></div>
+        <div id="mychart"></div>
     </div>
     `
   
-  class NewChartsV7 extends HTMLElement {
+  class NewChartsV8 extends HTMLElement {
     constructor () {
       super()
 
       this._shadowRoot = this.attachShadow({ mode: 'open' })
       this._shadowRoot.appendChild(template.content.cloneNode(true))
 
-      this._root = this._shadowRoot.getElementById('root') // do we need it???
+      this._root = this._shadowRoot.getElementById('root')
       this._mychart = this._shadowRoot.getElementById('mychart')
 
       this._props = {}
@@ -38,8 +38,8 @@ var loadJSLibraries = (src) => {
       //////////////////////////////////////////////////////////////////////////////////////////////
     // Create root element
     // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-    //////////////////////////var root = am5.Root.new('mychart');
-    var this._mychar = am5.Root.new('mychart');
+    var root = am5.Root.new('mychart');
+    //////////////////////var this._mychar = am5.Root.new('mychart');
 
     // Set themes
     // https://www.amcharts.com/docs/v5/concepts/themes/
@@ -230,5 +230,5 @@ var loadJSLibraries = (src) => {
     } // closing: async render () {
   } // closing: class SampleLifeExpectancy2 extends HTMLElement {
 
-  customElements.define('com-sap-sample-asantos-new-chartsv7', NewChartsV7)
+  customElements.define('com-sap-sample-asantos-new-chartsv8', NewChartsV8)
 })() // closing: (function () {
