@@ -1,7 +1,14 @@
 // Loading necessary extra JS libraries
 var loadJSLibraries = (src) => {
   return new Promise(resolve => {
-    $.getScript(src, resolve)
+    let script = document.createElement('script')
+    script.src = src
+    script.onload = () => {
+      console.log("Load: " + src)
+      resolve(script)
+    }
+    script.onerror = () => reject(new Error(`Script load error for ${src}`))
+    this._shadowRoot.appendChild(script)
   })
 }
 
@@ -107,7 +114,7 @@ var loadJSLibraries = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV20 extends HTMLElement {
+  class NewChartsV21 extends HTMLElement {
     constructor () {
       super()
 
@@ -238,6 +245,6 @@ var loadJSLibraries = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv20', NewChartsV20)
+  customElements.define('com-sap-sample-asantos-new-chartsv21', NewChartsV21)
   
 })() // END of function --> (function () {
