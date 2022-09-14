@@ -9,11 +9,11 @@ var loadJSLibraries = (src) => {
   const template = document.createElement('template')
   template.innerHTML = `
     <div id="root" style="width: 100%; height: 100%;">
-    <div id="chartdiv"></div>
+    <div id="mychart"></div>
     </div>
     `
   
-  class NewChartsV5 extends HTMLElement {
+  class NewChartsV6 extends HTMLElement {
     constructor () {
       super()
 
@@ -37,7 +37,7 @@ var loadJSLibraries = (src) => {
       //////////////////////////////////////////////////////////////////////////////////////////////
     // Create root element
     // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-    var root = am5.Root.new('chartdiv');
+    var root = am5.Root.new('mychart');
 
 
     // Set themes
@@ -223,11 +223,11 @@ var loadJSLibraries = (src) => {
       return 0;
     }	
       
-    this._shadowRoot.getElementById('chartdiv').innerHTML = chart
+    ////////////this._shadowRoot.getElementById('mychart').innerHTML = chart
       
     //////////////////////////////////////////////////////////////////////////////////////////////
     } // closing: async render () {
   } // closing: class SampleLifeExpectancy2 extends HTMLElement {
 
-  customElements.define('com-sap-sample-asantos-new-chartsv5', NewChartsV5)
+  customElements.define('com-sap-sample-asantos-new-chartsv6', NewChartsV6)
 })() // closing: (function () {
