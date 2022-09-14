@@ -20,7 +20,8 @@ var loadJSLibraries = (src) => {
       this._shadowRoot = this.attachShadow({ mode: 'open' })
       this._shadowRoot.appendChild(template.content.cloneNode(true))
 
-      this._root = this._shadowRoot.getElementById('root')
+      this._root = this._shadowRoot.getElementById('root') // do we need it???
+      this._mychart = this._shadowRoot.getElementById('mychart')
 
       this._props = {}
     }
@@ -37,8 +38,8 @@ var loadJSLibraries = (src) => {
       //////////////////////////////////////////////////////////////////////////////////////////////
     // Create root element
     // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-    var root = am5.Root.new('mychart');
-
+    //////////////////////////var root = am5.Root.new('mychart');
+    var this._mychar = am5.Root.new('mychart');
 
     // Set themes
     // https://www.amcharts.com/docs/v5/concepts/themes/
