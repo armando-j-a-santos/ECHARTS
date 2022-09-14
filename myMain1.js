@@ -19,8 +19,8 @@ var getScriptPromisify = (src) => {
     <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-    <div id="chartdiv"></div>
 
+    <div id="chartdiv"></div>
     `
   class SampleLifeExpectancy2 extends HTMLElement {
     constructor () {
@@ -228,8 +228,8 @@ var getScriptPromisify = (src) => {
       return 0;
     }	
     //////////////////////////////////////////////////////////////////////////////////////////////
-    }
-  }
+    } // closing: async render () {
+  } // closing: class SampleLifeExpectancy2 extends HTMLElement {
 
   customElements.define('com-sap-sample-echarts-life_expectancy2', SampleLifeExpectancy2)
-})()
+})() // closing: (function () {
