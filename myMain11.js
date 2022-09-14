@@ -13,7 +13,7 @@ var loadJSLibraries = (src) => {
     </div>
     `
   
-  class NewChartsV10 extends HTMLElement {
+  class NewChartsV11 extends HTMLElement {
     constructor () {
       super()
 
@@ -40,7 +40,7 @@ var loadJSLibraries = (src) => {
     // https://www.amcharts.com/docs/v5/getting-started/#Root_element
     var root = am5.Root.new('mychart')
     
-    //////var this._mychart = 'Hello Armando'
+    this._mychart = am5.Root.new('mychart')
 
     // Set themes
     // https://www.amcharts.com/docs/v5/concepts/themes/
@@ -231,5 +231,5 @@ var loadJSLibraries = (src) => {
     } // closing: async render () {
   } // closing: class SampleLifeExpectancy2 extends HTMLElement {
 
-  customElements.define('com-sap-sample-asantos-new-chartsv10', NewChartsV10)
+  customElements.define('com-sap-sample-asantos-new-chartsv11', NewChartsV11)
 })() // closing: (function () {
