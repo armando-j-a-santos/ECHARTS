@@ -8,8 +8,6 @@ var loadJSLibraries = (src) => {
 (function () {
   const template = document.createElement('template')
   template.innerHTML = `
-    <body>font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";</body>
-
     #chartdiv {
       width: 100%;
       height: 350px;
@@ -18,7 +16,7 @@ var loadJSLibraries = (src) => {
     <div id="chartdiv"></div>
     `
   
-  class NewChartsV2 extends HTMLElement {
+  class NewChartsV3 extends HTMLElement {
     constructor () {
       super()
 
@@ -227,9 +225,12 @@ var loadJSLibraries = (src) => {
       }
       return 0;
     }	
+      
+    this._shadowRoot.getElementById('chartdiv').innerHTML = chart
+      
     //////////////////////////////////////////////////////////////////////////////////////////////
     } // closing: async render () {
   } // closing: class SampleLifeExpectancy2 extends HTMLElement {
 
-  customElements.define('com-sap-sample-asantos-new-chartsv2', NewChartsV2)
+  customElements.define('com-sap-sample-asantos-new-chartsv3', NewChartsV3)
 })() // closing: (function () {
