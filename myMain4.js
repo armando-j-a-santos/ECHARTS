@@ -8,15 +8,10 @@ var loadJSLibraries = (src) => {
 (function () {
   const template = document.createElement('template')
   template.innerHTML = `
-    #chartdiv {
-      width: 100%;
-      height: 350px;
-    }
-
     <div id="chartdiv"></div>
     `
   
-  class NewChartsV3 extends HTMLElement {
+  class NewChartsV4 extends HTMLElement {
     constructor () {
       super()
 
@@ -226,11 +221,11 @@ var loadJSLibraries = (src) => {
       return 0;
     }	
       
-    this._shadowRoot.getElementById('chartdiv').innerHTML = chart
+    /////////////this._shadowRoot.getElementById('chartdiv').innerHTML = chart
       
     //////////////////////////////////////////////////////////////////////////////////////////////
     } // closing: async render () {
   } // closing: class SampleLifeExpectancy2 extends HTMLElement {
 
-  customElements.define('com-sap-sample-asantos-new-chartsv3', NewChartsV3)
+  customElements.define('com-sap-sample-asantos-new-chartsv4', NewChartsV4)
 })() // closing: (function () {
