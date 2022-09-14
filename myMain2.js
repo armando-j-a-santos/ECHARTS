@@ -1,4 +1,5 @@
-var getScriptPromisify = (src) => {
+// Loading necessary extra JS libraries
+var loadJSLibraries = (src) => {
   return new Promise(resolve => {
     $.getScript(src, resolve)
   })
@@ -7,23 +8,17 @@ var getScriptPromisify = (src) => {
 (function () {
   const template = document.createElement('template')
   template.innerHTML = `
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    }
+    <body>font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";</body>
 
     #chartdiv {
       width: 100%;
       height: 350px;
     }
 
-    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-
     <div id="chartdiv"></div>
     `
   
-  class NewChartsV1 extends HTMLElement {
+  class NewChartsV2 extends HTMLElement {
     constructor () {
       super()
 
@@ -39,8 +34,12 @@ var getScriptPromisify = (src) => {
     // Scripting methods
     // ------------------
     async render () {
-      //await getScriptPromisify('https://cdn.bootcdn.net/ajax/libs/echarts/5.0.0/echarts.min.js')
-    //////////////////////////////////////////////////////////////////////////////////////////////
+    
+    await loadJSLibraries('https://cdn.amcharts.com/lib/5/index.js')
+    await loadJSLibraries('https://cdn.amcharts.com/lib/5/xy.js')
+    await loadJSLibraries('https://cdn.amcharts.com/lib/5/themes/Animated.js')  
+    
+      //////////////////////////////////////////////////////////////////////////////////////////////
     // Create root element
     // https://www.amcharts.com/docs/v5/getting-started/#Root_element
     var root = am5.Root.new("chartdiv");
@@ -232,5 +231,5 @@ var getScriptPromisify = (src) => {
     } // closing: async render () {
   } // closing: class SampleLifeExpectancy2 extends HTMLElement {
 
-  customElements.define('com-sap-sample-asantos-new-chartsv1', NewChartsV1)
+  customElements.define('com-sap-sample-asantos-new-chartsv2', NewChartsV2)
 })() // closing: (function () {
