@@ -13,7 +13,7 @@ var loadJSLibraries = (src) => {
     </div>
     `
   
-  class NewChartsV11 extends HTMLElement {
+  class NewChartsV12 extends HTMLElement {
     constructor () {
       super()
 
@@ -225,11 +225,11 @@ var loadJSLibraries = (src) => {
       return 0
     }	
       
-    ////////////this._shadowRoot.getElementById('mychart').innerHTML = chart
+    this._shadowRoot.getElementById('mychart').innerHTML = chart
       
     //////////////////////////////////////////////////////////////////////////////////////////////
     } // closing: async render () {
   } // closing: class SampleLifeExpectancy2 extends HTMLElement {
 
-  customElements.define('com-sap-sample-asantos-new-chartsv11', NewChartsV11)
+  customElements.define('com-sap-sample-asantos-new-chartsv12', NewChartsV12)
 })() // closing: (function () {
