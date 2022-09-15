@@ -111,7 +111,7 @@ var loadJSLibraries = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV34 extends HTMLElement {
+  class NewChartsV35 extends HTMLElement {
     constructor () {
       super()
 
@@ -120,21 +120,7 @@ var loadJSLibraries = (src) => {
 
       this._root = this._shadowRoot.getElementById('root')
       this._props = {}
-    }
-  
-    // ------------------
-    // Scripting methods
-    // ------------------
-    async render (resultSet) {
       
-      this._placeholder = this._root.querySelector('#placeholder')
-      if (this._placeholder) {
-        this._root.removeChild(this._placeholder)
-        this._placeholder = null
-      }
-      
-      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     
-     
         new Promise(resolve => {
           let script = document.createElement('script')
           script.src = 'https://cdn.amcharts.com/lib/5/index.js'
@@ -164,6 +150,21 @@ var loadJSLibraries = (src) => {
           }
           this._shadowRoot.appendChild(script)
         })
+      
+    }
+  
+    // ------------------
+    // Scripting methods
+    // ------------------
+    async render (resultSet) {
+      
+      this._placeholder = this._root.querySelector('#placeholder')
+      if (this._placeholder) {
+        this._root.removeChild(this._placeholder)
+        this._placeholder = null
+      }
+      
+      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     
 
       ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
   
@@ -271,6 +272,6 @@ var loadJSLibraries = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv34', NewChartsV34)
+  customElements.define('com-sap-sample-asantos-new-chartsv35', NewChartsV35)
   
 })() // END of function --> (function () {
