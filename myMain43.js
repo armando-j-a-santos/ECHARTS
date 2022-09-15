@@ -99,15 +99,15 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV42 extends HTMLElement {
+  class NewChartsV43 extends HTMLElement {
     constructor () {
       super()
 
        // Necessary initialization that runs onInit (initialization) of the custom widget
-      this._shadowRoot = this.attachShadow({ mode: 'open' })
-      this._shadowRoot.appendChild(template.content.cloneNode(true))
+      shadowRoot = this.attachShadow({ mode: 'open' })
+      shadowRoot.appendChild(template.content.cloneNode(true))
 
-      this._root = this._shadowRoot.getElementById('root')
+      this._root = shadowRoot.getElementById('root')
       this._props = {}
     }
   
@@ -117,7 +117,7 @@
         console.log("onCustomWidgetAfterUpdate");
         const div = document.createElement('div');
         div.innerHTML = '<div id="chartdiv"></div>';
-        this._shadowRoot.appendChild(div);
+        shadowRoot.appendChild(div);
       
         // Load necessary libraries
         new Promise(resolve => {
@@ -148,7 +148,15 @@
               console.log('loaded Animated.js')
             }
             this._shadowRoot.appendChild(script)
-        })      
+        })
+      
+      
+        var myRoot = shadowRoot.getElementById('root');
+        console.log(myRoot);
+      
+        var mychartdiv = shadowRoot.getElementById('chartdiv');
+        console.log(mychartdiv);      
+      
     }
 
     
@@ -256,7 +264,7 @@
       table_output += '</tbody></table></div></div>'
     
       // replace above element "my_data" with the HTML table output (final HTML table built above)
-      this._shadowRoot.getElementById('my_data').innerHTML = table_output
+      shadowRoot.getElementById('my_data').innerHTML = table_output
       
       // to avoid memory issues, release from memory the huge HTML string (table_output)
       table_output = ''
@@ -268,6 +276,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv42', NewChartsV42)
+  customElements.define('com-sap-sample-asantos-new-chartsv43', NewChartsV43)
   
 })() // END of function --> (function () {
