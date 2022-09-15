@@ -99,7 +99,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV41 extends HTMLElement {
+  class NewChartsV42 extends HTMLElement {
     constructor () {
       super()
 
@@ -109,45 +109,46 @@
 
       this._root = this._shadowRoot.getElementById('root')
       this._props = {}
-      
-      // Load necessary libraries
-      new Promise(resolve => {
-          let script = document.createElement('script')
-          script.src = 'https://cdn.amcharts.com/lib/5/index.js'
-          script.onload = () => {
-            resolve(script)
-            console.log('loaded index.js')
-          }
-          this._shadowRoot.appendChild(script)
-      })
-      
-      new Promise(resolve => {
-          let script = document.createElement('script')
-          script.src = 'https://cdn.amcharts.com/lib/5/xy.js'
-          script.onload = () => {
-            resolve(script)
-            console.log('loaded xy.js')
-          }
-          this._shadowRoot.appendChild(script)
-      })
-      
-      new Promise(resolve => {
-          let script = document.createElement('script')
-          script.src = 'https://cdn.amcharts.com/lib/5/themes/Animated.js'
-          script.onload = () => {
-            resolve(script)
-            console.log('loaded Animated.js')
-          }
-          this._shadowRoot.appendChild(script)
-      })      
     }
   
     //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
     onCustomWidgetAfterUpdate() {
+        // Build the neceasry div tag with name: chartdiv, to be used later on the following code
         console.log("onCustomWidgetAfterUpdate");
         const div = document.createElement('div');
         div.innerHTML = '<div id="chartdiv"></div>';
         this._shadowRoot.appendChild(div);
+      
+        // Load necessary libraries
+        new Promise(resolve => {
+            let script = document.createElement('script')
+            script.src = 'https://cdn.amcharts.com/lib/5/index.js'
+            script.onload = () => {
+              resolve(script)
+              console.log('loaded index.js')
+            }
+            this._shadowRoot.appendChild(script)
+        })
+
+        new Promise(resolve => {
+            let script = document.createElement('script')
+            script.src = 'https://cdn.amcharts.com/lib/5/xy.js'
+            script.onload = () => {
+              resolve(script)
+              console.log('loaded xy.js')
+            }
+            this._shadowRoot.appendChild(script)
+        })
+
+        new Promise(resolve => {
+            let script = document.createElement('script')
+            script.src = 'https://cdn.amcharts.com/lib/5/themes/Animated.js'
+            script.onload = () => {
+              resolve(script)
+              console.log('loaded Animated.js')
+            }
+            this._shadowRoot.appendChild(script)
+        })      
     }
 
     
@@ -267,6 +268,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv41', NewChartsV41)
+  customElements.define('com-sap-sample-asantos-new-chartsv42', NewChartsV42)
   
 })() // END of function --> (function () {
