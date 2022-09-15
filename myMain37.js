@@ -111,7 +111,7 @@ var loadJSLibraries = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV36 extends HTMLElement {
+  class NewChartsV37 extends HTMLElement {
     constructor () {
       super()
 
@@ -167,15 +167,19 @@ var loadJSLibraries = (src) => {
       
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     
 
-      // Create root element
-      // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-      var root = am5.Root.new('chartdiv')
+      am5.ready(function() {
+        
+        // Create root element
+        // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+        var root = am5.Root.new('chartdiv')
 
-      // Set themes
-      // https://www.amcharts.com/docs/v5/concepts/themes/
-      root.setThemes([
-        am5themes_Animated.new(root)
-      ])
+        // Set themes
+        // https://www.amcharts.com/docs/v5/concepts/themes/
+        root.setThemes([
+          am5themes_Animated.new(root)
+        ])
+      
+      }) // end am5.ready()
   
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       
@@ -271,6 +275,6 @@ var loadJSLibraries = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv36', NewChartsV36)
+  customElements.define('com-sap-sample-asantos-new-chartsv37', NewChartsV37)
   
 })() // END of function --> (function () {
