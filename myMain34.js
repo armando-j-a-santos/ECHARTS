@@ -111,7 +111,7 @@ var loadJSLibraries = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV33 extends HTMLElement {
+  class NewChartsV34 extends HTMLElement {
     constructor () {
       super()
 
@@ -165,16 +165,8 @@ var loadJSLibraries = (src) => {
           this._shadowRoot.appendChild(script)
         })
 
-        //////////////////////////////////////////////////////////////////////////////////////////////
-      // Create root element
-      // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-      var root = am5.Root.new('mychart')
-
-      // Set themes
-      // https://www.amcharts.com/docs/v5/concepts/themes/
-      root.setThemes([
-        am5themes_Animated.new(root)
-      ])      
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+  
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       
       
@@ -255,6 +247,16 @@ var loadJSLibraries = (src) => {
     
       //Close all used tags
       table_output += '</tbody></table></div></div>'
+      
+      // Create root element
+      // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+      var root = am5.Root.new('mychart')
+
+      // Set themes
+      // https://www.amcharts.com/docs/v5/concepts/themes/
+      root.setThemes([
+        am5themes_Animated.new(root)
+      ])   
     
       // replace above element "my_data" with the HTML table output (final HTML table built above)
       this._shadowRoot.getElementById('my_data').innerHTML = table_output
@@ -269,6 +271,6 @@ var loadJSLibraries = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv33', NewChartsV33)
+  customElements.define('com-sap-sample-asantos-new-chartsv34', NewChartsV34)
   
 })() // END of function --> (function () {
