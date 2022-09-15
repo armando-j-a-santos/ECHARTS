@@ -100,10 +100,11 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV38 extends HTMLElement {
+  class NewChartsV39 extends HTMLElement {
     constructor () {
       super()
 
+       // Necessary initialization that runs onInit (initialization) of the custom widget
       this._shadowRoot = this.attachShadow({ mode: 'open' })
       this._shadowRoot.appendChild(template.content.cloneNode(true))
 
@@ -141,6 +142,21 @@
           this._shadowRoot.appendChild(script)
       })
       
+      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     
+      am5.ready(function() {
+        
+        // Create root element
+        var root = am5.Root.new("chartdiv")
+
+        // Set themes
+        root.setThemes([
+          am5themes_Animated.new(root)
+        ])
+      
+      }) // end am5.ready()
+      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
+      
+      
     }
   
     // ------------------
@@ -153,25 +169,6 @@
         this._root.removeChild(this._placeholder)
         this._placeholder = null
       }
-      
-      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     
-
-      am5.ready(function() {
-        
-        // Create root element
-        // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-        var root = am5.Root.new("chartdiv")
-
-        // Set themes
-        // https://www.amcharts.com/docs/v5/concepts/themes/
-        root.setThemes([
-          am5themes_Animated.new(root)
-        ])
-      
-      }) // end am5.ready()
-  
-      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      
       
       // Table Wrapper & Scrollbar definition
       var table_output = '<div id="table-wrapper"><div id="table-scroll">'
@@ -264,6 +261,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv38', NewChartsV38)
+  customElements.define('com-sap-sample-asantos-new-chartsv39', NewChartsV39)
   
 })() // END of function --> (function () {
