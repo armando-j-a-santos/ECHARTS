@@ -104,7 +104,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV51 extends HTMLElement {
+  class NewChartsV52 extends HTMLElement {
     constructor () {
       super()
 
@@ -121,11 +121,8 @@
         // Build the neceasry div tag with name: chartdiv, to be used later on the following code
         console.log("onCustomWidgetAfterUpdate")
         const div = document.createElement('div')
-        div.innerHTML = '<div id="chartdiv"></div>'
+        div.innerHTML = '<div id="chartdiv" style="width: 100%; height: 300px;"></div>'
         this._shadowRoot.appendChild(div)
-        const style = document.createElement('div')
-        style.innerHTML = '<style>#chartdiv {width: 100%; height: 300px;}</style>'
-        this._shadowRoot.appendChild(style)
       
         // Load necessary libraries
         new Promise(resolve => {
@@ -287,6 +284,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv51', NewChartsV51)
+  customElements.define('com-sap-sample-asantos-new-chartsv52', NewChartsV52)
   
 })() // END of function --> (function () {
