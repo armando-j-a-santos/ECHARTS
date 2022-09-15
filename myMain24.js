@@ -8,7 +8,6 @@ var loadJSLibraries = (src) => {
       resolve(script)
     }
     script.onerror = () => reject(new Error(`Script load error for ${src}`))
-    this._shadowRoot.appendChild(script)
   })
 }
 
@@ -114,7 +113,7 @@ var loadJSLibraries = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV23 extends HTMLElement {
+  class NewChartsV24 extends HTMLElement {
     constructor () {
       super()
       this._shadowRoot.appendChild(template.content.cloneNode(true));
@@ -245,6 +244,6 @@ var loadJSLibraries = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv23', NewChartsV23)
+  customElements.define('com-sap-sample-asantos-new-chartsv24', NewChartsV24)
   
 })() // END of function --> (function () {
