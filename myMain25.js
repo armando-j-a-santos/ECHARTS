@@ -1,13 +1,10 @@
-// Loading necessary extra JS libraries
 var loadJSLibraries = (src) => {
   return new Promise(resolve => {
     let script = document.createElement('script')
     script.src = src
     script.onload = () => {
-      console.log("Load: " + src)
       resolve(script)
     }
-    script.onerror = () => reject(new Error(`Script load error for ${src}`))
   })
 }
 
@@ -113,7 +110,7 @@ var loadJSLibraries = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV24 extends HTMLElement {
+  class NewChartsV25 extends HTMLElement {
     constructor () {
       super()
       this._shadowRoot.appendChild(template.content.cloneNode(true));
@@ -135,10 +132,27 @@ var loadJSLibraries = (src) => {
         this._placeholder = null
       }
       
-      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      await loadJSLibraries('https://cdn.amcharts.com/lib/5/index.js')
-      await loadJSLibraries('https://cdn.amcharts.com/lib/5/xy.js')
-      await loadJSLibraries('https://cdn.amcharts.com/lib/5/themes/Animated.js')  
+      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     
+        try{
+         await loadJSLibraries('https://cdn.amcharts.com/lib/5/index.js')
+         console.log("loaded index.js"); 
+        }catch{
+         console.log("error in index.js");
+        }
+      
+        try{
+         await loadJSLibraries('https://cdn.amcharts.com/lib/5/xy.js')
+         console.log("loaded xy.js"); 
+        }catch{
+         console.log("error in xy.js");
+        }      
+ 
+        try{
+         await loadJSLibraries('https://cdn.amcharts.com/lib/5/themes/Animated.js')
+         console.log("loaded Animated.js"); 
+        }catch{
+         console.log("error in Animated.js");
+        }         
 
         //////////////////////////////////////////////////////////////////////////////////////////////
       // Create root element
@@ -244,6 +258,6 @@ var loadJSLibraries = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv24', NewChartsV24)
+  customElements.define('com-sap-sample-asantos-new-chartsv25', NewChartsV25)
   
 })() // END of function --> (function () {
