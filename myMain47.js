@@ -99,7 +99,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV46 extends HTMLElement {
+  class NewChartsV47 extends HTMLElement {
     constructor () {
       super()
 
@@ -151,10 +151,10 @@
         })
       
       
-        var myRoot = this._sshadowRoot.getElementById('root')
+        var myRoot = this._shadowRoot.getElementById('root')
         console.log(myRoot)
       
-        var mychartdiv = this._sshadowRoot.getElementById('chartdiv')
+        var mychartdiv = this._shadowRoot.getElementById('chartdiv')
         console.log(mychartdiv) 
       
     }
@@ -264,7 +264,7 @@
       table_output += '</tbody></table></div></div>'
     
       // replace above element "my_data" with the HTML table output (final HTML table built above)
-      this_shadowRoot.getElementById('my_data').innerHTML = table_output
+      this._shadowRoot.getElementById('my_data').innerHTML = table_output
       
       // to avoid memory issues, release from memory the huge HTML string (table_output)
       table_output = ''
@@ -276,6 +276,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv46', NewChartsV46)
+  customElements.define('com-sap-sample-asantos-new-chartsv47', NewChartsV47)
   
 })() // END of function --> (function () {
