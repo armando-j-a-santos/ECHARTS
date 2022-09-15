@@ -99,15 +99,15 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV44 extends HTMLElement {
+  class NewChartsV45 extends HTMLElement {
     constructor () {
       super()
 
-       // Necessary initialization that runs onInit (initialization) of the custom widget
-      shadowRoot = this.attachShadow({ mode: 'open' })
-      shadowRoot.appendChild(template.content.cloneNode(true))
+       // Necessary statments that runs onInit (initialization) of the custom widget
+      this._shadowRoot = this.attachShadow({ mode: 'open' })
+      this._shadowRoot.appendChild(template.content.cloneNode(true))
 
-      this._root = shadowRoot.getElementById('root')
+      this._root = this._shadowRoot.getElementById('root')
       this._props = {}
     }
   
@@ -117,7 +117,7 @@
         console.log("onCustomWidgetAfterUpdate")
         const div = document.createElement('div')
         div.innerHTML = '<div id="chartdiv"></div>'
-        shadowRoot.appendChild(div)
+        this._shadowRoot.appendChild(div)
       
         // Load necessary libraries
         new Promise(resolve => {
@@ -276,6 +276,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv44', NewChartsV44)
+  customElements.define('com-sap-sample-asantos-new-chartsv45', NewChartsV45)
   
 })() // END of function --> (function () {
