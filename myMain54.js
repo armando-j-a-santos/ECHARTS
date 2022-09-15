@@ -105,7 +105,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV53 extends HTMLElement {
+  class NewChartsV54 extends HTMLElement {
     constructor () {
       super()
 
@@ -184,7 +184,7 @@
       am5.ready(function() {
         
         // Create root element
-        var root = am5.Root.new("chartdiv")
+        var root = am5.Root.new(mychartdiv)
 
         // Set themes
         root.setThemes([
@@ -285,6 +285,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv53', NewChartsV53)
+  customElements.define('com-sap-sample-asantos-new-chartsv54', NewChartsV54)
   
 })() // END of function --> (function () {
