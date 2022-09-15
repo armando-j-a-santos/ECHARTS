@@ -12,6 +12,11 @@
         color: black;
       }
       
+      #chartdiv {
+        width: 100%;
+        height: 300px;
+      }
+      
       .myGrey {
           background-color: #f2f2f2;
       }
@@ -99,7 +104,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV47 extends HTMLElement {
+  class NewChartsV48 extends HTMLElement {
     constructor () {
       super()
 
@@ -276,6 +281,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv47', NewChartsV47)
+  customElements.define('com-sap-sample-asantos-new-chartsv48', NewChartsV48)
   
 })() // END of function --> (function () {
