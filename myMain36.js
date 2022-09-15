@@ -104,14 +104,14 @@ var loadJSLibraries = (src) => {
       </style>
       <div id="root" style="width: 100%; height: 100%;">
         <div id="my_data">Your table is being prepared. Please wait a few seconds.</div>
-        <div id="mychart">Chart in here.</div>
+        <div id="chartdiv">Chart in here.</div>
       </div>
     `
   
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV35 extends HTMLElement {
+  class NewChartsV36 extends HTMLElement {
     constructor () {
       super()
 
@@ -121,7 +121,8 @@ var loadJSLibraries = (src) => {
       this._root = this._shadowRoot.getElementById('root')
       this._props = {}
       
-        new Promise(resolve => {
+      // Load necessary libraries
+      new Promise(resolve => {
           let script = document.createElement('script')
           script.src = 'https://cdn.amcharts.com/lib/5/index.js'
           script.onload = () => {
@@ -129,9 +130,9 @@ var loadJSLibraries = (src) => {
             console.log('loaded index.js')
           }
           this._shadowRoot.appendChild(script)
-        })
+      })
       
-        new Promise(resolve => {
+      new Promise(resolve => {
           let script = document.createElement('script')
           script.src = 'https://cdn.amcharts.com/lib/5/xy.js'
           script.onload = () => {
@@ -139,9 +140,9 @@ var loadJSLibraries = (src) => {
             console.log('loaded xy.js')
           }
           this._shadowRoot.appendChild(script)
-        })
+      })
       
-        new Promise(resolve => {
+      new Promise(resolve => {
           let script = document.createElement('script')
           script.src = 'https://cdn.amcharts.com/lib/5/themes/Animated.js'
           script.onload = () => {
@@ -149,7 +150,7 @@ var loadJSLibraries = (src) => {
             console.log('loaded Animated.js')
           }
           this._shadowRoot.appendChild(script)
-        })
+      })
       
     }
   
@@ -166,7 +167,15 @@ var loadJSLibraries = (src) => {
       
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     
 
-      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+      // Create root element
+      // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+      var root = am5.Root.new('chartdiv')
+
+      // Set themes
+      // https://www.amcharts.com/docs/v5/concepts/themes/
+      root.setThemes([
+        am5themes_Animated.new(root)
+      ])
   
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       
@@ -248,16 +257,6 @@ var loadJSLibraries = (src) => {
     
       //Close all used tags
       table_output += '</tbody></table></div></div>'
-      
-      // Create root element
-      // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-      var root = am5.Root.new('mychart')
-
-      // Set themes
-      // https://www.amcharts.com/docs/v5/concepts/themes/
-      root.setThemes([
-        am5themes_Animated.new(root)
-      ])   
     
       // replace above element "my_data" with the HTML table output (final HTML table built above)
       this._shadowRoot.getElementById('my_data').innerHTML = table_output
@@ -272,6 +271,6 @@ var loadJSLibraries = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv35', NewChartsV35)
+  customElements.define('com-sap-sample-asantos-new-chartsv36', NewChartsV36)
   
 })() // END of function --> (function () {
