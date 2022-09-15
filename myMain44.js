@@ -99,7 +99,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV43 extends HTMLElement {
+  class NewChartsV44 extends HTMLElement {
     constructor () {
       super()
 
@@ -114,10 +114,10 @@
     //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
     onCustomWidgetAfterUpdate() {
         // Build the neceasry div tag with name: chartdiv, to be used later on the following code
-        console.log("onCustomWidgetAfterUpdate");
-        const div = document.createElement('div');
-        div.innerHTML = '<div id="chartdiv"></div>';
-        shadowRoot.appendChild(div);
+        console.log("onCustomWidgetAfterUpdate")
+        const div = document.createElement('div')
+        div.innerHTML = '<div id="chartdiv"></div>'
+        shadowRoot.appendChild(div)
       
         // Load necessary libraries
         new Promise(resolve => {
@@ -151,11 +151,11 @@
         })
       
       
-        var myRoot = shadowRoot.getElementById('root');
-        console.log(myRoot);
+        // const myRoot = shadowRoot.getElementById('root')
+        // console.log(myRoot)
       
-        var mychartdiv = shadowRoot.getElementById('chartdiv');
-        console.log(mychartdiv);      
+        // const mychartdiv = shadowRoot.getElementById('chartdiv')
+        // console.log(mychartdiv) 
       
     }
 
@@ -276,6 +276,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv43', NewChartsV43)
+  customElements.define('com-sap-sample-asantos-new-chartsv44', NewChartsV44)
   
 })() // END of function --> (function () {
