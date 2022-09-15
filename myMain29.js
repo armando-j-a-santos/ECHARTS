@@ -111,7 +111,7 @@ var loadJSLibraries = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV28 extends HTMLElement {
+  class NewChartsV29 extends HTMLElement {
     constructor () {
       super()
 
@@ -140,6 +140,20 @@ var loadJSLibraries = (src) => {
         } catch {
           console.log("error in index.js")
         }
+      
+        try{
+           await loadJSLibraries('https://cdn.amcharts.com/lib/5/xy.js')
+           console.log("loaded xy.js")
+        } catch {
+          console.log("error in xy.js")
+        }
+      
+        try{
+           await loadJSLibraries('https://cdn.amcharts.com/lib/5/themes/Animated.js')
+           console.log("loaded Animated.js")
+        } catch {
+          console.log("error in Animated.js")
+        }      
            
 
         //////////////////////////////////////////////////////////////////////////////////////////////
@@ -246,6 +260,6 @@ var loadJSLibraries = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv28', NewChartsV28)
+  customElements.define('com-sap-sample-asantos-new-chartsv29', NewChartsV29)
   
 })() // END of function --> (function () {
