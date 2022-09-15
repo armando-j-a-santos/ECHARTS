@@ -98,13 +98,14 @@
       </style>
       <div id="root" style="width: 100%; height: 100%;">
         <div id="my_data">Your table is being prepared. Please wait a few seconds.</div>
+        <div id="chartdiv">hello</div>
       </div>
     `
   
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV52 extends HTMLElement {
+  class NewChartsV53 extends HTMLElement {
     constructor () {
       super()
 
@@ -284,6 +285,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv52', NewChartsV52)
+  customElements.define('com-sap-sample-asantos-new-chartsv53', NewChartsV53)
   
 })() // END of function --> (function () {
