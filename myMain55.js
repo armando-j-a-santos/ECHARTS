@@ -98,14 +98,13 @@
       </style>
       <div id="root" style="width: 100%; height: 100%;">
         <div id="my_data">Your table is being prepared. Please wait a few seconds.</div>
-        <div id="chartdiv">hello</div>
       </div>
     `
   
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV54 extends HTMLElement {
+  class NewChartsV55 extends HTMLElement {
     constructor () {
       super()
 
@@ -156,12 +155,11 @@
             this._shadowRoot.appendChild(script)
         })
       
+        //var myRoot = this._shadowRoot.getElementById('root')
+        //console.log(myRoot)
       
-        var myRoot = this._shadowRoot.getElementById('root')
-        console.log(myRoot)
-      
-        var mychartdiv = this._shadowRoot.getElementById('chartdiv')
-        console.log(mychartdiv) 
+        //var mychartdiv = this._shadowRoot.getElementById('chartdiv')
+        //console.log(mychartdiv) 
       
     }
 
@@ -285,6 +283,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv54', NewChartsV54)
+  customElements.define('com-sap-sample-asantos-new-chartsv55', NewChartsV55)
   
 })() // END of function --> (function () {
