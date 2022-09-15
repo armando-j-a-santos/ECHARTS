@@ -99,7 +99,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV40 extends HTMLElement {
+  class NewChartsV41 extends HTMLElement {
     constructor () {
       super()
 
@@ -143,11 +143,11 @@
     }
   
     //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
-    onCustomWidgetAfterUpdate(changedProperties) {
+    onCustomWidgetAfterUpdate() {
         console.log("onCustomWidgetAfterUpdate");
         const div = document.createElement('div');
         div.innerHTML = '<div id="chartdiv"></div>';
-        shadowRoot.appendChild(div);
+        this._shadowRoot.appendChild(div);
     }
 
     
@@ -267,6 +267,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv40', NewChartsV40)
+  customElements.define('com-sap-sample-asantos-new-chartsv41', NewChartsV41)
   
 })() // END of function --> (function () {
