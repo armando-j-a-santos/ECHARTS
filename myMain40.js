@@ -93,14 +93,13 @@
       </style>
       <div id="root" style="width: 100%; height: 100%;">
         <div id="my_data">Your table is being prepared. Please wait a few seconds.</div>
-        <div id="chartdiv">Chart in here.</div>
       </div>
     `
   
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV39 extends HTMLElement {
+  class NewChartsV40 extends HTMLElement {
     constructor () {
       super()
 
@@ -140,7 +139,28 @@
             console.log('loaded Animated.js')
           }
           this._shadowRoot.appendChild(script)
-      })
+      })      
+    }
+  
+    //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
+    onCustomWidgetAfterUpdate(changedProperties) {
+        console.log("onCustomWidgetAfterUpdate");
+        const div = document.createElement('div');
+        div.innerHTML = '<div id="chartdiv"></div>';
+        shadowRoot.appendChild(div);
+    }
+
+    
+    // ------------------
+    // Scripting methods
+    // ------------------
+    async render (resultSet) {
+      
+      this._placeholder = this._root.querySelector('#placeholder')
+      if (this._placeholder) {
+        this._root.removeChild(this._placeholder)
+        this._placeholder = null
+      }
       
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     
       am5.ready(function() {
@@ -154,21 +174,7 @@
         ])
       
       }) // end am5.ready()
-      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
-      
-      
-    }
-  
-    // ------------------
-    // Scripting methods
-    // ------------------
-    async render (resultSet) {
-      
-      this._placeholder = this._root.querySelector('#placeholder')
-      if (this._placeholder) {
-        this._root.removeChild(this._placeholder)
-        this._placeholder = null
-      }
+      //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////         
       
       // Table Wrapper & Scrollbar definition
       var table_output = '<div id="table-wrapper"><div id="table-scroll">'
@@ -255,12 +261,12 @@
       table_output = ''
       
     } // END of method --> render 
-  } // END of class myNewTable
+  } // END of class NewCharts
   
   
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv39', NewChartsV39)
+  customElements.define('com-sap-sample-asantos-new-chartsv40', NewChartsV40)
   
 })() // END of function --> (function () {
