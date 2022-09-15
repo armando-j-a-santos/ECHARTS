@@ -104,7 +104,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV49 extends HTMLElement {
+  class NewChartsV50 extends HTMLElement {
     constructor () {
       super()
 
@@ -177,10 +177,10 @@
       }
       
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     
+      var mychartdiv = this._shadowRoot.getElementById('chartdiv')
+      console.log(mychartdiv) 
+      
       am5.ready(function() {
-        
-        var mychartdiv = this._shadowRoot.getElementById('chartdiv')
-        console.log(mychartdiv) 
         
         // Create root element
         var root = am5.Root.new("chartdiv")
@@ -284,6 +284,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv49', NewChartsV49)
+  customElements.define('com-sap-sample-asantos-new-chartsv50', NewChartsV50)
   
 })() // END of function --> (function () {
