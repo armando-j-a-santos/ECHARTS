@@ -17,7 +17,6 @@
       }     
       </style>
       <div id="root" style="width: 100%; height: 100%;">
-        <div id="my_data">Your table is being prepared. Please wait a few seconds.</div>
         <div id="chartdiv2"></div>
       </div>
     `
