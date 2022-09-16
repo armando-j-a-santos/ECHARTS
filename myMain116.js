@@ -105,7 +105,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV115 extends HTMLElement {
+  class NewChartsV116 extends HTMLElement {
     constructor () {
       super()
 
@@ -116,8 +116,6 @@
       // We need the row below to avoid error: Cannot read properties of undefined (reading 'querySelector')
       this._root = this._shadowRoot.getElementById('root')
       this._props = {}
-      
-      this._rootA
     }
   
     //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
@@ -389,6 +387,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv115', NewChartsV115)
+  customElements.define('com-sap-sample-asantos-new-chartsv116', NewChartsV116)
   
 })() // END of function --> (function () {
