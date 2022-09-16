@@ -105,7 +105,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV107 extends HTMLElement {
+  class NewChartsV108 extends HTMLElement {
     constructor () {
       super()
 
@@ -187,7 +187,10 @@
         
         // To avoid error:  You cannot have multiple Roots on the same DOM node
         // Clicking two time the button in SAC side to render the amchart
-        if (root !== undefined) root.dispose()
+        if (root !== undefined) {
+            root.dispose()
+            console.log("disposed")
+        } else {console.log("NOT disposed")}
         
         // Assign the root element to a chartdiv
         root = am5.Root.new(mychartdiv)
@@ -383,6 +386,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv107', NewChartsV107)
+  customElements.define('com-sap-sample-asantos-new-chartsv108', NewChartsV108)
   
 })() // END of function --> (function () {
