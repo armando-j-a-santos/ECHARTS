@@ -105,7 +105,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV103 extends HTMLElement {
+  class NewChartsV104 extends HTMLElement {
     constructor () {
       super()
 
@@ -183,7 +183,7 @@
       am5.ready(function() {
         
         // Create root element
-        var root = am5.Root.new(mychartdiv)
+        this.root = am5.Root.new(mychartdiv)
 
         // Set themes
         root.setThemes([
@@ -355,9 +355,6 @@
           series.appear()
           chart.appear(1000, 100)
 
-          // To avoid error:  You cannot have multiple Roots on the same DOM node
-          if (root !== null) root.dispose()
-
           function getVariancePercent(dataItem) {
             if (dataItem) {
               var value = dataItem.get("valueY")
@@ -379,6 +376,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv103', NewChartsV103)
+  customElements.define('com-sap-sample-asantos-new-chartsv104', NewChartsV104)
   
 })() // END of function --> (function () {
