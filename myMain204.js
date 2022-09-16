@@ -18,14 +18,14 @@
       </style>
       <div id="root" style="width: 100%; height: 100%;">
         <div id="my_data">Your table is being prepared. Please wait a few seconds.</div>
-        <div id="chartdiv"></div>
+        <div id="chartdiv2"></div>
       </div>
     `
   
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV203 extends HTMLElement {
+  class NewChartsV204 extends HTMLElement {
     constructor () {
       super()
 
@@ -42,7 +42,7 @@
         // Build the neceasry div tag with name: chartdiv, to be used later on the following code
         console.log("onCustomWidgetAfterUpdate")
         const div = document.createElement('div')
-        div.innerHTML = '<div id="chartdiv" style="width: 100%; height: 100%;"></div>'
+        div.innerHTML = '<div id="chartdiv2" style="width: 100%; height: 100%;"></div>'
         this._shadowRoot.appendChild(div)
       
         // Load necessary libraries
@@ -95,7 +95,7 @@
       }
       
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     
-      var mychartdiv = this._shadowRoot.getElementById('chartdiv')
+      var mychartdiv = this._shadowRoot.getElementById('chartdiv2')
       //console.log(mychartdiv) 
       
       am5.ready(function() {
@@ -105,7 +105,7 @@
         // Loop throught the registried root elements and disposed the we used in this custom widget (chartdiv)
         am5.array.each(am5.registry.rootElements, function (root) {
           //console.log(root.dom.id)
-          if (root.dom.id === 'chartdiv') {
+          if (root.dom.id === 'chartdiv2') {
             root.dispose()
           }
         });
@@ -296,6 +296,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv203', NewChartsV203)
+  customElements.define('com-sap-sample-asantos-new-chartsv204', NewChartsV204)
   
 })() // END of function --> (function () {
