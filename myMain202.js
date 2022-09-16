@@ -25,7 +25,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV201 extends HTMLElement {
+  class NewChartsV202 extends HTMLElement {
     constructor () {
       super()
 
@@ -42,7 +42,7 @@
         // Build the neceasry div tag with name: chartdiv, to be used later on the following code
         console.log("onCustomWidgetAfterUpdate")
         const div = document.createElement('div')
-        div.innerHTML = '<div id="chartdiv" style="width: 100%; height: 300px;"></div>'
+        div.innerHTML = '<div id="chartdiv" style="width: 100%; height: 100%;"></div>'
         this._shadowRoot.appendChild(div)
       
         // Load necessary libraries
@@ -132,9 +132,10 @@
           }))
 
 
-          // Data array
+          // Data handling
           var data = []
           
+          // Loop thru the data that came from SAC
           resultSet.forEach(dp => {
                 //console.log(dp)  
                 //var cRegion = dp.Region.description
@@ -142,21 +143,16 @@
                 // Get the description & formattedValue from the measures (@MeasureDimension)
                 var { rawValue, description } = dp['@MeasureDimension']
                 
+                // Add data into the array to be paused afterwards
                 data.push({ location: cLocation , value:  Math.round(Number(rawValue)) })
-                
           })
-        
-          console.log('Data >>>')
-          console.log(data)
 
-          // Populate data
+          // Populate data with the valuenext
           for (var i = 0; i < (data.length - 1); i++) {
             data[i].valueNext = data[i + 1].value
           }
 
-
           // Create axes
-          // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
           var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
             categoryField: "location",
             renderer: am5xy.AxisRendererX.new(root, {
@@ -176,7 +172,6 @@
 
 
           // Add series
-          // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
 
           // Column series
           var series = chart.series.push(am5xy.ColumnSeries.new(root, {
@@ -285,10 +280,6 @@
               var openValue = dataItem.get("openValueY")
               var change = value - openValue
               var varpercentage =  Math.round(change / openValue * 100)
-              //console.log('value='+value)
-              //console.log('openValue='+openValue)
-              //console.log('change='+change)
-              //console.log('varpercentage='+varpercentage)
               return varpercentage
             }
             return 0
@@ -305,6 +296,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv201', NewChartsV201)
+  customElements.define('com-sap-sample-asantos-new-chartsv202', NewChartsV202)
   
 })() // END of function --> (function () {
