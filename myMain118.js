@@ -16,6 +16,85 @@
         width: 100%;
         height: 300px;
       }
+      
+      .myGrey {
+          background-color: #f2f2f2;
+      }
+      
+      .myLightBlue {
+          background-color: #c1dff7;
+      }
+      
+      .myLightGreen {
+          background-color: #e1f5e1;
+      }
+      
+      .myLightRed {
+          background-color: #fcd9e1;
+      }
+      
+      ///////////////////////////////////////////////////////////////
+      // Table CSS classes
+      ///////////////////////////////////////////////////////////////
+      
+      table {
+        font-family: arial, sans-serif;
+        /* font-size: 15px; */
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      /* HEADER DEFINITION */
+      th{ 
+        position: sticky;   /* Freeze Header */
+        top: 0px;           /* Don't forget this, required for the stickiness */
+        border-bottom: 1px solid black;
+        text-align: left;
+        padding: 8px;
+        
+        background: white; /* Header background color */
+        color: black;      /* Header text color */
+      }
+      
+      /* CELL DEFINITION */
+      td{
+        border-bottom: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      // Alternative rows (white/grey background)
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+      
+      ///////////////////////////////////////////////////////////////
+      // Scrollbar necessary CSS classes
+      ///////////////////////////////////////////////////////////////
+      #table-wrapper {
+        position:relative;
+      }
+      #table-scroll {
+        height:500px;
+        overflow:auto;  
+        margin-top:20px;
+      }
+      #table-wrapper table {
+        width:100%;
+      }
+      #table-wrapper table * {
+        color:black;
+      }
+      #table-wrapper table thead th .text {
+        position:absolute;   
+        top:-20px;
+        z-index:2;
+        height:100%;
+        width:100%;
+        border:1px solid black;
+      }
+      ///////////////////////////////////////////////////////////////
+      
       </style>
       <div id="root" style="width: 100%; height: 100%;">
         <div id="my_data">Your table is being prepared. Please wait a few seconds.</div>
@@ -26,15 +105,14 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV117 extends HTMLElement {
+  class NewChartsV118 extends HTMLElement {
     constructor () {
       super()
-      
+
        // Necessary statments that runs onInit (initialization) of the custom widget
       this._shadowRoot = this.attachShadow({ mode: 'open' })
       this._shadowRoot.appendChild(template.content.cloneNode(true))
-      
-      // We need the row below to avoid error: Cannot read properties of undefined (reading 'querySelector')
+
       this._root = this._shadowRoot.getElementById('root')
       this._props = {}
     }
@@ -88,7 +166,7 @@
 
     
     // ------------------
-    // Necessary Scripting methods
+    // Scripting methods
     // ------------------
     async render (resultSet, mydispose) {
       
@@ -104,11 +182,19 @@
       
       am5.ready(function() {
         
-
-          // Assign the root element to a chartdiv
-          var root = am5.Root.new(mychartdiv)
-          console.log(root)
-
+        // To avoid error:  You cannot have multiple Roots on the same DOM node
+        // Clicking two time the button in SAC side to render the amchart
+        if (mydispose === 'Yes') {
+            root.dispose()
+            console.log("disposed")
+        } else {
+          var root  
+          console.log("NOT disposed")
+        }
+        
+         // Create the root element and
+        // Assign the root element to a chartdiv
+        root = am5.Root.new(mychartdiv)
 
         // Set themes
         root.setThemes([
@@ -180,7 +266,7 @@
           // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
 
           // Column series
-          var series = chart.series.push(am5xy.ColumnSeries.new(root {
+          var series = chart.series.push(am5xy.ColumnSeries.new(root, {
             xAxis: xAxis,
             yAxis: yAxis,
             valueYField: "value",
@@ -301,6 +387,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv117', NewChartsV117)
+  customElements.define('com-sap-sample-asantos-new-chartsv118', NewChartsV118)
   
 })() // END of function --> (function () {
