@@ -27,7 +27,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV122 extends HTMLElement {
+  class NewChartsV123 extends HTMLElement {
     constructor () {
       super()
 
@@ -293,7 +293,12 @@
               var value = dataItem.get("valueY")
               var openValue = dataItem.get("openValueY")
               var change = value - openValue
-              return Math.round(change / openValue * 100)
+              var varpercentage =  Math.round(change / openValue * 100)
+              console.log('value='+value)
+              console.log('openValue='+openValue)
+              console.log('change='+change)
+              console.log('varpercentage='+varpercentage)
+              return varpercentage
             }
             return 0
           }	        
@@ -309,6 +314,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv122', NewChartsV122)
+  customElements.define('com-sap-sample-asantos-new-chartsv123', NewChartsV123)
   
 })() // END of function --> (function () {
