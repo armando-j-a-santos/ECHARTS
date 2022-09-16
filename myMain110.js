@@ -105,15 +105,16 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV109 extends HTMLElement {
+  class NewChartsV110 extends HTMLElement {
     constructor () {
       super()
 
        // Necessary statments that runs onInit (initialization) of the custom widget
       this._shadowRoot = this.attachShadow({ mode: 'open' })
       this._shadowRoot.appendChild(template.content.cloneNode(true))
-
-      /////this._root = this._shadowRoot.getElementById('root')
+      
+      // We need the row below to avoid error: Cannot read properties of undefined (reading 'querySelector')
+      this._root = this._shadowRoot.getElementById('root')
       this._props = {}
     }
   
@@ -183,31 +184,31 @@
       am5.ready(function() {
         
         // Create the root element
-        var root
+        var rootA
         
         // To avoid error:  You cannot have multiple Roots on the same DOM node
         // Clicking two time the button in SAC side to render the amchart
-        if (root !== undefined) {
-            root.dispose()
+        if (rootA !== undefined) {
+            rootA.dispose()
             console.log("disposed")
         } else {console.log("NOT disposed")}
         
         // Assign the root element to a chartdiv
-        root = am5.Root.new(mychartdiv)
+        rootA = am5.Root.new(mychartdiv)
 
         // Set themes
-        root.setThemes([
-          am5themes_Animated.new(root)
+        rootA.setThemes([
+          am5themes_Animated.new(rootA)
         ])
         
         //***
         // Create chart
-          var chart = root.container.children.push(am5xy.XYChart.new(root, {
+          var chart = rootA.container.children.push(am5xy.XYChart.new(rootA, {
             panX: false,
             panY: false,
             wheelX: "none",
             wheelY: "none",
-            layout: root.verticalLayout
+            layout: rootA.verticalLayout
           }))
 
 
@@ -243,21 +244,21 @@
 
           // Create axes
           // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-          var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
+          var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(rootA, {
             categoryField: "year",
-            renderer: am5xy.AxisRendererX.new(root, {
+            renderer: am5xy.AxisRendererX.new(rootA, {
               cellStartLocation: 0.1,
               cellEndLocation: 0.9,
               minGridDistance: 30
             }),
-            tooltip: am5.Tooltip.new(root, {})
+            tooltip: am5.Tooltip.new(rootA, {})
           }))
 
           xAxis.data.setAll(data);
 
-          var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+          var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(rootA, {
             min: 0,
-            renderer: am5xy.AxisRendererY.new(root, {})
+            renderer: am5xy.AxisRendererY.new(rootA, {})
           }))
 
 
@@ -265,7 +266,7 @@
           // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
 
           // Column series
-          var series = chart.series.push(am5xy.ColumnSeries.new(root, {
+          var series = chart.series.push(am5xy.ColumnSeries.new(rootA, {
             xAxis: xAxis,
             yAxis: yAxis,
             valueYField: "value",
@@ -281,7 +282,7 @@
           series.data.setAll(data)
 
           // Variance indicator series
-          var series2 = chart.series.push(am5xy.ColumnSeries.new(root, {
+          var series2 = chart.series.push(am5xy.ColumnSeries.new(rootA, {
             xAxis: xAxis,
             yAxis: yAxis,
             valueYField: "valueNext",
@@ -298,7 +299,7 @@
           series2.data.setAll(data);
 
           series2.bullets.push(function () {
-            var label = am5.Label.new(root, {
+            var label = am5.Label.new(rootA, {
               text: "{valueY}",
               fontWeight: "500",
               fill: am5.color(0x00cc00),
@@ -323,14 +324,14 @@
               return getVariancePercent(target.dataItem) < 0 ? am5.color(0xcc0000) : fill
             })
 
-            return am5.Bullet.new(root, {
+            return am5.Bullet.new(rootA, {
               locationY: 1,
               sprite: label
             })
           })
 
           series2.bullets.push(function() {
-            var arrow = am5.Graphics.new(root, {
+            var arrow = am5.Graphics.new(rootA, {
               rotation: -90,
               centerX: am5.p50,
               centerY: am5.p50,
@@ -353,7 +354,7 @@
               return getVariancePercent(target.dataItem) < 0 ? -3 : dy
             })
 
-            return am5.Bullet.new(root, {
+            return am5.Bullet.new(rootA, {
               locationY: 1,
               sprite: arrow
             })
@@ -386,6 +387,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv109', NewChartsV109)
+  customElements.define('com-sap-sample-asantos-new-chartsv110', NewChartsV110)
   
 })() // END of function --> (function () {
