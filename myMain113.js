@@ -105,7 +105,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV112 extends HTMLElement {
+  class NewChartsV113 extends HTMLElement {
     constructor () {
       super()
 
@@ -205,7 +205,7 @@
             panY: false,
             wheelX: "none",
             wheelY: "none",
-            layout: rootA.verticalLayout
+            layout: this._rootA.verticalLayout
           }))
 
 
@@ -248,14 +248,14 @@
               cellEndLocation: 0.9,
               minGridDistance: 30
             }),
-            tooltip: am5.Tooltip.new(rootA, {})
+            tooltip: am5.Tooltip.new(this._rootA, {})
           }))
 
           xAxis.data.setAll(data);
 
           var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(this._rootA, {
             min: 0,
-            renderer: am5xy.AxisRendererY.new(rootA, {})
+            renderer: am5xy.AxisRendererY.new(this._rootA, {})
           }))
 
 
@@ -384,6 +384,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv112', NewChartsV112)
+  customElements.define('com-sap-sample-asantos-new-chartsv113', NewChartsV113)
   
 })() // END of function --> (function () {
