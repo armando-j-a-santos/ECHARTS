@@ -16,85 +16,6 @@
         width: 100%;
         height: 300px;
       }
-      
-      .myGrey {
-          background-color: #f2f2f2;
-      }
-      
-      .myLightBlue {
-          background-color: #c1dff7;
-      }
-      
-      .myLightGreen {
-          background-color: #e1f5e1;
-      }
-      
-      .myLightRed {
-          background-color: #fcd9e1;
-      }
-      
-      ///////////////////////////////////////////////////////////////
-      // Table CSS classes
-      ///////////////////////////////////////////////////////////////
-      
-      table {
-        font-family: arial, sans-serif;
-        /* font-size: 15px; */
-        border-collapse: collapse;
-        width: 100%;
-      }
-      
-      /* HEADER DEFINITION */
-      th{ 
-        position: sticky;   /* Freeze Header */
-        top: 0px;           /* Don't forget this, required for the stickiness */
-        border-bottom: 1px solid black;
-        text-align: left;
-        padding: 8px;
-        
-        background: white; /* Header background color */
-        color: black;      /* Header text color */
-      }
-      
-      /* CELL DEFINITION */
-      td{
-        border-bottom: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-      }
-      
-      // Alternative rows (white/grey background)
-      tr:nth-child(even) {
-        background-color: #dddddd;
-      }
-      
-      ///////////////////////////////////////////////////////////////
-      // Scrollbar necessary CSS classes
-      ///////////////////////////////////////////////////////////////
-      #table-wrapper {
-        position:relative;
-      }
-      #table-scroll {
-        height:500px;
-        overflow:auto;  
-        margin-top:20px;
-      }
-      #table-wrapper table {
-        width:100%;
-      }
-      #table-wrapper table * {
-        color:black;
-      }
-      #table-wrapper table thead th .text {
-        position:absolute;   
-        top:-20px;
-        z-index:2;
-        height:100%;
-        width:100%;
-        border:1px solid black;
-      }
-      ///////////////////////////////////////////////////////////////
-      
       </style>
       <div id="root" style="width: 100%; height: 100%;">
         <div id="my_data">Your table is being prepared. Please wait a few seconds.</div>
@@ -105,10 +26,10 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV116 extends HTMLElement {
+  class NewChartsV117 extends HTMLElement {
     constructor () {
       super()
-
+      
        // Necessary statments that runs onInit (initialization) of the custom widget
       this._shadowRoot = this.attachShadow({ mode: 'open' })
       this._shadowRoot.appendChild(template.content.cloneNode(true))
@@ -169,7 +90,7 @@
     // ------------------
     // Necessary Scripting methods
     // ------------------
-    async render (resultSet, dispose) {
+    async render (resultSet, mydispose) {
       
       this._placeholder = this._root.querySelector('#placeholder')
       if (this._placeholder) {
@@ -183,13 +104,6 @@
       
       am5.ready(function() {
         
-        if (dispose === "Yes") {          
-            // To avoid error:  You cannot have multiple Roots on the same DOM node
-            // Clicking two time the button in SAC side to render the amchart
-            console.log("root:")
-            console.log(root)
-            root.dispose()
-         }
 
           // Assign the root element to a chartdiv
           var root = am5.Root.new(mychartdiv)
@@ -387,6 +301,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv116', NewChartsV116)
+  customElements.define('com-sap-sample-asantos-new-chartsv117', NewChartsV117)
   
 })() // END of function --> (function () {
