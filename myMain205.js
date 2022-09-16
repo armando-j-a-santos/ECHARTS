@@ -11,7 +11,7 @@
         font-size: 1.5em;
         color: black;
       }
-      #chartdiv {
+      #chartdiv2 {
         width: 100%;
         height: 100%;
       }     
@@ -25,7 +25,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV204 extends HTMLElement {
+  class NewChartsV205 extends HTMLElement {
     constructor () {
       super()
 
@@ -296,6 +296,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv204', NewChartsV204)
+  customElements.define('com-sap-sample-asantos-new-chartsv205', NewChartsV205)
   
 })() // END of function --> (function () {
