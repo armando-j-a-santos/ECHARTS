@@ -25,7 +25,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV200 extends HTMLElement {
+  class NewChartsV201 extends HTMLElement {
     constructor () {
       super()
 
@@ -142,7 +142,7 @@
                 // Get the description & formattedValue from the measures (@MeasureDimension)
                 var { rawValue, description } = dp['@MeasureDimension']
                 
-                data.push({ Location: cLocation , value:  Math.round(Number(rawValue)) })
+                data.push({ location: cLocation , value:  Math.round(Number(rawValue)) })
                 
           })
         
@@ -305,6 +305,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv200', NewChartsV200)
+  customElements.define('com-sap-sample-asantos-new-chartsv201', NewChartsV201)
   
 })() // END of function --> (function () {
