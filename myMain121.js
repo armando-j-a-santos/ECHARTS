@@ -105,7 +105,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV120 extends HTMLElement {
+  class NewChartsV121 extends HTMLElement {
     constructor () {
       super()
 
@@ -186,7 +186,7 @@
         // Clicking two time the button in SAC side to render the amchart
         am5.array.each(am5.registry.rootElements, function (root) {
           console.log(root.dom.id)
-          if (root.dom.id === 'mychartdiv') {
+          if (root.dom.id === 'chartdiv') {
             root.dispose()
             console.log('root disposed')
           }
@@ -387,6 +387,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv120', NewChartsV120)
+  customElements.define('com-sap-sample-asantos-new-chartsv121', NewChartsV121)
   
 })() // END of function --> (function () {
