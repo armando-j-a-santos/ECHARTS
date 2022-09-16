@@ -16,85 +16,7 @@
         width: 100%;
         height: 300px;
       }
-      
-      .myGrey {
-          background-color: #f2f2f2;
-      }
-      
-      .myLightBlue {
-          background-color: #c1dff7;
-      }
-      
-      .myLightGreen {
-          background-color: #e1f5e1;
-      }
-      
-      .myLightRed {
-          background-color: #fcd9e1;
-      }
-      
-      ///////////////////////////////////////////////////////////////
-      // Table CSS classes
-      ///////////////////////////////////////////////////////////////
-      
-      table {
-        font-family: arial, sans-serif;
-        /* font-size: 15px; */
-        border-collapse: collapse;
-        width: 100%;
-      }
-      
-      /* HEADER DEFINITION */
-      th{ 
-        position: sticky;   /* Freeze Header */
-        top: 0px;           /* Don't forget this, required for the stickiness */
-        border-bottom: 1px solid black;
-        text-align: left;
-        padding: 8px;
-        
-        background: white; /* Header background color */
-        color: black;      /* Header text color */
-      }
-      
-      /* CELL DEFINITION */
-      td{
-        border-bottom: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-      }
-      
-      // Alternative rows (white/grey background)
-      tr:nth-child(even) {
-        background-color: #dddddd;
-      }
-      
-      ///////////////////////////////////////////////////////////////
-      // Scrollbar necessary CSS classes
-      ///////////////////////////////////////////////////////////////
-      #table-wrapper {
-        position:relative;
-      }
-      #table-scroll {
-        height:500px;
-        overflow:auto;  
-        margin-top:20px;
-      }
-      #table-wrapper table {
-        width:100%;
-      }
-      #table-wrapper table * {
-        color:black;
-      }
-      #table-wrapper table thead th .text {
-        position:absolute;   
-        top:-20px;
-        z-index:2;
-        height:100%;
-        width:100%;
-        border:1px solid black;
-      }
-      ///////////////////////////////////////////////////////////////
-      
+            
       </style>
       <div id="root" style="width: 100%; height: 100%;">
         <div id="my_data">Your table is being prepared. Please wait a few seconds.</div>
@@ -105,7 +27,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewChartsV121 extends HTMLElement {
+  class NewChartsV122 extends HTMLElement {
     constructor () {
       super()
 
@@ -126,6 +48,7 @@
         this._shadowRoot.appendChild(div)
       
         // Load necessary libraries
+        // Library: index.js
         new Promise(resolve => {
             let script = document.createElement('script')
             script.src = 'https://cdn.amcharts.com/lib/5/index.js'
@@ -135,7 +58,8 @@
             }
             this._shadowRoot.appendChild(script)
         })
-
+        
+        // Library: xy.js
         new Promise(resolve => {
             let script = document.createElement('script')
             script.src = 'https://cdn.amcharts.com/lib/5/xy.js'
@@ -146,6 +70,7 @@
             this._shadowRoot.appendChild(script)
         })
 
+        // Library: Animated.js
         new Promise(resolve => {
             let script = document.createElement('script')
             script.src = 'https://cdn.amcharts.com/lib/5/themes/Animated.js'
@@ -155,12 +80,7 @@
             }
             this._shadowRoot.appendChild(script)
         })
-      
-        //var myRoot = this._shadowRoot.getElementById('root')
-        //console.log(myRoot)
-      
-        //var mychartdiv = this._shadowRoot.getElementById('chartdiv')
-        //console.log(mychartdiv) 
+
       
     }
 
@@ -168,7 +88,7 @@
     // ------------------
     // Scripting methods
     // ------------------
-    async render (resultSet, mydispose) {
+    async render (resultSet) {
       
       this._placeholder = this._root.querySelector('#placeholder')
       if (this._placeholder) {
@@ -178,24 +98,26 @@
       
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     
       var mychartdiv = this._shadowRoot.getElementById('chartdiv')
-      console.log(mychartdiv) 
+      //console.log(mychartdiv) 
       
       am5.ready(function() {
         
         // To avoid error:  You cannot have multiple Roots on the same DOM node
         // Clicking two time the button in SAC side to render the amchart
+        // Loop throught the registried root elements and disposed the we used in this custom widget (chartdiv)
         am5.array.each(am5.registry.rootElements, function (root) {
-          console.log(root.dom.id)
+          //console.log(root.dom.id)
           if (root.dom.id === 'chartdiv') {
             root.dispose()
-            console.log('root disposed')
           }
         });
         
-        // Create the root element and
-        // Assign the root element to a chartdiv
+        // Create a new root element and
+        // Assign this root element to a chartdiv
         var root = am5.Root.new(mychartdiv)
-
+        // Remove un-wanted logo image
+        root._logo.dispose() 
+        
         // Set themes
         root.setThemes([
           am5themes_Animated.new(root)
@@ -387,6 +309,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-chartsv121', NewChartsV121)
+  customElements.define('com-sap-sample-asantos-new-chartsv122', NewChartsV122)
   
 })() // END of function --> (function () {
