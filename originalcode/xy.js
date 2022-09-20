@@ -1483,13 +1483,8 @@
                                         e.moveTo(0, 0), e.lineTo(r, 0), e.lineTo(r, a), e.lineTo(0, a), e.lineTo(0, 0)
                                     }
                                 }
-                            }), m = r("Graphics", ["line", "series", "legend", "marker", "fill"]).states.create("disabled", {}), (0, s.v)(m, "stroke", i, "disabled"), r("SmoothedXYLineSeries").setAll({
-                                tension: .5
-                            }), r("SmoothedXLineSeries").setAll({
-                                tension: .5
-                            }), r("SmoothedYLineSeries").setAll({
-                                tension: .5
-                            }), m = r("Rectangle", ["column", "autocolor"]).states.create("riseFromOpen", {}), (0, s.v)(m, "fill", i, "positive"), (0, s.v)(m, "stroke", i, "positive"), m = r("Rectangle", ["column", "autocolor"]).states.create("dropFromOpen", {}), (0, s.v)(m, "fill", i, "negative"), (0, s.v)(m, "stroke", i, "negative"), r("Rectangle", ["column", "autocolor", "pro"]).states.create("riseFromPrevious", {
+                            }), m = r("Graphics", ["line", "series", "legend", "marker", "fill"]).states.create("disabled", {}), (0, s.v)(m, "stroke", i, "disabled"), 
+                            m = r("Rectangle", ["column", "autocolor"]).states.create("riseFromOpen", {}), (0, s.v)(m, "fill", i, "positive"), (0, s.v)(m, "stroke", i, "positive"), m = r("Rectangle", ["column", "autocolor"]).states.create("dropFromOpen", {}), (0, s.v)(m, "fill", i, "negative"), (0, s.v)(m, "stroke", i, "negative"), r("Rectangle", ["column", "autocolor", "pro"]).states.create("riseFromPrevious", {
                                 fillOpacity: 1
                             }), r("Rectangle", ["column", "autocolor", "pro"]).states.create("dropFromPrevious", {
                                 fillOpacity: 0
@@ -6898,18 +6893,6 @@
                     console.log('----->>>> LineSeries');
                     return V.e
                 },
-                SmoothedXLineSeries: function() {
-                    console.log('----->>>> SmoothedXLineSeries');
-                    return z
-                },
-                SmoothedXYLineSeries: function() {
-                    console.log('----->>>> SmoothedXYLineSeries');
-                    return Z
-                },
-                SmoothedYLineSeries: function() {
-                    console.log('----->>>> SmoothedYLineSeries');
-                    return U
-                },
                 StepLineSeries: function() {
                     console.log('----->>>> StepLineSeries');
                     return q
@@ -7694,11 +7677,6 @@
                         value: function() {
                             this.isDirty("tension") && (this.set("curveFactory", (0, G.$)(this.get("tension", .5))), this._valuesDirty = !0), e.prototype._updateChildren.call(this)
                         }
-                    }), Object.defineProperty(t, "className", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: "SmoothedYLineSeries"
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
@@ -7725,11 +7703,6 @@
                         value: function() {
                             this.isDirty("tension") && (this.set("curveFactory", (0, E.G)(this.get("tension", .5))), this._valuesDirty = !0), e.prototype._updateChildren.call(this)
                         }
-                    }), Object.defineProperty(t, "className", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: "SmoothedXLineSeries"
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
@@ -7756,11 +7729,6 @@
                         value: function() {
                             this.isDirty("tension") && (this.set("curveFactory", W.ZP.tension(this.get("tension", .5))), this._valuesDirty = !0), e.prototype._updateChildren.call(this)
                         }
-                    }), Object.defineProperty(t, "className", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: "SmoothedXYLineSeries"
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
