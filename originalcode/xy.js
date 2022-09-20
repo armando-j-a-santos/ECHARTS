@@ -1489,9 +1489,6 @@
                                 tension: .5
                             }), r("SmoothedYLineSeries").setAll({
                                 tension: .5
-                            }), r("OHLC").setAll({
-                                width: (0, n.aQ)(80),
-                                height: (0, n.aQ)(80)
                             }), m = r("Rectangle", ["column", "autocolor"]).states.create("riseFromOpen", {}), (0, s.v)(m, "fill", i, "positive"), (0, s.v)(m, "stroke", i, "positive"), m = r("Rectangle", ["column", "autocolor"]).states.create("dropFromOpen", {}), (0, s.v)(m, "fill", i, "negative"), (0, s.v)(m, "stroke", i, "negative"), r("Rectangle", ["column", "autocolor", "pro"]).states.create("riseFromPrevious", {
                                 fillOpacity: 1
                             }), r("Rectangle", ["column", "autocolor", "pro"]).states.create("dropFromPrevious", {
@@ -6901,14 +6898,6 @@
                     console.log('----->>>> LineSeries');
                     return V.e
                 },
-                OHLC: function() {
-                    console.log('----->>>> OHLC');
-                    return S
-                },
-                OHLCSeries: function() {
-                    console.log('----->>>> OHLCSeries');
-                    return R
-                },
                 SmoothedXLineSeries: function() {
                     console.log('----->>>> SmoothedXLineSeries');
                     return z
@@ -7632,11 +7621,6 @@
                                 e.moveTo(0, 0), e.lineTo(0, i / 2), e.moveTo(r, i / 2), e.lineTo(r, i)
                             }
                         }
-                    }), Object.defineProperty(t, "className", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: "OHLC"
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
@@ -7657,7 +7641,7 @@
                                 themeTags: ["autocolor"]
                             }), (function() {
                                 return S._new(t._root, {
-                                    themeTags: s.mergeTags(t.columns.template.get("themeTags", []), ["ohlc", "series", "column"])
+                                    /////////////themeTags: s.mergeTags(t.columns.template.get("themeTags", []), ["ohlc", "series", "column"])
                                 }, [t.columns.template])
                             }))
                         }), t
@@ -7678,16 +7662,11 @@
                             var i = this;
                             e.prototype._processAxisRange.call(this, t), t.columns = new N.o(F.YS.new({}), (function() {
                                 return S._new(i._root, {
-                                    themeTags: s.mergeTags(t.columns.template.get("themeTags", []), ["ohlc", "series", "column"])
+                                    /////////////themeTags: s.mergeTags(t.columns.template.get("themeTags", []), ["ohlc", "series", "column"])
                                 }, [i.columns.template, t.columns.template])
                             }))
                         }
-                    }), Object.defineProperty(t, "className", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: "OHLCSeries"
-                    }), Object.defineProperty(t, "classNames", {
+                    }),Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
                         writable: !0,
