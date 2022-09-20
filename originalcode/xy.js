@@ -1394,15 +1394,6 @@
                                         }
                                     }
                                 }
-                            }), r("GaplessDateAxis").setAll({
-                                fillRule: function(e) {
-                                    var t = e.get("axisFill");
-                                    if (t) {
-                                        var i = e.get("index"),
-                                            a = !1;
-                                        u.isNumber(i) && i % 2 != 0 || (a = !0), t.setPrivate("visible", a)
-                                    }
-                                }
                             }), r("ValueAxis").setAll({
                                 baseValue: 0,
                                 logarithmic: !1,
@@ -1430,8 +1421,6 @@
                                 valueXGrouped: "close",
                                 valueYGrouped: "close",
                                 seriesTooltipTarget: "series"
-                            }), r("BaseColumnSeries").setAll({
-                                adjustBulletPosition: !0
                             }), r("ColumnSeries").setAll({
                                 clustered: !0
                             }), r("RoundedRectangle", ["series", "column"]).setAll({
@@ -4179,11 +4168,6 @@
                             }
                             this._updateGhost()
                         }
-                    }), Object.defineProperty(t, "className", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: "GaplessDateAxis"
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
@@ -5177,11 +5161,6 @@
                         value: function(t) {
                             return "bullet" == this.get("seriesTooltipTarget") ? e.prototype._getTooltipTarget.call(this, t) : t.get("graphics") || this
                         }
-                    }), Object.defineProperty(t, "className", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: "BaseColumnSeries"
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
@@ -6853,10 +6832,6 @@
                     console.log('----->>>> AxisTick');
                     return j.T
                 },
-                BaseColumnSeries: function() {
-                    console.log('----->>>> BaseColumnSeries');
-                    return h.d
-                },
                 CategoryAxis: function() {
                     console.log('----->>>> CategoryAxis');
                     return f
@@ -6880,10 +6855,6 @@
                 DurationAxis: function() {
                     console.log('----->>>> DurationAxis');
                     return w
-                },
-                GaplessDateAxis: function() {
-                    console.log('----->>>> GaplessDateAxis');
-                    return _.J
                 },
                 Grid: function() {
                     console.log('----->>>> Grid');
