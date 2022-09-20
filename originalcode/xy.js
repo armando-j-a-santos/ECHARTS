@@ -7,7 +7,6 @@
                 z: function() {
                     return v
                 }
-                console.log('hey in here');
             });
             var a = i(5125),
                 r = i(55),
