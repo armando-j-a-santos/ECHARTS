@@ -1489,31 +1489,9 @@
                                 tension: .5
                             }), r("SmoothedYLineSeries").setAll({
                                 tension: .5
-                            }), r("Candlestick").setAll({
-                                position: "absolute",
-                                isMeasured: !1,
-                                width: (0, n.aQ)(50),
-                                height: (0, n.aQ)(50),
-                                strokeWidth: 1,
-                                strokeOpacity: 1,
-                                cornerRadiusBL: 0,
-                                cornerRadiusTL: 0,
-                                cornerRadiusBR: 0,
-                                cornerRadiusTR: 0,
-                                fillOpacity: 1,
-                                role: "figure"
                             }), r("OHLC").setAll({
                                 width: (0, n.aQ)(80),
                                 height: (0, n.aQ)(80)
-                            }), r("CandlestickSeries").setAll({
-                                lowValueXGrouped: "low",
-                                lowValueYGrouped: "low",
-                                highValueXGrouped: "high",
-                                highValueYGrouped: "high",
-                                openValueXGrouped: "open",
-                                openValueYGrouped: "open",
-                                valueXGrouped: "close",
-                                valueYGrouped: "close"
                             }), m = r("Rectangle", ["column", "autocolor"]).states.create("riseFromOpen", {}), (0, s.v)(m, "fill", i, "positive"), (0, s.v)(m, "stroke", i, "positive"), m = r("Rectangle", ["column", "autocolor"]).states.create("dropFromOpen", {}), (0, s.v)(m, "fill", i, "negative"), (0, s.v)(m, "stroke", i, "negative"), r("Rectangle", ["column", "autocolor", "pro"]).states.create("riseFromPrevious", {
                                 fillOpacity: 1
                             }), r("Rectangle", ["column", "autocolor", "pro"]).states.create("dropFromPrevious", {
@@ -5249,11 +5227,6 @@
                             var t = this._display;
                             t.moveTo(this.get("lowX0", 0), this.get("lowY0", 0)), t.lineTo(this.get("lowX1", 0), this.get("lowY1", 0)), t.moveTo(this.get("highX0", 0), this.get("highY0", 0)), t.lineTo(this.get("highX1", 0), this.get("highY1", 0))
                         }
-                    }), Object.defineProperty(t, "className", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: "Candlestick"
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
@@ -5287,7 +5260,7 @@
                                 themeTags: ["autocolor"]
                             }), (function() {
                                 return n.j._new(t._root, {
-                                    themeTags: l.mergeTags(t.columns.template.get("themeTags", []), ["candlestick", "series", "column"])
+                                    /////////////themeTags: l.mergeTags(t.columns.template.get("themeTags", []), ["candlestick", "series", "column"])
                                 }, [t.columns.template])
                             }))
                         }), t
@@ -5357,15 +5330,10 @@
                             var i = this;
                             e.prototype._processAxisRange.call(this, t), t.columns = new s.o(o.YS.new({}), (function() {
                                 return n.j._new(i._root, {
-                                    themeTags: l.mergeTags(t.columns.template.get("themeTags", []), ["candlestick", "series", "column"])
+                                    /////////////themeTags: l.mergeTags(t.columns.template.get("themeTags", []), ["candlestick", "series", "column"])
                                 }, [i.columns.template, t.columns.template])
                             }))
                         }
-                    }), Object.defineProperty(t, "className", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: "CandlestickSeries"
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
@@ -6896,14 +6864,6 @@
                 BaseColumnSeries: function() {
                     console.log('----->>>> BaseColumnSeries');
                     return h.d
-                },
-                Candlestick: function() {
-                    console.log('----->>>> Candlestick');
-                    return Y.j
-                },
-                CandlestickSeries: function() {
-                    console.log('----->>>> CandlestickSeries');
-                    return X.$
                 },
                 CategoryAxis: function() {
                     console.log('----->>>> CategoryAxis');
