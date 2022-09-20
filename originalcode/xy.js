@@ -26,6 +26,7 @@
                 v = function(e) {
                     function t() {
                         var t = null !== e && e.apply(this, arguments) || this;
+                        console.log('[6450].6901 t->' + t);
                         return Object.defineProperty(t, "xAxes", {
                             enumerable: !0,
                             configurable: !0,
