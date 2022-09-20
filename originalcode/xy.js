@@ -6862,96 +6862,127 @@
             console.log("inside xy [6450].3955");
             i.r(t), i.d(t, {
                 Axis: function() {
+                    console.log('----->>>> Axis');
                     return c.R
                 },
                 AxisBullet: function() {
+                    console.log('----->>>> AxisBullet');
                     return O
                 },
                 AxisLabel: function() {
+                    console.log('----->>>> AxisLabel');
                     return T.k
                 },
                 AxisLabelRadial: function() {
+                    console.log('----->>>> AxisLabelRadial');
                     return D.p
                 },
                 AxisRenderer: function() {
+                    console.log('----->>>> AxisRenderer');
                     return k.Y
                 },
                 AxisRendererX: function() {
+                    console.log('----->>>> AxisRendererX');
                     return I.n
                 },
                 AxisRendererY: function() {
+                    console.log('----->>>> AxisRendererY');
                     return M.j
                 },
                 AxisTick: function() {
+                    console.log('----->>>> AxisTick');
                     return j.T
                 },
                 BaseColumnSeries: function() {
+                    console.log('----->>>> BaseColumnSeries');
                     return h.d
                 },
                 Candlestick: function() {
+                    console.log('----->>>> Candlestick');
                     return Y.j
                 },
                 CandlestickSeries: function() {
+                    console.log('----->>>> CandlestickSeries');
                     return X.$
                 },
                 CategoryAxis: function() {
+                    console.log('----->>>> CategoryAxis');
                     return f
                 },
                 CategoryDateAxis: function() {
+                    console.log('----->>>> CategoryDateAxis');
                     return v
                 },
                 ColumnSeries: function() {
+                    console.log('----->>>> ColumnSeries');
                     return L.d
                 },
                 DateAxis: function() {
+                    console.log('----->>>> DateAxis');
                     return y.S
                 },
                 DefaultTheme: function() {
+                    console.log('----->>>> DefaultTheme');
                     return J.l
                 },
                 DurationAxis: function() {
+                    console.log('----->>>> DurationAxis');
                     return w
                 },
                 GaplessDateAxis: function() {
+                    console.log('----->>>> GaplessDateAxis');
                     return _.J
                 },
                 Grid: function() {
+                    console.log('----->>>> Grid');
                     return A.r
                 },
                 LineSeries: function() {
+                    console.log('----->>>> LineSeries');
                     return V.e
                 },
                 OHLC: function() {
+                    console.log('----->>>> OHLC');
                     return S
                 },
                 OHLCSeries: function() {
+                    console.log('----->>>> OHLCSeries');
                     return R
                 },
                 SmoothedXLineSeries: function() {
+                    console.log('----->>>> SmoothedXLineSeries');
                     return z
                 },
                 SmoothedXYLineSeries: function() {
+                    console.log('----->>>> SmoothedXYLineSeries');
                     return Z
                 },
                 SmoothedYLineSeries: function() {
+                    console.log('----->>>> SmoothedYLineSeries');
                     return U
                 },
                 StepLineSeries: function() {
+                    console.log('----->>>> StepLineSeries');
                     return q
                 },
                 ValueAxis: function() {
+                    console.log('----->>>> ValueAxis');
                     return x.m
                 },
                 XYChart: function() {
+                    console.log('----->>>> XYChart');
                     return a.z
                 },
                 XYChartScrollbar: function() {
+                    console.log('----->>>> XYChartScrollbar');
                     return l
                 },
                 XYCursor: function() {
+                    console.log('----->>>> XYCursor');
                     return u.L
                 },
                 XYSeries: function() {
+                    console.log('----->>>> XYSeries');
                     return C.o
                 }
             });
