@@ -1525,6 +1525,17 @@
                                 })), e._otherCharts = i
                             }
                         }
+                    }), Object.defineProperty(t.prototype, "_updateChildren", {
+                        enumerable: !1,
+                        configurable: !0,
+                        writable: !0,
+                        value: function() {
+                            if (e.prototype._updateChildren.call(this), this._handleSyncWith(), this.isDirty("positionX") || this.isDirty("positionY")) {
+                                var t = this.get("positionX"),
+                                    i = this.get("positionY");
+                                null == t && null == i ? this.hide(0) : (this._movePoint = this.toGlobal(this._getPoint(this.get("positionX", 0), this.get("positionY", 0))), this.handleMove())
+                            }
+                        }
                     }), Object.defineProperty(t.prototype, "_updateXLine", {
                         enumerable: !1,
                         configurable: !0,
@@ -2325,13 +2336,6 @@
                         writable: !0,
                         value: function(e, t, i, a) {
                             return !1
-                        }
-                    }), Object.defineProperty(t.prototype, "createAxisRange", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e) {
-                            return this.axisRanges.push(e)
                         }
                     }), Object.defineProperty(t.prototype, "_groupSeriesData", {
                         enumerable: !1,
@@ -4709,7 +4713,6 @@
                         configurable: !0,
                         writable: !0,
                         value: function() {
-                            console.log("inside _updateChildren (757)");
                             var i = this,
                                 a = this.chart;
                             a && (this._ph = a.plotContainer.height(), this._pw = a.plotContainer.width());
@@ -5334,6 +5337,81 @@
                         value: function(e) {
                             var t = this.mainContainer.children.push(e.make());
                             return e.push(t), t
+                        }
+                    }), Object.defineProperty(t.prototype, "_updateChildren", {
+                        enumerable: !1,
+                        configurable: !0,
+                        writable: !0,
+                        value: function() {
+                            this._strokeTemplate = void 0, this._fillTemplate = void 0;
+                            var t = this.get("xAxis"),
+                                i = this.get("yAxis");
+                            if (this.isDirty("stroke")) {
+                                var a = this.get("stroke");
+                                this.strokes.template.set("stroke", a);
+                                var r = this._legendStroke;
+                                r && r.states.lookup("default").set("stroke", a)
+                            }
+                            if (this.isDirty("fill")) {
+                                var n = this.get("fill");
+                                this.fills.template.set("fill", n);
+                                var o = this._legendFill;
+                                o && o.states.lookup("default").set("fill", n)
+                            }
+                            if (this.isDirty("curveFactory")) {
+                                var s = this.get("curveFactory");
+                                s && (this._strokeGenerator.curve(s), this._fillGenerator.curve(s))
+                            }
+                            if (t.inited && i.inited) {
+                                if (this._axesDirty || this._valuesDirty || this._stackDirty || this.isDirty("vcx") || this.isDirty("vcy") || this._sizeDirty || this.isDirty("connect") || this.isDirty("curveFactory")) {
+                                    this.fills.each((function(e) {
+                                        e.setPrivate("visible", !1)
+                                    })), this.strokes.each((function(e) {
+                                        e.setPrivate("visible", !1)
+                                    })), this.axisRanges.each((function(e) {
+                                        var t = e.fills;
+                                        t && t.each((function(e) {
+                                            e.setPrivate("visible", !1)
+                                        }));
+                                        var i = e.strokes;
+                                        i && i.each((function(e) {
+                                            e.setPrivate("visible", !1)
+                                        }))
+                                    }));
+                                    var l = this.startIndex(),
+                                        u = this.strokes.template.get("templateField"),
+                                        h = this.fills.template.get("templateField"),
+                                        c = !0,
+                                        p = !0;
+                                    u && (c = !1), h && (p = !1);
+                                    for (var g = function(e) {
+                                            var t = f.dataItems[e],
+                                                i = !0,
+                                                a = t.dataContext;
+                                            if (u && a[u] && (c = !0), h && a[h] && (p = !0), d.each(f._valueFields, (function(e) {
+                                                    b.isNumber(t.get(e)) || (i = !1)
+                                                })), i && c && p) return l = e, "break"
+                                        }, f = this, m = l - 1; m >= 0 && "break" !== g(m); m--);
+                                    var v = this.dataItems.length,
+                                        y = this.endIndex();
+                                    if (y < v) {
+                                        y++;
+                                        var _ = function(e) {
+                                                var t = x.dataItems[e],
+                                                    i = !0;
+                                                if (d.each(x._valueFields, (function(e) {
+                                                        b.isNumber(t.get(e)) || (i = !1)
+                                                    })), i) return y = e + 1, "break"
+                                            },
+                                            x = this;
+                                        for (m = y; m < v && "break" !== _(m); m++);
+                                    }
+                                    if (l > 0 && l--, this._endIndex = y, this._clearGraphics(), this._sindex = 0, this._dindex = l, 1 == this.dataItems.length) this._startSegment(0);
+                                    else
+                                        for (; this._dindex < y - 1;) this._startSegment(this._dindex), this._sindex++
+                                }
+                            } else this._skipped = !0;
+                            e.prototype._updateChildren.call(this)
                         }
                     }), Object.defineProperty(t.prototype, "_clearGraphics", {
                         enumerable: !1,
@@ -6073,7 +6151,6 @@
                         configurable: !0,
                         writable: !0,
                         value: function() {
-                            console.log("inside _updateChildren (4604)");
                             e.prototype._updateChildren.call(this), this._x = this.x(), this._y = this.y(), this._makeRangeMask()
                         }
                     }), Object.defineProperty(t.prototype, "_stack", {
@@ -6223,7 +6300,7 @@
                         configurable: !0,
                         writable: !0,
                         value: function() {
-                            this._afterDataChange(), this._valuesDirty = !0, this._dataProcessed = !1, this._aggregatesCalculated = !1, this.markDirty()
+                            this._valuesDirty = !0, this._dataProcessed = !1, this._aggregatesCalculated = !1, this.markDirty()
                         }
                     }), Object.defineProperty(t.prototype, "_clearDirty", {
                         enumerable: !1,
@@ -6517,29 +6594,6 @@
                         writable: !0,
                         value: function() {
                             this.hideTooltip(), this.updateLegendValue(void 0), this.updateLegendMarker(void 0)
-                        }
-                    }), Object.defineProperty(t.prototype, "_afterDataChange", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            e.prototype._afterDataChange.call(this), this.get("xAxis")._markDirtyKey("start"), this.get("yAxis")._markDirtyKey("start"), this.resetExtremes()
-                        }
-                    }), Object.defineProperty(t.prototype, "resetExtremes", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            this.setPrivate("selectionMinX", void 0), this.setPrivate("selectionMaxX", void 0), this.setPrivate("selectionMinY", void 0), this.setPrivate("selectionMaxY", void 0), this.setPrivate("minX", void 0), this.setPrivate("minY", void 0), this.setPrivate("maxX", void 0), this.setPrivate("maxY", void 0)
-                        }
-                    }), Object.defineProperty(t.prototype, "createAxisRange", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e) {
-                            return this.axisRanges.push({
-                                axisDataItem: e
-                            })
                         }
                     }), Object.defineProperty(t, "className", {
                         enumerable: !0,
@@ -7330,6 +7384,13 @@
                         value: function() {
                             this._setDefault("curveFactory", (0, G.$)(this.get("tension", .5))), e.prototype._afterNew.call(this)
                         }
+                    }), Object.defineProperty(t.prototype, "_updateChildren", {
+                        enumerable: !1,
+                        configurable: !0,
+                        writable: !0,
+                        value: function() {
+                            this.isDirty("tension") && (this.set("curveFactory", (0, G.$)(this.get("tension", .5))), this._valuesDirty = !0), e.prototype._updateChildren.call(this)
+                        }
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
@@ -7349,6 +7410,13 @@
                         value: function() {
                             this._setDefault("curveFactory", (0, E.G)(this.get("tension", .5))), e.prototype._afterNew.call(this)
                         }
+                    }), Object.defineProperty(t.prototype, "_updateChildren", {
+                        enumerable: !1,
+                        configurable: !0,
+                        writable: !0,
+                        value: function() {
+                            this.isDirty("tension") && (this.set("curveFactory", (0, E.G)(this.get("tension", .5))), this._valuesDirty = !0), e.prototype._updateChildren.call(this)
+                        }
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
@@ -7367,6 +7435,13 @@
                         writable: !0,
                         value: function() {
                             this._setDefault("curveFactory", W.ZP.tension(this.get("tension", .5))), e.prototype._afterNew.call(this)
+                        }
+                    }), Object.defineProperty(t.prototype, "_updateChildren", {
+                        enumerable: !1,
+                        configurable: !0,
+                        writable: !0,
+                        value: function() {
+                            this.isDirty("tension") && (this.set("curveFactory", W.ZP.tension(this.get("tension", .5))), this._valuesDirty = !0), e.prototype._updateChildren.call(this)
                         }
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
