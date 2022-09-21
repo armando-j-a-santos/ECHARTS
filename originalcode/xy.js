@@ -5088,26 +5088,6 @@
                             }
                             this._updateCandleGraphics(t, a, r, n, o, s, l, u, h, c)
                         }
-                    }), Object.defineProperty(t.prototype, "_updateCandleGraphics", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e, t, i, a, r, n, o, s, l, h) {
-                            var c = e.get("graphics");
-                            if (c) {
-                                var p = this.getPoint(t, a),
-                                    b = this.getPoint(i, r),
-                                    d = this.getPoint(n, s),
-                                    g = this.getPoint(o, l),
-                                    f = c.x(),
-                                    m = c.y();
-                                c.set("lowX0", p.x - f), c.set("lowY0", p.y - m), c.set("lowX1", b.x - f), c.set("lowY1", b.y - m), c.set("highX0", d.x - f), c.set("highY0", d.y - m), c.set("highX1", g.x - f), c.set("highY1", g.y - m), c.set("orientation", h);
-                                var v = e.get("rangeGraphics");
-                                v && u.each(v, (function(e) {
-                                    e.set("lowX0", p.x - f), e.set("lowY0", p.y - m), e.set("lowX1", b.x - f), e.set("lowY1", b.y - m), e.set("highX0", d.x - f), e.set("highY0", d.y - m), e.set("highX1", g.x - f), e.set("highY1", g.y - m), e.set("orientation", h)
-                                }))
-                            }
-                        }
                     }), Object.defineProperty(t.prototype, "_processAxisRange", {
                         enumerable: !1,
                         configurable: !0,
@@ -6365,39 +6345,6 @@
                         writable: !0,
                         value: function() {
                             e.prototype._afterChanged.call(this), this._skipped && (this._markDirtyAxes(), this._skipped = !1)
-                        }
-                    }), Object.defineProperty(t.prototype, "showDataItemTooltip", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e) {
-                            this.updateLegendMarker(e), this.updateLegendValue(e);
-                            var t = this.get("tooltip");
-                            if (t) {
-                                if (!this.isHidden() && (t._setDataItem(e), e)) {
-                                    var i = this.get("locationX", 0),
-                                        a = this.get("locationY", 1),
-                                        r = e.get("locationX", i),
-                                        n = e.get("locationY", a),
-                                        o = this.get("xAxis"),
-                                        s = this.get("yAxis"),
-                                        l = this.get("vcx", 1),
-                                        u = this.get("vcy", 1),
-                                        h = o.getDataItemPositionX(e, this._tooltipFieldX, this._aLocationX0 + (this._aLocationX1 - this._aLocationX0) * r, l),
-                                        p = s.getDataItemPositionY(e, this._tooltipFieldY, this._aLocationY0 + (this._aLocationY1 - this._aLocationY0) * n, u),
-                                        b = this.getPoint(h, p),
-                                        d = !0;
-                                    if (c.each(this._valueFields, (function(t) {
-                                            null == e.get(t) && (d = !1)
-                                        })), d) {
-                                        var g = this.chart;
-                                        g && g.inPlot(b) ? (t.label.text.markDirtyText(), t.set("tooltipTarget", this._getTooltipTarget(e)), t.set("pointTo", this._display.toGlobal({
-                                            x: b.x,
-                                            y: b.y
-                                        }))) : t._setDataItem(void 0)
-                                    } else t._setDataItem(void 0)
-                                }
-                            } else this.hideTooltip()
                         }
                     }), Object.defineProperty(t.prototype, "_getTooltipTarget", {
                         enumerable: !1,
