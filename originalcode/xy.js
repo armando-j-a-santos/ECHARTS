@@ -5377,53 +5377,6 @@
                                 }, [i.strokes.template, t.strokes.template])
                             }))
                         }
-                    }), Object.defineProperty(t.prototype, "createLegendMarker", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e) {
-                            var t = this.get("legendDataItem");
-                            if (t) {
-                                var i = t.get("marker"),
-                                    a = t.get("markerRectangle");
-                                a && a.setPrivate("visible", !1), i.set("background", p.A.new(i._root, {
-                                    fillOpacity: 0,
-                                    fill: (0, h.$_)(0)
-                                }));
-                                var r = i.children.push(n.T._new(i._root, {
-                                    themeTags: ["line", "series", "legend", "marker", "stroke"],
-                                    interactive: !1
-                                }, [this.strokes.template]));
-                                this._legendStroke = r;
-                                var o = i.children.push(n.T._new(i._root, {
-                                    themeTags: ["line", "series", "legend", "marker", "fill"]
-                                }, [this.fills.template]));
-                                this._legendFill = o;
-                                var s = this._root.interfaceColors.get("disabled");
-                                if (r.states.create("disabled", {
-                                        fill: s,
-                                        stroke: s
-                                    }), o.states.create("disabled", {
-                                        fill: s,
-                                        stroke: s
-                                    }), this.bullets.length > 0) {
-                                    var l = this.bullets.getIndex(0);
-                                    if (l) {
-                                        var u = l(i._root, this, new c.z(this, {}, {}));
-                                        if (u) {
-                                            var b = u.get("sprite");
-                                            b instanceof n.T && b.states.create("disabled", {
-                                                fill: s,
-                                                stroke: s
-                                            }), b && (b.set("tooltipText", void 0), b.set("tooltipHTML", void 0), i.children.push(b), b.setAll({
-                                                x: i.width() / 2,
-                                                y: i.height() / 2
-                                            }))
-                                        }
-                                    }
-                                }
-                            }
-                        }
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
@@ -6038,13 +5991,6 @@
                             var i = e.get("stackToItemX");
                             return i ? i.get(t, 0) + this.getStackedXValue(i, t) : 0
                         }
-                    }), Object.defineProperty(t.prototype, "createLegendMarker", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e) {
-                            this.updateLegendMarker()
-                        }
                     }), Object.defineProperty(t.prototype, "_markDirtyAxes", {          // No change for this function
                         enumerable: !1,
                         configurable: !0,
@@ -6052,7 +5998,7 @@
                         value: function() {
                             this._axesDirty = !0, this.markDirty()
                         }
-                    }),Object.defineProperty(t.prototype, "_positionBullet", {         // needed in 4604
+                    }), Object.defineProperty(t.prototype, "_positionBullet", {         // needed in 4604
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
