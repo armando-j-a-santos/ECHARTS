@@ -6064,6 +6064,7 @@
                         configurable: !0,
                         writable: !0,
                         value: function() {
+                            console.log('inside _markDirtyAxes (4604)');
                             this._axesDirty = !0, this.markDirty()
                         }
                     }),Object.defineProperty(t.prototype, "_clearDirty", {
