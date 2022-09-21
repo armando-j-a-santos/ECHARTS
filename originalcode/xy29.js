@@ -2253,6 +2253,13 @@
                         configurable: !0,
                         writable: !0,
                         value: function(e, t) {}
+                    }), Object.defineProperty(t.prototype, "_clearDirty", {
+                        enumerable: !1,
+                        configurable: !0,
+                        writable: !0,
+                        value: function() {
+                            e.prototype._clearDirty.call(this), this._sizeDirty = !1, this._rangesDirty = !1
+                        }
                     }), Object.defineProperty(t.prototype, "coordinateToPosition", {
                         enumerable: !1,
                         configurable: !0,
@@ -3445,6 +3452,13 @@
                                 })), e._dataSetId && this.markDirtySize()
                             }
                         }
+                    }), Object.defineProperty(t.prototype, "_clearDirty", {
+                        enumerable: !1,
+                        configurable: !0,
+                        writable: !0,
+                        value: function() {
+                            e.prototype._clearDirty.call(this), this._groupingCalculated = !1, this._dataGrouped = !1
+                        }
                     }), Object.defineProperty(t.prototype, "getGroupInterval", {
                         enumerable: !1,
                         configurable: !0,
@@ -3578,7 +3592,7 @@
                                 }
                                 for (var O = p; O < this.dataItems.length; O++) this.dataItems[O].hide();
                                 l.each(this.series, (function(e) {
-                                    e.inited /////////////&& e._markDirtyAxes()
+                                    e.inited && e._markDirtyAxes()
                                 }))
                             }
                             this._updateGhost()
@@ -3940,7 +3954,7 @@
                                     }))
                                 }
                                 o.each(this.series, (function(e) {
-                                    e.inited /////////////&& e._markDirtyAxes()
+                                    e.inited && e._markDirtyAxes()
                                 }))
                             }
                             this._updateGhost()
@@ -4132,7 +4146,7 @@
                                 }
                                 for (var y = c; y < this.dataItems.length; y++) this.dataItems[y].hide();
                                 l.each(this.series, (function(e) {
-                                    e.inited /////////////&& e._markDirtyAxes()
+                                    e.inited && e._markDirtyAxes()
                                 })), this._updateGhost()
                             }
                         }
@@ -5382,7 +5396,6 @@
                         configurable: !0,
                         writable: !0,
                         value: function(e) {
-                            console.log('inside createLegendMarker (2338)');
                             var t = this.get("legendDataItem");
                             if (t) {
                                 var i = t.get("marker"),
@@ -6044,8 +6057,21 @@
                         configurable: !0,
                         writable: !0,
                         value: function(e) {
-                            console.log('inside createLegendMarker (4604)');
                             this.updateLegendMarker()
+                        }
+                    }), Object.defineProperty(t.prototype, "_markDirtyAxes", {
+                        enumerable: !1,
+                        configurable: !0,
+                        writable: !0,
+                        value: function() {
+                            this._axesDirty = !0, this.markDirty()
+                        }
+                    }),Object.defineProperty(t.prototype, "_clearDirty", {
+                        enumerable: !1,
+                        configurable: !0,
+                        writable: !0,
+                        value: function() {
+                            e.prototype._clearDirty.call(this), this._axesDirty = !1, this._selectionProcessed = !1, this._stackDirty = !1, this._dataProcessed = !1
                         }
                     }), Object.defineProperty(t.prototype, "show", {                    // didn't tried to delete
                         enumerable: !1,
@@ -6282,8 +6308,8 @@
                                     n = i.get("baseAxis"),
                                     o = i.get("xAxis"),
                                     s = i.get("yAxis");
-                                /////////////if (o instanceof t && s instanceof t) i._markDirtyAxes();
-                                if (n === e) {
+                                if (o instanceof t && s instanceof t) i._markDirtyAxes();
+                                else if (n === e) {
                                     var l = void 0,
                                         u = void 0,
                                         h = s;
@@ -6324,7 +6350,7 @@
                                         for (d = m; d < v && "break" !== _(d); d++);
                                         i.setPrivate("outOfSelection", !y)
                                     }
-                                    /////////////i._markDirtyAxes()
+                                    i._markDirtyAxes()
                                 }
                             }))
                         }
