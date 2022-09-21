@@ -2122,13 +2122,6 @@
                                 t.markDirtySize()
                             })), e.processAxis(this)
                         }
-                    }), Object.defineProperty(t.prototype, "showDataItem", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(t) {
-                            return this._toggleDataItem(t, !0), e.prototype.showDataItem.call(this, t)
-                        }
                     }), Object.defineProperty(t.prototype, "_toggleDataItem", {
                         enumerable: !1,
                         configurable: !0,
@@ -3374,7 +3367,7 @@
                                         var n = this.get("baseInterval"),
                                             s = n.timeUnit + n.count;
                                         l.each(this.series, (function(e) {
-                                            e.setDataSet(s)
+                                            /////////////   e.setDataSet(s)
                                         })), this._setBaseInterval(n), this.setPrivateRaw("groupInterval", void 0), this.markDirtyExtremes()
                                     }
                                     this._dataGrouped = !0
@@ -3456,7 +3449,7 @@
                                             }
                                         })), m && a.get("originals").push(b)), n = T
                                     })), f && x && f(x, i)
-                                })), e._dataSetId && e.setDataSet(e._dataSetId), this.markDirtySize()
+                                })), e._dataSetId && this.markDirtySize()
                             }
                         }
                     }), Object.defineProperty(t.prototype, "_clearDirty", {
@@ -3508,7 +3501,7 @@
                                     if (n && (!u || u.timeUnit !== n.timeUnit || u.count !== n.count || this._seriesDataGrouped) && (this._seriesDataGrouped = !1, this.setPrivateRaw("groupInterval", n), this._setBaseInterval(n), n)) {
                                         var h = n.timeUnit + n.count;
                                         l.each(this.series, (function(e) {
-                                            e.get("baseAxis") === t && e.setDataSet(h)
+                                            e.get("baseAxis") === t /////////////&& e.setDataSet(h)
                                         })), this.markDirtyExtremes()
                                     }
                                 }
@@ -4834,16 +4827,6 @@
                             }
                             i = d.x, a = g.x, r = d.y, n = g.y, l.isNumber(h) && (i += u = (a - i - h) / 2, a -= u), l.isNumber(p) && p < Math.abs(a - i) && (i += u = (a - i - p) / 2, a -= u), l.isNumber(c) && (r += u = (n - r - c) / 2, n -= u), l.isNumber(b) && b < Math.abs(n - r) && (r += u = (n - r - b) / 2, n -= u), this.get("adjustBulletPosition") && (o && (a = Math.min(Math.max(0, a), this._pw), i = Math.min(Math.max(0, i), this._pw)), s && (r = Math.min(Math.max(0, r), this._ph), n = Math.min(Math.max(0, n), this._ph))), e.setRaw("left", i), e.setRaw("right", a), e.setRaw("top", r), e.setRaw("bottom", n), t.setPrivate("width", a - i), t.setPrivate("height", n - r), t.set("x", i), t.set("y", n - (n - r))
                         }
-                    }), Object.defineProperty(t.prototype, "_handleDataSetChange", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            var t = this;
-                            e.prototype._handleDataSetChange.call(this), s.each(this._dataItems, (function(e) {
-                                t._toggleColumn(e, !1)
-                            }))
-                        }
                     }), Object.defineProperty(t.prototype, "_applyGraphicsStates", {
                         enumerable: !1,
                         configurable: !0,
@@ -4892,26 +4875,7 @@
                                 e.setPrivate("hidden", !t)
                             }))
                         }
-                    }), Object.defineProperty(t.prototype, "showDataItem", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(t, i) {
-                            return (0, a.mG)(this, void 0, void 0, (function() {
-                                var r, n, o;
-                                return (0, a.Jh)(this, (function(a) {
-                                    switch (a.label) {
-                                        case 0:
-                                            return r = [e.prototype.showDataItem.call(this, t, i)], (n = t.get("graphics")) && r.push(n.show(i)), (o = t.get("rangeGraphics")) && s.each(o, (function(e) {
-                                                r.push(e.show(i))
-                                            })), [4, Promise.all(r)];
-                                        case 1:
-                                            return a.sent(), [2]
-                                    }
-                                }))
-                            }))
-                        }
-                    }), Object.defineProperty(t.prototype, "updateLegendMarker", {
+                    }),Object.defineProperty(t.prototype, "updateLegendMarker", {
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
@@ -6153,35 +6117,7 @@
                         value: function(e, t) {
                             return this._showBullets
                         }
-                    }), Object.defineProperty(t.prototype, "setDataSet", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e) {
-                            if (this._dataSets[e]) {
-                                this._handleDataSetChange(), this._dataItems = this._dataSets[e], this._markDataSetDirty(), this._dataSetId = e;
-                                var t = "datasetchanged";
-                                this.events.isEnabled(t) && this.events.dispatch(t, {
-                                    type: t,
-                                    target: this,
-                                    id: e
-                                })
-                            }
-                        }
-                    }), Object.defineProperty(t.prototype, "_handleDataSetChange", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            this.bullets.length > 0 && c.each(this._dataItems, (function(e) {
-                                var t = e.bullets;
-                                t && c.each(t, (function(e) {
-                                    var t = e.get("sprite");
-                                    t && t.setPrivate("visible", !1)
-                                }))
-                            })), this._selectionProcessed = !1
-                        }
-                    }), Object.defineProperty(t.prototype, "show", {
+                    }), Object.defineProperty(t.prototype, "show", {                    // didn't tried to delete
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
@@ -6204,7 +6140,7 @@
                                 }))
                             }))
                         }
-                    }), Object.defineProperty(t.prototype, "hide", {
+                    }), Object.defineProperty(t.prototype, "hide", {                    // didn't tried to delete
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
@@ -6217,30 +6153,6 @@
                                             return this._fixVC(), (i = []).push(e.prototype.hide.call(this, t).then((function() {
                                                 r._isHiding = !1
                                             }))), i.push(this.bulletsContainer.hide(t)), i.push(this._sequencedShowHide(!1, t)), [4, Promise.all(i)];
-                                        case 1:
-                                            return a.sent(), [2]
-                                    }
-                                }))
-                            }))
-                        }
-                    }), Object.defineProperty(t.prototype, "showDataItem", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(t, i) {
-                            return (0, a.mG)(this, void 0, void 0, (function() {
-                                var r, n;
-                                return (0, a.Jh)(this, (function(a) {
-                                    switch (a.label) {
-                                        case 0:
-                                            return r = [e.prototype.showDataItem.call(this, t, i)], u.isNumber(i) || (i = this.get("stateAnimationDuration", 0)), n = this.get("stateAnimationEasing"), c.each(this._valueFields, (function(e) {
-                                                r.push(t.animate({
-                                                    key: e + "Working",
-                                                    to: t.get(e),
-                                                    duration: i,
-                                                    easing: n
-                                                }).waitForStop())
-                                            })), [4, Promise.all(r)];
                                         case 1:
                                             return a.sent(), [2]
                                     }
