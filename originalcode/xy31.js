@@ -6073,6 +6073,43 @@
                         value: function() {
                             e.prototype._clearDirty.call(this), this._axesDirty = !1, this._selectionProcessed = !1, this._stackDirty = !1, this._dataProcessed = !1
                         }
+                    }), Object.defineProperty(t.prototype, "_positionBullet", {         // needed in 4604
+                        enumerable: !1,
+                        configurable: !0,
+                        writable: !0,
+                        value: function(e) {
+                            var t = e.get("sprite");
+                            if (t) {
+                                var i = t.dataItem,
+                                    a = e.get("locationX", i.get("locationX", .5)),
+                                    r = e.get("locationY", i.get("locationY", .5)),
+                                    n = this.get("xAxis"),
+                                    o = this.get("yAxis"),
+                                    s = n.getDataItemPositionX(i, this._xField, a, this.get("vcx", 1)),
+                                    l = o.getDataItemPositionY(i, this._yField, r, this.get("vcy", 1)),
+                                    u = this.getPoint(s, l),
+                                    h = i.get("left", u.x),
+                                    c = i.get("right", u.x),
+                                    p = i.get("top", u.y),
+                                    b = i.get("bottom", u.y);
+                                if (this._shouldShowBullet(s, l)) {
+                                    e.getPrivate("hidden") ? t.setPrivate("visible", !1) : t.setPrivate("visible", !0);
+                                    var d = c - h,
+                                        g = b - p;
+                                    t.isType("Label") && (t.setPrivate("maxWidth", Math.abs(d)), t.setPrivate("maxHeight", Math.abs(g)));
+                                    var f = h + d * a,
+                                        m = b - g * r;
+                                    t.set("x", f), t.set("y", m)
+                                } else t.setPrivate("visible", !1)
+                            }
+                        }
+                    }), Object.defineProperty(t.prototype, "_shouldShowBullet", {       // needed in 4604
+                        enumerable: !1,
+                        configurable: !0,
+                        writable: !0,
+                        value: function(e, t) {
+                            return this._showBullets
+                        }
                     }), Object.defineProperty(t.prototype, "show", {                    // didn't tried to delete
                         enumerable: !1,
                         configurable: !0,
