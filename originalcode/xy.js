@@ -2122,13 +2122,6 @@
                                 t.markDirtySize()
                             })), e.processAxis(this)
                         }
-                    }), Object.defineProperty(t.prototype, "hideDataItem", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(t) {
-                            return this._toggleDataItem(t, !1), e.prototype.hideDataItem.call(this, t)
-                        }
                     }), Object.defineProperty(t.prototype, "showDataItem", {
                         enumerable: !1,
                         configurable: !0,
@@ -4883,25 +4876,6 @@
                                 t && t.removeValue(e), e.dispose()
                             }))
                         }
-                    }), Object.defineProperty(t.prototype, "hideDataItem", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(t, i) {
-                            return (0, a.mG)(this, void 0, void 0, (function() {
-                                var r, n, o;
-                                return (0, a.Jh)(this, (function(a) {
-                                    switch (a.label) {
-                                        case 0:
-                                            return r = [e.prototype.hideDataItem.call(this, t, i)], (n = t.get("graphics")) && r.push(n.hide(i)), (o = t.get("rangeGraphics")) && s.each(o, (function(e) {
-                                                r.push(e.hide(i))
-                                            })), [4, Promise.all(r)];
-                                        case 1:
-                                            return a.sent(), [2]
-                                    }
-                                }))
-                            }))
-                        }
                     }), Object.defineProperty(t.prototype, "_toggleColumn", {
                         enumerable: !1,
                         configurable: !0,
@@ -6267,39 +6241,6 @@
                                                     easing: n
                                                 }).waitForStop())
                                             })), [4, Promise.all(r)];
-                                        case 1:
-                                            return a.sent(), [2]
-                                    }
-                                }))
-                            }))
-                        }
-                    }), Object.defineProperty(t.prototype, "hideDataItem", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(t, i) {
-                            return (0, a.mG)(this, void 0, void 0, (function() {
-                                var r, n, o, s, l, h, p, b, d;
-                                return (0, a.Jh)(this, (function(a) {
-                                    switch (a.label) {
-                                        case 0:
-                                            return r = [e.prototype.hideDataItem.call(this, t, i)], n = this.states.create("hidden", {}), u.isNumber(i) || (i = n.get("stateAnimationDuration", this.get("stateAnimationDuration", 0))), o = n.get("stateAnimationEasing", this.get("stateAnimationEasing")), s = this.get("xAxis"), l = this.get("yAxis"), h = this.get("baseAxis"), p = this.get("stacked"), h !== s && h || c.each(this._valueYFields, (function(e) {
-                                                var a = l.getPrivate("min"),
-                                                    n = l.baseValue();
-                                                u.isNumber(a) && a > n && (n = a), p && (n = 0), r.push(t.animate({
-                                                    key: e + "Working",
-                                                    to: n,
-                                                    duration: i,
-                                                    easing: o
-                                                }).waitForStop())
-                                            })), h !== l && h || (b = s.getPrivate("min"), d = s.baseValue(), u.isNumber(b) && b > d && (d = b), p && (d = 0), c.each(this._valueXFields, (function(e) {
-                                                r.push(t.animate({
-                                                    key: e + "Working",
-                                                    to: d,
-                                                    duration: i,
-                                                    easing: o
-                                                }).waitForStop())
-                                            }))), [4, Promise.all(r)];
                                         case 1:
                                             return a.sent(), [2]
                                     }
