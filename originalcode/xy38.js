@@ -5788,7 +5788,7 @@
                             }
                             this._tooltipFieldY = a, this.isDirty("baseAxis") && this._fixVC(), this.set("x", r.x() - p.relativeToValue(r.get("centerX", 0), r.width()) - r.parent.get("paddingLeft", 0)), this.set("y", n.y() - p.relativeToValue(n.get("centerY", 0), n.height()) - n.parent.get("paddingTop", 0)), this.bulletsContainer.set("y", this.y()), this.bulletsContainer.set("x", this.x());
                             var s = this.get("stacked");
-                            if (this.isDirty("stacked") && (s ? this._valuesDirty && !this._dataProcessed || this._stack() : this._unstack()), this._valuesDirty && !this._dataProcessed && (this._dataProcessed = !0, s && this._stack(), c.each(this.dataItems, (function(e) {
+                            if (this.isDirty("stacked") && (s ? this._valuesDirty && !this._dataProcessed || true : true), this._valuesDirty && !this._dataProcessed && (this._dataProcessed = !0, s , c.each(this.dataItems, (function(e) {
                                     c.each(t._valueXShowFields, (function(i) {
                                         var a = e.get(i);
                                         null != a && (s && (a += 0), t._min("minX", a), t._max("maxX", a))
@@ -5862,31 +5862,6 @@
                         value: function() {
                             console.log("inside _updateChildren (4604)");
                             e.prototype._updateChildren.call(this), this._x = this.x(), this._y = this.y(), this._makeRangeMask()
-                        }
-                    }), Object.defineProperty(t.prototype, "_stack", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            var e = this.chart;
-                            if (e) {
-                                var t = e.series.indexOf(this);
-                                if (this._couldStackTo = [], t > 0)
-                                    for (var i = void 0, a = t - 1; a >= 0 && ((i = e.series.getIndex(a)).get("xAxis") !== this.get("xAxis") || i.get("yAxis") !== this.get("yAxis") || i.className !== this.className || (this._couldStackTo.push(i), i.get("stacked"))); a--);
-                                /////////////this._stackDataItems()
-                            }
-                        }
-                    }), Object.defineProperty(t.prototype, "_unstack", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            var e = this;
-                            h.each(this._reallyStackedTo, (function(t, i) {
-                                delete i._stackedSeries[e.uid]
-                            })), this._reallyStackedTo = {}, c.each(this.dataItems, (function(e) {
-                                e.setRaw("stackToItemY", void 0), e.setRaw("stackToItemX", void 0)
-                            }))
                         }
                     }), Object.defineProperty(t.prototype, "_markDirtyAxes", {          // No change for this function - needed in 4604
                         enumerable: !1,
