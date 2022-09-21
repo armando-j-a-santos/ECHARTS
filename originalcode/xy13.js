@@ -4721,6 +4721,7 @@
                         configurable: !0,
                         writable: !0,
                         value: function() {
+                            console.log("inside _updateChildren (757)");
                             var i = this,
                                 a = this.chart;
                             a && (this._ph = a.plotContainer.height(), this._pw = a.plotContainer.width());
@@ -5351,6 +5352,7 @@
                         configurable: !0,
                         writable: !0,
                         value: function() {
+                            console.log("inside _updateChildren (2338)");
                             this._strokeTemplate = void 0, this._fillTemplate = void 0;
                             var t = this.get("xAxis"),
                                 i = this.get("yAxis");
@@ -6159,6 +6161,7 @@
                         configurable: !0,
                         writable: !0,
                         value: function() {
+                            console.log("inside _updateChildren (4604)");
                             e.prototype._updateChildren.call(this), this._x = this.x(), this._y = this.y(), this._makeRangeMask()
                         }
                     }), Object.defineProperty(t.prototype, "_stack", {
