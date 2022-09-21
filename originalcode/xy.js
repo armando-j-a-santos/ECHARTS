@@ -1277,72 +1277,7 @@
                                     month: a.translate("_date_month_full"),
                                     year: a.translate("_date_year")
                                 };
-                            r("DateAxis").setAll({
-                                maxZoomFactor: null,
-                                strictMinMax: !0,
-                                startLocation: 0,
-                                endLocation: 1,
-                                markUnitChange: !0,
-                                groupData: !1,
-                                groupCount: 500,
-                                gridIntervals: p.copy(b),
-                                dateFormats: c.copy(d),
-                                periodChangeDateFormats: c.copy(g),
-                                tooltipDateFormats: f,
-                                groupIntervals: [{
-                                    timeUnit: "millisecond",
-                                    count: 1
-                                }, {
-                                    timeUnit: "millisecond",
-                                    count: 10
-                                }, {
-                                    timeUnit: "millisecond",
-                                    count: 100
-                                }, {
-                                    timeUnit: "second",
-                                    count: 1
-                                }, {
-                                    timeUnit: "second",
-                                    count: 10
-                                }, {
-                                    timeUnit: "minute",
-                                    count: 1
-                                }, {
-                                    timeUnit: "minute",
-                                    count: 10
-                                }, {
-                                    timeUnit: "hour",
-                                    count: 1
-                                }, {
-                                    timeUnit: "day",
-                                    count: 1
-                                }, {
-                                    timeUnit: "week",
-                                    count: 1
-                                }, {
-                                    timeUnit: "month",
-                                    count: 1
-                                }, {
-                                    timeUnit: "year",
-                                    count: 1
-                                }],
-                                fillRule: function(e) {
-                                    var i = e.get("axisFill");
-                                    if (i) {
-                                        var a = e.component,
-                                            r = e.get("value"),
-                                            n = e.get("endValue"),
-                                            o = a.intervalDuration(),
-                                            s = a.getPrivate("baseInterval"),
-                                            u = a.getPrivate("gridInterval", s),
-                                            h = a.getPrivate("min", 0);
-                                        if (h = l.round(new Date(h), u.timeUnit, u.count, t._root.locale.firstDayOfWeek, t._root.utc, void 0, t._root.timezone).getTime(), null != r && null != n) {
-                                            var c = Math.round(Math.round((r - h) / o)) / 2;
-                                            c == Math.round(c) ? i.setPrivate("visible", !0) : i.setPrivate("visible", !1)
-                                        }
-                                    }
-                                }
-                            }), r("ValueAxis").setAll({
+                            r("ValueAxis").setAll({
                                 baseValue: 0,
                                 logarithmic: !1,
                                 strictMinMax: !1,
@@ -3914,11 +3849,6 @@
                         value: function(e) {
                             return this.valueToPosition(e.getTime())
                         }
-                    }), Object.defineProperty(t, "className", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: "DateAxis"
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
@@ -6008,7 +5938,7 @@
                                 }))), !this.get("baseAxis")) {
                                 var i = this.get("xAxis"),
                                     a = this.get("yAxis");
-                                a.isType("CategoryAxis") || a.isType("DateAxis") ? this.set("baseAxis", a) : this.set("baseAxis", i)
+                                a.isType("CategoryAxis") ? this.set("baseAxis", a) : this.set("baseAxis", i)
                             }
                             this.states.create("hidden", {
                                 opacity: 1,
@@ -6665,7 +6595,7 @@
                         writable: !0,
                         value: function() {
                             var e = "X: {" + this._xField;
-                            return this.get("xAxis").isType("DateAxis") && (e += ".formatDate()"), e += "}; Y: {" + this._yField, this.get("yAxis").isType("DateAxis") && (e += ".formatDate()"), e + "}"
+                            return (e += ".formatDate()"), e += "}; Y: {" + this._yField && (e += ".formatDate()"), e + "}"
                         }
                     }), Object.defineProperty(t.prototype, "getPoint", {
                         enumerable: !1,
@@ -6756,10 +6686,6 @@
                 ColumnSeries: function() {
                     console.log('----->>>> ColumnSeries');
                     return L.d
-                },
-                DateAxis: function() {
-                    console.log('----->>>> DateAxis');
-                    return y.S
                 },
                 DefaultTheme: function() {
                     console.log('----->>>> DefaultTheme');
