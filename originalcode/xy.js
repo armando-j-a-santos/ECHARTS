@@ -1037,33 +1037,6 @@
                                 strokeOpacity: 0,
                                 inside: !0,
                                 minGridDistance: 5
-                            }), r("AxisLabel", ["xy", "scrollbar", "x"]).setAll({
-                                opacity: .5,
-                                centerY: n.AQ,
-                                minPosition: .01,
-                                maxPosition: .99,
-                                fontSize: "0.8em"
-                            }), r("AxisLabel", ["category"]).setAll({
-                                text: "{category}",
-                                populateText: !0
-                            }), r("AxisLabel", ["x"]).setAll({
-                                centerY: 0
-                            }), r("AxisLabel", ["x", "inside"]).setAll({
-                                centerY: n.AQ
-                            }), r("AxisLabel", ["x", "inside", "opposite"]).setAll({
-                                centerY: 0
-                            }), r("AxisLabel", ["x", "opposite"]).setAll({
-                                centerY: n.AQ
-                            }), r("AxisLabel", ["y"]).setAll({
-                                centerX: n.AQ
-                            }), r("AxisLabel", ["y", "inside"]).setAll({
-                                centerX: 0
-                            }), r("AxisLabel", ["y", "inside", "opposite"]).setAll({
-                                centerX: n.AQ
-                            }), r("AxisLabel", ["y", "opposite"]).setAll({
-                                centerX: 0
-                            }), r("AxisLabel", ["xy", "scrollbar", "y"]).setAll({
-                                visible: !1
                             }), r("Grid", ["xy", "scrollbar", "y"]).setAll({
                                 visible: !1
                             }), r("Grid", ["xy", "scrollbar", "x"]).setAll({
@@ -1096,15 +1069,6 @@
                                 zoomX: !0,
                                 zoomY: !0,
                                 fixAxisSize: !0
-                            }), r("AxisLabel").setAll({
-                                location: .5,
-                                multiLocation: 0,
-                                centerX: n.CI,
-                                centerY: n.CI,
-                                paddingTop: 3,
-                                paddingBottom: 3,
-                                paddingLeft: 5,
-                                paddingRight: 5
                             }), r("Container", ["axis", "header"]).setAll({
                                 layer: 30
                             }), (m = r("AxisRenderer")).setAll({
@@ -1149,8 +1113,6 @@
                             }), r("Grid", ["series", "range"]).setAll({
                                 visible: !1
                             }), r("AxisTick", ["series", "range"]).setAll({
-                                visible: !1
-                            }), r("AxisLabel", ["series", "range"]).setAll({
                                 visible: !1
                             }), (m = r("AxisTick")).setAll({
                                 location: .5,
@@ -2515,12 +2477,7 @@
                             value: []
                         }), t
                     }
-                    return (0, a.ZT)(t, e), Object.defineProperty(t, "className", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: "AxisLabel"
-                    }), Object.defineProperty(t, "classNames", {
+                    return (0, a.ZT)(t, e), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
                         writable: !0,
@@ -6799,14 +6756,6 @@
                     console.log('----->>>> Axis');
                     return c.R
                 },
-                AxisBullet: function() {
-                    console.log('----->>>> AxisBullet');
-                    return O
-                },
-                AxisLabel: function() {
-                    console.log('----->>>> AxisLabel');
-                    return T.k
-                },
                 AxisRenderer: function() {
                     console.log('----->>>> AxisRenderer');
                     return k.Y
@@ -7523,11 +7472,6 @@
                                 this.axis && t && i && this.axis._prepareDataItem(i)
                             }
                         }
-                    }), Object.defineProperty(t, "className", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: "AxisBullet"
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
