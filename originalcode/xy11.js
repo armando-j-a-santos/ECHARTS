@@ -1041,12 +1041,6 @@
                                 visible: !1
                             }), r("Grid", ["xy", "scrollbar", "x"]).setAll({
                                 opacity: .5
-                            }), r("XYCursor").setAll({
-                                behavior: "none",
-                                layer: 30,
-                                exportable: !1,
-                                snapToSeriesBy: "xy",
-                                moveThreshold: 1
                             }), (m = r("Grid", ["cursor", "x"])).setAll({
                                 strokeOpacity: .8,
                                 strokeDasharray: [2, 2]
@@ -1291,8 +1285,6 @@
                                         u.isNumber(a) && u.isNumber(r) && (h.round(a / r / 2, 5) == Math.round(a / r / 2) ? t.setPrivate("visible", !1) : t.setPrivate("visible", !0))
                                     }
                                 }
-                            }), r("DurationAxis").setAll({
-                                baseUnit: "second"
                             }), r("XYSeries").setAll({
                                 maskBullets: !0,
                                 stackToNegative: !0,
@@ -1319,10 +1311,6 @@
                                 cornerRadiusTR: 0,
                                 fillOpacity: 1,
                                 role: "figure"
-                            }), r("LineSeries").setAll({
-                                connect: !0,
-                                autoGapCount: 1.1,
-                                stackToNegative: !1
                             }), r("Graphics", ["series", "stroke"]).setAll({
                                 position: "absolute",
                                 strokeWidth: 1,
@@ -1826,11 +1814,6 @@
                         value: function() {
                             e.prototype._dispose.call(this), this.selection.dispose()
                         }
-                    }), Object.defineProperty(t, "className", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: "XYCursor"
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
@@ -5692,11 +5675,6 @@
                                 }
                             }
                         }
-                    }), Object.defineProperty(t, "className", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: "LineSeries"
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
@@ -6687,25 +6665,9 @@
                     console.log('----->>>> ColumnSeries');
                     return L.d
                 },
-                DefaultTheme: function() {
-                    console.log('----->>>> DefaultTheme');
-                    return J.l
-                },
-                DurationAxis: function() {
-                    console.log('----->>>> DurationAxis');
-                    return w
-                },
                 Grid: function() {
                     console.log('----->>>> Grid');
                     return A.r
-                },
-                LineSeries: function() {
-                    console.log('----->>>> LineSeries');
-                    return V.e
-                },
-                StepLineSeries: function() {
-                    console.log('----->>>> StepLineSeries');
-                    return q
                 },
                 ValueAxis: function() {
                     console.log('----->>>> ValueAxis');
@@ -6714,14 +6676,6 @@
                 XYChart: function() {
                     console.log('----->>>> XYChart');
                     return a.z
-                },
-                XYChartScrollbar: function() {
-                    console.log('----->>>> XYChartScrollbar');
-                    return l
-                },
-                XYCursor: function() {
-                    console.log('----->>>> XYCursor');
-                    return u.L
                 },
                 XYSeries: function() {
                     console.log('----->>>> XYSeries');
@@ -6790,11 +6744,6 @@
                                 s > u && (s = (i = (0, r.CR)([u, s], 2))[0], u = i[1]), l > h && (l = (a = (0, r.CR)([h, l], 2))[0], h = a[1]), "horizontal" === t.get("orientation") ? (e.moveTo(0, 0), e.lineTo(s, 0), e.lineTo(s, c), e.lineTo(0, c), e.lineTo(0, 0), e.moveTo(u, 0), e.lineTo(p, 0), e.lineTo(p, c), e.lineTo(u, c), e.lineTo(u, 0)) : (e.moveTo(0, 0), e.lineTo(0, l), e.lineTo(p, l), e.lineTo(p, 0), e.lineTo(0, 0), e.moveTo(0, h), e.lineTo(0, c), e.lineTo(p, c), e.lineTo(p, h), e.lineTo(0, h))
                             }))
                         }
-                    }), Object.defineProperty(t, "className", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: "XYChartScrollbar"
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
@@ -7328,11 +7277,6 @@
                                 r = d.round(this.positionToValue(e), a);
                             return t.format(r, this.getPrivate("durationFormat"), this.get("baseUnit"))
                         }
-                    }), Object.defineProperty(t, "className", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: "DurationAxis"
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
@@ -7633,11 +7577,6 @@
                             }
                             this.get("noRisers") && (t.points = [], t.segments.push(i))
                         }
-                    }), Object.defineProperty(t, "className", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: "StepLineSeries"
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
