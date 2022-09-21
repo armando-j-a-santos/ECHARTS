@@ -2253,13 +2253,6 @@
                         configurable: !0,
                         writable: !0,
                         value: function(e, t) {}
-                    }), Object.defineProperty(t.prototype, "_clearDirty", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            e.prototype._clearDirty.call(this), this._sizeDirty = !1, this._rangesDirty = !1
-                        }
                     }), Object.defineProperty(t.prototype, "coordinateToPosition", {
                         enumerable: !1,
                         configurable: !0,
@@ -3451,13 +3444,6 @@
                                     })), f && x && f(x, i)
                                 })), e._dataSetId && this.markDirtySize()
                             }
-                        }
-                    }), Object.defineProperty(t.prototype, "_clearDirty", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            e.prototype._clearDirty.call(this), this._groupingCalculated = !1, this._dataGrouped = !1
                         }
                     }), Object.defineProperty(t.prototype, "getGroupInterval", {
                         enumerable: !1,
@@ -6059,21 +6045,14 @@
                         value: function(e) {
                             this.updateLegendMarker()
                         }
-                    }), Object.defineProperty(t.prototype, "_markDirtyAxes", {
+                    }), Object.defineProperty(t.prototype, "_markDirtyAxes", {          // No change for this function
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
                         value: function() {
                             this._axesDirty = !0, this.markDirty()
                         }
-                    }),Object.defineProperty(t.prototype, "_clearDirty", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            e.prototype._clearDirty.call(this), this._axesDirty = !1, this._selectionProcessed = !1, this._stackDirty = !1, this._dataProcessed = !1
-                        }
-                    }), Object.defineProperty(t.prototype, "_positionBullet", {         // needed in 4604
+                    }),Object.defineProperty(t.prototype, "_positionBullet", {         // needed in 4604
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
