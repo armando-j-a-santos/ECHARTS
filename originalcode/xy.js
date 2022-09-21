@@ -6073,7 +6073,7 @@
                         value: function() {
                             e.prototype._clearDirty.call(this), this._axesDirty = !1, this._selectionProcessed = !1, this._stackDirty = !1, this._dataProcessed = !1
                         }
-                    }), Object.defineProperty(t.prototype, "_positionBullet", {
+                    }), Object.defineProperty(t.prototype, "_positionBullet", {         // needed in 4604
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
@@ -6103,7 +6103,7 @@
                                 } else t.setPrivate("visible", !1)
                             }
                         }
-                    }), Object.defineProperty(t.prototype, "_shouldShowBullet", {
+                    }), Object.defineProperty(t.prototype, "_shouldShowBullet", {       // needed in 4604
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
