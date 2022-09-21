@@ -4240,7 +4240,7 @@
                         writable: !0,
                         value: function(e, t, i, a) {
                             var r = e.get(t);
-                            return r = e.get("stackToItemX") ? r * a + e.component.getStackedXValueWorking(e, t) : this._baseValue + (r - this._baseValue) * a, this.valueToPosition(r)
+                            return r = e.get("stackToItemX") ? r * a : this._baseValue + (r - this._baseValue) * a, this.valueToPosition(r)
                         }
                     }), Object.defineProperty(t.prototype, "getDataItemCoordinateY", {
                         enumerable: !1,
@@ -4255,7 +4255,7 @@
                         writable: !0,
                         value: function(e, t, i, a) {
                             var r = e.get(t);
-                            return r = e.get("stackToItemY") ? r * a + e.component.getStackedYValueWorking(e, t) : this._baseValue + (r - this._baseValue) * a, this.valueToPosition(r)
+                            return r = e.get("stackToItemY") ? r * a : this._baseValue + (r - this._baseValue) * a, this.valueToPosition(r)
                         }
                     }), Object.defineProperty(t.prototype, "basePosition", {
                         enumerable: !1,
@@ -5791,10 +5791,10 @@
                             if (this.isDirty("stacked") && (s ? this._valuesDirty && !this._dataProcessed || this._stack() : this._unstack()), this._valuesDirty && !this._dataProcessed && (this._dataProcessed = !0, s && this._stack(), c.each(this.dataItems, (function(e) {
                                     c.each(t._valueXShowFields, (function(i) {
                                         var a = e.get(i);
-                                        null != a && (s && (a += t.getStackedXValue(e, i)), t._min("minX", a), t._max("maxX", a))
+                                        null != a && (s && (a += 0), t._min("minX", a), t._max("maxX", a))
                                     })), c.each(t._valueYShowFields, (function(i) {
                                         var a = e.get(i);
-                                        null != a && (s && (a += t.getStackedYValue(e, i)), t._min("minY", a), t._max("maxY", a))
+                                        null != a && (s && (a += 0), t._min("minY", a), t._max("maxY", a))
                                     })), r.processSeriesDataItem(e, t._valueXFields), n.processSeriesDataItem(e, t._valueYFields)
                                 })), r._seriesValuesDirty = !0, n._seriesValuesDirty = !0, this.get("ignoreMinMax") || ((this.isPrivateDirty("minX") || this.isPrivateDirty("maxX")) && r.markDirtyExtremes(), (this.isPrivateDirty("minY") || this.isPrivateDirty("maxY")) && n.markDirtyExtremes())), (this.isDirty("vcx") || this.isDirty("vcy")) , this._dataGrouped || (r._groupSeriesData(this), n._groupSeriesData(this), this._dataGrouped = !0), this._valuesDirty || this.isPrivateDirty("startIndex") || this.isPrivateDirty("endIndex") || this.isDirty("vcx") || this.isDirty("vcy") || this._stackDirty) {
                                 var l = this.startIndex(),
@@ -5937,7 +5937,7 @@
                             var a = this;
                             c.each(this.__valueXShowFields, (function(r) {
                                 var n = e.get(r);
-                                null != n && (i && (n += a.getStackedXValueWorking(e, r)), a._min("selectionMinX", n), a._max("selectionMaxX", n * t))
+                                null != n && (i && (n += 0), a._min("selectionMinX", n), a._max("selectionMaxX", n * t))
                             }))
                         }
                     }), Object.defineProperty(t.prototype, "processYSelectionDataItem", {
@@ -5948,50 +5948,10 @@
                             var a = this;
                             c.each(this.__valueYShowFields, (function(r) {
                                 var n = e.get(r);
-                                null != n && (i && (n += a.getStackedYValueWorking(e, r)), a._min("selectionMinY", n), a._max("selectionMaxY", n * t))
+                                null != n && (i && (n += 0), a._min("selectionMinY", n), a._max("selectionMaxY", n * t))
                             }))
                         }
-                    }), Object.defineProperty(t.prototype, "getStackedYValueWorking", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e, t) {
-                            var i = e.get("stackToItemY");
-                            if (i) {
-                                var a = i.component;
-                                return i.get(t, 0) * a.get("vcy", 1) + this.getStackedYValueWorking(i, t)
-                            }
-                            return 0
-                        }
-                    }), Object.defineProperty(t.prototype, "getStackedXValueWorking", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e, t) {
-                            var i = e.get("stackToItemX");
-                            if (i) {
-                                var a = i.component;
-                                return i.get(t, 0) * a.get("vcx", 1) + this.getStackedXValueWorking(i, t)
-                            }
-                            return 0
-                        }
-                    }), Object.defineProperty(t.prototype, "getStackedYValue", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e, t) {
-                            var i = e.get("stackToItemY");
-                            return i ? i.get(t, 0) + this.getStackedYValue(i, t) : 0
-                        }
-                    }), Object.defineProperty(t.prototype, "getStackedXValue", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e, t) {
-                            var i = e.get("stackToItemX");
-                            return i ? i.get(t, 0) + this.getStackedXValue(i, t) : 0
-                        }
-                    }), Object.defineProperty(t.prototype, "_markDirtyAxes", {          // No change for this function
+                    }), Object.defineProperty(t.prototype, "_markDirtyAxes", {          // No change for this function - needed in 4604
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
