@@ -1525,17 +1525,6 @@
                                 })), e._otherCharts = i
                             }
                         }
-                    }), Object.defineProperty(t.prototype, "_updateChildren", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            if (e.prototype._updateChildren.call(this), this._handleSyncWith(), this.isDirty("positionX") || this.isDirty("positionY")) {
-                                var t = this.get("positionX"),
-                                    i = this.get("positionY");
-                                null == t && null == i ? this.hide(0) : (this._movePoint = this.toGlobal(this._getPoint(this.get("positionX", 0), this.get("positionY", 0))), this.handleMove())
-                            }
-                        }
                     }), Object.defineProperty(t.prototype, "_updateXLine", {
                         enumerable: !1,
                         configurable: !0,
@@ -4715,60 +4704,6 @@
                                     this._createGraphics(s)
                                 }
                         }
-                    }), Object.defineProperty(t.prototype, "_updateChildren", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            var i = this,
-                                a = this.chart;
-                            a && (this._ph = a.plotContainer.height(), this._pw = a.plotContainer.width());
-                            var r = this.get("xAxis"),
-                                n = this.get("yAxis"),
-                                o = this.get("baseAxis"),
-                                l = this.columns.template;
-                            this.isDirty("fill") && null == l.get("fill") && l.set("fill", this.get("fill")), this.isDirty("stroke") && null == l.get("stroke") && l.set("stroke", this.get("stroke"));
-                            var u = 0,
-                                h = 0,
-                                c = 0;
-                            s.each(o.series, (function(e) {
-                                if (e instanceof t) {
-                                    var a = e.get("stacked");
-                                    a && 0 == c && h++, !a && e.get("clustered") && h++
-                                }
-                                e === i && (u = h - 1), c++
-                            })), this.get("clustered") || (u = 0, h = 1), 0 === h && (h = 1, u = 0);
-                            var p = r.get("renderer"),
-                                b = n.get("renderer"),
-                                d = "cellStartLocation",
-                                g = "cellEndLocation",
-                                f = p.get(d, 0),
-                                m = p.get(g, 1),
-                                v = b.get(d, 0),
-                                y = b.get(g, 1);
-                            if (this._aLocationX0 = f + u / h * (m - f), this._aLocationX1 = f + (u + 1) / h * (m - f), this._aLocationY0 = v + u / h * (y - v), this._aLocationY1 = v + (u + 1) / h * (y - v), r.inited && n.inited) {
-                                if (this._axesDirty || this._valuesDirty || this._stackDirty || this.isDirty("vcx") || this.isDirty("vcy") || this._sizeDirty) {
-                                    for (var _ = this.dataItems.length, x = Math.max(0, this.startIndex() - 2), w = Math.min(this.endIndex() + 2, _ - 1), P = 0; P < x; P++) this._toggleColumn(this.dataItems[P], !1);
-                                    for (var O = this.dataItems[x], T = x; T <= w; T++)
-                                        if (null != (k = this.dataItems[T]).get("valueX") && null != k.get("valueY")) {
-                                            if (O = k, T > 0 && x > 0)
-                                                for (var D = T - 1; D >= 0; D--) {
-                                                    var j = this.dataItems[D];
-                                                    if (null != j.get("valueX") && null != j.get("valueY")) {
-                                                        O = j;
-                                                        break
-                                                    }
-                                                }
-                                            break
-                                        } for (var A = x; A <= w; A++) {
-                                        var k = this.dataItems[A];
-                                        this._updateGraphics(k, O), null != k.get("valueX") && null != k.get("valueY") && (O = k)
-                                    }
-                                    for (var I = w + 1; I < _; I++) this._toggleColumn(this.dataItems[I], !1)
-                                }
-                            } else this._skipped = !0;
-                            this.updateLegendMarker(), e.prototype._updateChildren.call(this)
-                        }
                     }), Object.defineProperty(t.prototype, "_createGraphics", {
                         enumerable: !1,
                         configurable: !0,
@@ -5344,81 +5279,6 @@
                         value: function(e) {
                             var t = this.mainContainer.children.push(e.make());
                             return e.push(t), t
-                        }
-                    }), Object.defineProperty(t.prototype, "_updateChildren", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            this._strokeTemplate = void 0, this._fillTemplate = void 0;
-                            var t = this.get("xAxis"),
-                                i = this.get("yAxis");
-                            if (this.isDirty("stroke")) {
-                                var a = this.get("stroke");
-                                this.strokes.template.set("stroke", a);
-                                var r = this._legendStroke;
-                                r && r.states.lookup("default").set("stroke", a)
-                            }
-                            if (this.isDirty("fill")) {
-                                var n = this.get("fill");
-                                this.fills.template.set("fill", n);
-                                var o = this._legendFill;
-                                o && o.states.lookup("default").set("fill", n)
-                            }
-                            if (this.isDirty("curveFactory")) {
-                                var s = this.get("curveFactory");
-                                s && (this._strokeGenerator.curve(s), this._fillGenerator.curve(s))
-                            }
-                            if (t.inited && i.inited) {
-                                if (this._axesDirty || this._valuesDirty || this._stackDirty || this.isDirty("vcx") || this.isDirty("vcy") || this._sizeDirty || this.isDirty("connect") || this.isDirty("curveFactory")) {
-                                    this.fills.each((function(e) {
-                                        e.setPrivate("visible", !1)
-                                    })), this.strokes.each((function(e) {
-                                        e.setPrivate("visible", !1)
-                                    })), this.axisRanges.each((function(e) {
-                                        var t = e.fills;
-                                        t && t.each((function(e) {
-                                            e.setPrivate("visible", !1)
-                                        }));
-                                        var i = e.strokes;
-                                        i && i.each((function(e) {
-                                            e.setPrivate("visible", !1)
-                                        }))
-                                    }));
-                                    var l = this.startIndex(),
-                                        u = this.strokes.template.get("templateField"),
-                                        h = this.fills.template.get("templateField"),
-                                        c = !0,
-                                        p = !0;
-                                    u && (c = !1), h && (p = !1);
-                                    for (var g = function(e) {
-                                            var t = f.dataItems[e],
-                                                i = !0,
-                                                a = t.dataContext;
-                                            if (u && a[u] && (c = !0), h && a[h] && (p = !0), d.each(f._valueFields, (function(e) {
-                                                    b.isNumber(t.get(e)) || (i = !1)
-                                                })), i && c && p) return l = e, "break"
-                                        }, f = this, m = l - 1; m >= 0 && "break" !== g(m); m--);
-                                    var v = this.dataItems.length,
-                                        y = this.endIndex();
-                                    if (y < v) {
-                                        y++;
-                                        var _ = function(e) {
-                                                var t = x.dataItems[e],
-                                                    i = !0;
-                                                if (d.each(x._valueFields, (function(e) {
-                                                        b.isNumber(t.get(e)) || (i = !1)
-                                                    })), i) return y = e + 1, "break"
-                                            },
-                                            x = this;
-                                        for (m = y; m < v && "break" !== _(m); m++);
-                                    }
-                                    if (l > 0 && l--, this._endIndex = y, this._clearGraphics(), this._sindex = 0, this._dindex = l, 1 == this.dataItems.length) this._startSegment(0);
-                                    else
-                                        for (; this._dindex < y - 1;) this._startSegment(this._dindex), this._sindex++
-                                }
-                            } else this._skipped = !0;
-                            e.prototype._updateChildren.call(this)
                         }
                     }), Object.defineProperty(t.prototype, "_clearGraphics", {
                         enumerable: !1,
@@ -6152,13 +6012,6 @@
                                     e.mainContainer._display.mask = t._display
                                 }))), t.markDirty(), t._markDirtyKey("fill")
                             } else this.mainContainer._display.mask = null
-                        }
-                    }), Object.defineProperty(t.prototype, "_updateChildren", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            e.prototype._updateChildren.call(this), this._x = this.x(), this._y = this.y(), this._makeRangeMask()
                         }
                     }), Object.defineProperty(t.prototype, "_stack", {
                         enumerable: !1,
@@ -7414,13 +7267,6 @@
                         value: function() {
                             this._setDefault("curveFactory", (0, G.$)(this.get("tension", .5))), e.prototype._afterNew.call(this)
                         }
-                    }), Object.defineProperty(t.prototype, "_updateChildren", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            this.isDirty("tension") && (this.set("curveFactory", (0, G.$)(this.get("tension", .5))), this._valuesDirty = !0), e.prototype._updateChildren.call(this)
-                        }
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
@@ -7439,13 +7285,6 @@
                         writable: !0,
                         value: function() {
                             this._setDefault("curveFactory", (0, E.G)(this.get("tension", .5))), e.prototype._afterNew.call(this)
-                        }
-                    }), Object.defineProperty(t.prototype, "_updateChildren", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            this.isDirty("tension") && (this.set("curveFactory", (0, E.G)(this.get("tension", .5))), this._valuesDirty = !0), e.prototype._updateChildren.call(this)
                         }
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
@@ -7466,14 +7305,7 @@
                         value: function() {
                             this._setDefault("curveFactory", W.ZP.tension(this.get("tension", .5))), e.prototype._afterNew.call(this)
                         }
-                    }), Object.defineProperty(t.prototype, "_updateChildren", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            this.isDirty("tension") && (this.set("curveFactory", W.ZP.tension(this.get("tension", .5))), this._valuesDirty = !0), e.prototype._updateChildren.call(this)
-                        }
-                    }), Object.defineProperty(t, "classNames", {
+                    }),Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
                         writable: !0,
