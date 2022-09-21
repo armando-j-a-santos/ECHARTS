@@ -3578,7 +3578,7 @@
                                 }
                                 for (var O = p; O < this.dataItems.length; O++) this.dataItems[O].hide();
                                 l.each(this.series, (function(e) {
-                                    e.inited /////////////&& e._markDirtyAxes()
+                                    e.inited /////////////	&& e._markDirtyAxes()
                                 }))
                             }
                             this._updateGhost()
@@ -3940,7 +3940,7 @@
                                     }))
                                 }
                                 o.each(this.series, (function(e) {
-                                    e.inited /////////////&& e._markDirtyAxes()
+                                    e.inited /////////////	&& e._markDirtyAxes()
                                 }))
                             }
                             this._updateGhost()
@@ -4132,7 +4132,7 @@
                                 }
                                 for (var y = c; y < this.dataItems.length; y++) this.dataItems[y].hide();
                                 l.each(this.series, (function(e) {
-                                    e.inited /////////////&& e._markDirtyAxes()
+                                    e.inited /////////////	&& e._markDirtyAxes()
                                 })), this._updateGhost()
                             }
                         }
@@ -6045,7 +6045,14 @@
                         value: function(e) {
                             this.updateLegendMarker()
                         }
-                    }), Object.defineProperty(t.prototype, "_positionBullet", {         // needed in 4604
+                    }), Object.defineProperty(t.prototype, "_markDirtyAxes", {          // needed in 4604
+                        enumerable: !1,
+                        configurable: !0,
+                        writable: !0,
+                        value: function() {
+                            this._axesDirty = !0, this.markDirty()
+                        }
+                    }),Object.defineProperty(t.prototype, "_positionBullet", {         // needed in 4604
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
@@ -6318,7 +6325,7 @@
                                     o = i.get("xAxis"),
                                     s = i.get("yAxis");
                                 /////////////if (o instanceof t && s instanceof t) i._markDirtyAxes();
-                                if (n === e) {
+                                 if (n === e) {
                                     var l = void 0,
                                         u = void 0,
                                         h = s;
@@ -6359,7 +6366,7 @@
                                         for (d = m; d < v && "break" !== _(d); d++);
                                         i.setPrivate("outOfSelection", !y)
                                     }
-                                    /////////////i._markDirtyAxes()
+                                    /////////////	i._markDirtyAxes()
                                 }
                             }))
                         }
