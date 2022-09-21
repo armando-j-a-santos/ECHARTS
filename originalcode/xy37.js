@@ -5808,12 +5808,12 @@
                                         f = this.getPrivate("outOfSelection");
                                     if (o === r)
                                         if (n._calculateTotals(), this.setPrivateRaw("selectionMinY", void 0), this.setPrivateRaw("selectionMaxY", void 0), f) n.markDirtySelectionExtremes();
-                                        else
-                                            for (var m = l; m < u; m++) this.processYSelectionDataItem(this.dataItems[m], d, g);
+                                        /////////////else
+                                            /////////////for (var m = l; m < u; m++) this.processYSelectionDataItem(this.dataItems[m], d, g);
                                     else if (o === n)
                                         if (r._calculateTotals(), this.setPrivateRaw("selectionMinX", void 0), this.setPrivateRaw("selectionMaxX", void 0), f) n.markDirtySelectionExtremes();
-                                        else
-                                            for (m = l; m < u; m++) this.processXSelectionDataItem(this.dataItems[m], b, g);
+                                        /////////////else
+                                            /////////////for (m = l; m < u; m++) this.processXSelectionDataItem(this.dataItems[m], b, g);
                                     if (o === r) {
                                         if ("valueYWorking" !== this.get("valueYShow")) {
                                             var v = this.getPrivate("selectionMinY");
@@ -5873,7 +5873,7 @@
                                 var t = e.series.indexOf(this);
                                 if (this._couldStackTo = [], t > 0)
                                     for (var i = void 0, a = t - 1; a >= 0 && ((i = e.series.getIndex(a)).get("xAxis") !== this.get("xAxis") || i.get("yAxis") !== this.get("yAxis") || i.className !== this.className || (this._couldStackTo.push(i), i.get("stacked"))); a--);
-                                this._stackDataItems()
+                                /////////////this._stackDataItems()
                             }
                         }
                     }), Object.defineProperty(t.prototype, "_unstack", {
@@ -5886,69 +5886,6 @@
                                 delete i._stackedSeries[e.uid]
                             })), this._reallyStackedTo = {}, c.each(this.dataItems, (function(e) {
                                 e.setRaw("stackToItemY", void 0), e.setRaw("stackToItemX", void 0)
-                            }))
-                        }
-                    }), Object.defineProperty(t.prototype, "_stackDataItems", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            var e, t, i = this,
-                                a = this.get("baseAxis"),
-                                r = this.get("xAxis"),
-                                n = this.get("yAxis");
-                            a === r ? (e = "valueY", t = "stackToItemY") : a === n && (e = "valueX", t = "stackToItemX");
-                            var o = this._couldStackTo.length,
-                                s = 0,
-                                l = this.get("stackToNegative");
-                            this._reallyStackedTo = {}, c.each(this.dataItems, (function(a) {
-                                for (var r = 0; r < o; r++) {
-                                    var n = i._couldStackTo[r],
-                                        h = n.dataItems[s],
-                                        c = a.get(e);
-                                    if (h) {
-                                        var p = h.get(e);
-                                        if (l) {
-                                            if (!u.isNumber(c)) break;
-                                            if (u.isNumber(p)) {
-                                                if (c >= 0 && p >= 0) {
-                                                    a.setRaw(t, h), i._reallyStackedTo[n.uid] = n, n._stackedSeries[i.uid] = i;
-                                                    break
-                                                }
-                                                if (c < 0 && p < 0) {
-                                                    a.setRaw(t, h), i._reallyStackedTo[n.uid] = n, n._stackedSeries[i.uid] = i;
-                                                    break
-                                                }
-                                            }
-                                        } else if (u.isNumber(c) && u.isNumber(p)) {
-                                            a.setRaw(t, h), i._reallyStackedTo[n.uid] = n, n._stackedSeries[i.uid] = i;
-                                            break
-                                        }
-                                    }
-                                }
-                                s++
-                            }))
-                        }
-                    }), Object.defineProperty(t.prototype, "processXSelectionDataItem", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e, t, i) {
-                            var a = this;
-                            c.each(this.__valueXShowFields, (function(r) {
-                                var n = e.get(r);
-                                null != n && (i && (n += 0), a._min("selectionMinX", n), a._max("selectionMaxX", n * t))
-                            }))
-                        }
-                    }), Object.defineProperty(t.prototype, "processYSelectionDataItem", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e, t, i) {
-                            var a = this;
-                            c.each(this.__valueYShowFields, (function(r) {
-                                var n = e.get(r);
-                                null != n && (i && (n += 0), a._min("selectionMinY", n), a._max("selectionMaxY", n * t))
                             }))
                         }
                     }), Object.defineProperty(t.prototype, "_markDirtyAxes", {          // No change for this function - needed in 4604
