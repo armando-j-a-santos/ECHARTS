@@ -2253,13 +2253,6 @@
                         configurable: !0,
                         writable: !0,
                         value: function(e, t) {}
-                    }), Object.defineProperty(t.prototype, "_clearDirty", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            e.prototype._clearDirty.call(this), this._sizeDirty = !1, this._rangesDirty = !1
-                        }
                     }), Object.defineProperty(t.prototype, "coordinateToPosition", {
                         enumerable: !1,
                         configurable: !0,
@@ -3452,13 +3445,6 @@
                                 })), e._dataSetId && this.markDirtySize()
                             }
                         }
-                    }), Object.defineProperty(t.prototype, "_clearDirty", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            e.prototype._clearDirty.call(this), this._groupingCalculated = !1, this._dataGrouped = !1
-                        }
                     }), Object.defineProperty(t.prototype, "getGroupInterval", {
                         enumerable: !1,
                         configurable: !0,
@@ -3592,7 +3578,7 @@
                                 }
                                 for (var O = p; O < this.dataItems.length; O++) this.dataItems[O].hide();
                                 l.each(this.series, (function(e) {
-                                    e.inited && e._markDirtyAxes()
+                                    e.inited /////////////&& e._markDirtyAxes()
                                 }))
                             }
                             this._updateGhost()
@@ -3954,7 +3940,7 @@
                                     }))
                                 }
                                 o.each(this.series, (function(e) {
-                                    e.inited && e._markDirtyAxes()
+                                    e.inited /////////////&& e._markDirtyAxes()
                                 }))
                             }
                             this._updateGhost()
@@ -4146,7 +4132,7 @@
                                 }
                                 for (var y = c; y < this.dataItems.length; y++) this.dataItems[y].hide();
                                 l.each(this.series, (function(e) {
-                                    e.inited && e._markDirtyAxes()
+                                    e.inited /////////////&& e._markDirtyAxes()
                                 })), this._updateGhost()
                             }
                         }
@@ -5391,53 +5377,6 @@
                                 }, [i.strokes.template, t.strokes.template])
                             }))
                         }
-                    }), Object.defineProperty(t.prototype, "createLegendMarker", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e) {
-                            var t = this.get("legendDataItem");
-                            if (t) {
-                                var i = t.get("marker"),
-                                    a = t.get("markerRectangle");
-                                a && a.setPrivate("visible", !1), i.set("background", p.A.new(i._root, {
-                                    fillOpacity: 0,
-                                    fill: (0, h.$_)(0)
-                                }));
-                                var r = i.children.push(n.T._new(i._root, {
-                                    themeTags: ["line", "series", "legend", "marker", "stroke"],
-                                    interactive: !1
-                                }, [this.strokes.template]));
-                                this._legendStroke = r;
-                                var o = i.children.push(n.T._new(i._root, {
-                                    themeTags: ["line", "series", "legend", "marker", "fill"]
-                                }, [this.fills.template]));
-                                this._legendFill = o;
-                                var s = this._root.interfaceColors.get("disabled");
-                                if (r.states.create("disabled", {
-                                        fill: s,
-                                        stroke: s
-                                    }), o.states.create("disabled", {
-                                        fill: s,
-                                        stroke: s
-                                    }), this.bullets.length > 0) {
-                                    var l = this.bullets.getIndex(0);
-                                    if (l) {
-                                        var u = l(i._root, this, new c.z(this, {}, {}));
-                                        if (u) {
-                                            var b = u.get("sprite");
-                                            b instanceof n.T && b.states.create("disabled", {
-                                                fill: s,
-                                                stroke: s
-                                            }), b && (b.set("tooltipText", void 0), b.set("tooltipHTML", void 0), i.children.push(b), b.setAll({
-                                                x: i.width() / 2,
-                                                y: i.height() / 2
-                                            }))
-                                        }
-                                    }
-                                }
-                            }
-                        }
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
@@ -6052,87 +5991,12 @@
                             var i = e.get("stackToItemX");
                             return i ? i.get(t, 0) + this.getStackedXValue(i, t) : 0
                         }
-                    }), Object.defineProperty(t.prototype, "createLegendMarker", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e) {
-                            this.updateLegendMarker()
-                        }
-                    }), Object.defineProperty(t.prototype, "_markDirtyAxes", {
+                    }), Object.defineProperty(t.prototype, "_markDirtyAxes", {           // can´t delete all. Needed 4604.
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
                         value: function() {
-                            console.log('inside _markDirtyAxes (4604)');
                             this._axesDirty = !0, this.markDirty()
-                        }
-                    }),Object.defineProperty(t.prototype, "_clearDirty", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            e.prototype._clearDirty.call(this), this._axesDirty = !1, this._selectionProcessed = !1, this._stackDirty = !1, this._dataProcessed = !1
-                        }
-                    }), Object.defineProperty(t.prototype, "_positionBullet", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e) {
-                            var t = e.get("sprite");
-                            if (t) {
-                                var i = t.dataItem,
-                                    a = e.get("locationX", i.get("locationX", .5)),
-                                    r = e.get("locationY", i.get("locationY", .5)),
-                                    n = this.get("xAxis"),
-                                    o = this.get("yAxis"),
-                                    s = n.getDataItemPositionX(i, this._xField, a, this.get("vcx", 1)),
-                                    l = o.getDataItemPositionY(i, this._yField, r, this.get("vcy", 1)),
-                                    u = this.getPoint(s, l),
-                                    h = i.get("left", u.x),
-                                    c = i.get("right", u.x),
-                                    p = i.get("top", u.y),
-                                    b = i.get("bottom", u.y);
-                                if (this._shouldShowBullet(s, l)) {
-                                    e.getPrivate("hidden") ? t.setPrivate("visible", !1) : t.setPrivate("visible", !0);
-                                    var d = c - h,
-                                        g = b - p;
-                                    t.isType("Label") && (t.setPrivate("maxWidth", Math.abs(d)), t.setPrivate("maxHeight", Math.abs(g)));
-                                    var f = h + d * a,
-                                        m = b - g * r;
-                                    t.set("x", f), t.set("y", m)
-                                } else t.setPrivate("visible", !1)
-                            }
-                        }
-                    }), Object.defineProperty(t.prototype, "_shouldShowBullet", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e, t) {
-                            return this._showBullets
-                        }
-                    }), Object.defineProperty(t.prototype, "show", {                    // didn't tried to delete
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(t) {
-                            return (0, a.mG)(this, void 0, void 0, (function() {
-                                var i, r = this;
-                                return (0, a.Jh)(this, (function(a) {
-                                    switch (a.label) {
-                                        case 0:
-                                            return this._fixVC(), (i = []).push(e.prototype.show.call(this, t).then((function() {
-                                                r._isShowing = !1;
-                                                var e = r.get("xAxis"),
-                                                    t = r.get("yAxis"),
-                                                    i = r.get("baseAxis");
-                                                t !== i && t.markDirtySelectionExtremes(), e !== i && e.markDirtySelectionExtremes()
-                                            }))), i.push(this.bulletsContainer.show(t)), i.push(this._sequencedShowHide(!0, t)), [4, Promise.all(i)];
-                                        case 1:
-                                            return a.sent(), [2]
-                                    }
-                                }))
-                            }))
                         }
                     }), Object.defineProperty(t.prototype, "hide", {                    // didn't tried to delete
                         enumerable: !1,
@@ -6346,8 +6210,8 @@
                                     n = i.get("baseAxis"),
                                     o = i.get("xAxis"),
                                     s = i.get("yAxis");
-                                if (o instanceof t && s instanceof t) i._markDirtyAxes();
-                                else if (n === e) {
+                                /////////////if (o instanceof t && s instanceof t) i._markDirtyAxes();
+                                if (n === e) {
                                     var l = void 0,
                                         u = void 0,
                                         h = s;
@@ -6388,7 +6252,7 @@
                                         for (d = m; d < v && "break" !== _(d); d++);
                                         i.setPrivate("outOfSelection", !y)
                                     }
-                                    i._markDirtyAxes()
+                                    /////////////i._markDirtyAxes()
                                 }
                             }))
                         }
