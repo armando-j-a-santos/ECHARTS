@@ -6066,14 +6066,7 @@
                         value: function() {
                             this._axesDirty = !0, this.markDirty()
                         }
-                    }), Object.defineProperty(t.prototype, "_markDataSetDirty", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            this._valuesDirty = !0, this._dataProcessed = !1, this._aggregatesCalculated = !1, this.markDirty()
-                        }
-                    }), Object.defineProperty(t.prototype, "_clearDirty", {
+                    }),Object.defineProperty(t.prototype, "_clearDirty", {
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
