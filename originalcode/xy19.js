@@ -2245,7 +2245,7 @@
                             h.isNumber(i) && (u.each(this.series, (function(a) {
                                 if (a.get("baseAxis") === e) {
                                     var r = e.getSeriesItem(a, i);
-                                    a.setRaw("tooltipDataItem", r), t && -1 != t.indexOf(a) ? (a.updateLegendMarker(r), a.updateLegendValue(r)) : a.showDataItemTooltip(r)
+                                    a.setRaw("tooltipDataItem", r), t && -1 != t.indexOf(a) ? (a.updateLegendMarker(r)) : a.showDataItemTooltip(r)
                                 }
                             })), a && (r.updateTooltipBounds(a), this.get("snapTooltip") && (i = this.roundAxisPosition(i, this.get("tooltipLocation", .5))), h.isNaN(i) ? a.hide(0) : (this.setPrivateRaw("tooltipPosition", i), this._updateTooltipText(a, i), r.positionTooltip(a, i), i < this.get("start") || i > this.get("end") ? a.hide(0) : a.show(0))))
                         }
@@ -4969,13 +4969,6 @@
                                 })))
                             }
                         }
-                    }), Object.defineProperty(t.prototype, "_getTooltipTarget", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(t) {
-                            return "bullet" == this.get("seriesTooltipTarget") ? e.prototype._getTooltipTarget.call(this, t) : t.get("graphics") || this
-                        }
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
@@ -5935,7 +5928,7 @@
                                         var a = e.get(i);
                                         null != a && (s && (a += t.getStackedYValue(e, i)), t._min("minY", a), t._max("maxY", a))
                                     })), r.processSeriesDataItem(e, t._valueXFields), n.processSeriesDataItem(e, t._valueYFields)
-                                })), r._seriesValuesDirty = !0, n._seriesValuesDirty = !0, this.get("ignoreMinMax") || ((this.isPrivateDirty("minX") || this.isPrivateDirty("maxX")) && r.markDirtyExtremes(), (this.isPrivateDirty("minY") || this.isPrivateDirty("maxY")) && n.markDirtyExtremes()), this._markStakedDirtyStack(), this.updateLegendValue(void 0)), (this.isDirty("vcx") || this.isDirty("vcy")) && this._markStakedDirtyStack(), this._dataGrouped || (r._groupSeriesData(this), n._groupSeriesData(this), this._dataGrouped = !0), this._valuesDirty || this.isPrivateDirty("startIndex") || this.isPrivateDirty("endIndex") || this.isDirty("vcx") || this.isDirty("vcy") || this._stackDirty) {
+                                })), r._seriesValuesDirty = !0, n._seriesValuesDirty = !0, this.get("ignoreMinMax") || ((this.isPrivateDirty("minX") || this.isPrivateDirty("maxX")) && r.markDirtyExtremes(), (this.isPrivateDirty("minY") || this.isPrivateDirty("maxY")) && n.markDirtyExtremes()), this._markStakedDirtyStack()), (this.isDirty("vcx") || this.isDirty("vcy")) && this._markStakedDirtyStack(), this._dataGrouped || (r._groupSeriesData(this), n._groupSeriesData(this), this._dataGrouped = !0), this._valuesDirty || this.isPrivateDirty("startIndex") || this.isPrivateDirty("endIndex") || this.isDirty("vcx") || this.isDirty("vcy") || this._stackDirty) {
                                 var l = this.startIndex(),
                                     u = this.endIndex(),
                                     h = this.get("minBulletDistance", 0);
@@ -6346,45 +6339,7 @@
                         value: function() {
                             e.prototype._afterChanged.call(this), this._skipped && (this._markDirtyAxes(), this._skipped = !1)
                         }
-                    }), Object.defineProperty(t.prototype, "_getTooltipTarget", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e) {
-                            if ("bullet" == this.get("seriesTooltipTarget")) {
-                                var t = e.bullets;
-                                if (t && t.length > 0) {
-                                    var i = t[0].get("sprite");
-                                    if (i) return i
-                                }
-                            }
-                            return this
-                        }
-                    }), Object.defineProperty(t.prototype, "updateLegendValue", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e) {
-                            var t = this.get("legendDataItem");
-                            if (t) {
-                                var i = t.get("label");
-                                if (i) {
-                                    var a = "";
-                                    e ? (i._setDataItem(e), a = this.get("legendLabelText", i.get("text", this.get("name", "")))) : (i._setDataItem(this._emptyDataItem), a = this.get("legendRangeLabelText", this.get("legendLabelText", i.get("text", this.get("name", ""))))), i.set("text", a)
-                                }
-                                var r = t.get("valueLabel");
-                                r && (a = "", e ? (r._setDataItem(e), a = this.get("legendValueText", r.get("text", ""))) : (r._setDataItem(this._emptyDataItem), a = this.get("legendRangeValueText", r.get("text", ""))), r.set("text", a))
-                            }
-                        }
-                    }), Object.defineProperty(t.prototype, "_getItemReaderLabel", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            var e = "X: {" + this._xField;
-                            return (e += ".formatDate()"), e += "}; Y: {" + this._yField && (e += ".formatDate()"), e + "}"
-                        }
-                    }), Object.defineProperty(t.prototype, "getPoint", {
+                    }), Object.defineProperty(t.prototype, "getPoint", {                // can´t delete all. Needed 757, 4604.
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
