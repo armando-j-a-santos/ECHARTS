@@ -4837,6 +4837,7 @@
                         configurable: !0,
                         writable: !0,
                         value: function(e, t, i, a, r, n, o, s) {
+                            console.log('inside getPoint/_updateSeriesGraphics (757)');
                             var u, h = t.get("width"),
                                 c = t.get("height"),
                                 p = t.get("maxWidth"),
@@ -5093,6 +5094,7 @@
                         configurable: !0,
                         writable: !0,
                         value: function(e, t, i, a, r, n, o, s, l, h) {
+                            console.log('inside getPoint/_updateCandleGraphics (2312)');
                             var c = e.get("graphics");
                             if (c) {
                                 var p = this.getPoint(t, a),
@@ -6183,6 +6185,7 @@
                         configurable: !0,
                         writable: !0,
                         value: function(e) {
+                            console.log('inside getPoint/_positionBullet" (4604))');
                             var t = e.get("sprite");
                             if (t) {
                                 var i = t.dataItem,
@@ -6371,6 +6374,7 @@
                         configurable: !0,
                         writable: !0,
                         value: function(e) {
+                            console.log('inside getPoint/showDataItemTooltip (4604)');
                             this.updateLegendMarker(e), this.updateLegendValue(e);
                             var t = this.get("tooltip");
                             if (t) {
@@ -6442,6 +6446,7 @@
                         configurable: !0,
                         writable: !0,
                         value: function(e, t) {
+                            console.log('inside getPoint (4604)');
                             var i = this.get("xAxis").get("renderer").positionToCoordinate(e),
                                 a = this.get("yAxis").get("renderer").positionToCoordinate(t),
                                 r = 999999999;
