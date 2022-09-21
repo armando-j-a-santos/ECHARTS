@@ -1112,15 +1112,6 @@
                                 isMeasured: !0
                             }), r("Grid", ["series", "range"]).setAll({
                                 visible: !1
-                            }), r("AxisTick", ["series", "range"]).setAll({
-                                visible: !1
-                            }), (m = r("AxisTick")).setAll({
-                                location: .5,
-                                multiLocation: 0,
-                                strokeOpacity: 1,
-                                isMeasured: !1,
-                                position: "absolute",
-                                visible: !1
                             }), (0, s.v)(m, "stroke", i, "grid"), r("CategoryAxis").setAll({
                                 startLocation: 0,
                                 endLocation: 1,
@@ -1286,12 +1277,7 @@
                                     month: a.translate("_date_month_full"),
                                     year: a.translate("_date_year")
                                 };
-                            r("CategoryDateAxis").setAll({
-                                markUnitChange: !0,
-                                gridIntervals: p.copy(b),
-                                dateFormats: c.copy(d),
-                                periodChangeDateFormats: c.copy(g)
-                            }), r("DateAxis").setAll({
+                            r("DateAxis").setAll({
                                 maxZoomFactor: null,
                                 strictMinMax: !0,
                                 startLocation: 0,
@@ -3406,12 +3392,7 @@
                             value: []
                         }), t
                     }
-                    return (0, a.ZT)(t, e), Object.defineProperty(t, "className", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: "AxisTick"
-                    }), Object.defineProperty(t, "classNames", {
+                    return (0, a.ZT)(t, e), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
                         writable: !0,
@@ -6768,17 +6749,9 @@
                     console.log('----->>>> AxisRendererY');
                     return M.j
                 },
-                AxisTick: function() {
-                    console.log('----->>>> AxisTick');
-                    return j.T
-                },
                 CategoryAxis: function() {
                     console.log('----->>>> CategoryAxis');
                     return f
-                },
-                CategoryDateAxis: function() {
-                    console.log('----->>>> CategoryDateAxis');
-                    return v
                 },
                 ColumnSeries: function() {
                     console.log('----->>>> ColumnSeries');
@@ -7329,11 +7302,6 @@
                         value: function(e, t) {
                             e.label.set("text", this.getTooltipText(t))
                         }
-                    }), Object.defineProperty(t, "className", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: "CategoryDateAxis"
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
