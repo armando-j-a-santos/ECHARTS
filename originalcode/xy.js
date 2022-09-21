@@ -2326,13 +2326,6 @@
                         value: function(e, t, i, a) {
                             return !1
                         }
-                    }), Object.defineProperty(t.prototype, "createAxisRange", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e) {
-                            return this.axisRanges.push(e)
-                        }
                     }), Object.defineProperty(t.prototype, "_groupSeriesData", {
                         enumerable: !1,
                         configurable: !0,
@@ -6223,7 +6216,7 @@
                         configurable: !0,
                         writable: !0,
                         value: function() {
-                            this._afterDataChange(), this._valuesDirty = !0, this._dataProcessed = !1, this._aggregatesCalculated = !1, this.markDirty()
+                            this._valuesDirty = !0, this._dataProcessed = !1, this._aggregatesCalculated = !1, this.markDirty()
                         }
                     }), Object.defineProperty(t.prototype, "_clearDirty", {
                         enumerable: !1,
@@ -6517,29 +6510,6 @@
                         writable: !0,
                         value: function() {
                             this.hideTooltip(), this.updateLegendValue(void 0), this.updateLegendMarker(void 0)
-                        }
-                    }), Object.defineProperty(t.prototype, "_afterDataChange", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            e.prototype._afterDataChange.call(this), this.get("xAxis")._markDirtyKey("start"), this.get("yAxis")._markDirtyKey("start"), this.resetExtremes()
-                        }
-                    }), Object.defineProperty(t.prototype, "resetExtremes", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            this.setPrivate("selectionMinX", void 0), this.setPrivate("selectionMaxX", void 0), this.setPrivate("selectionMinY", void 0), this.setPrivate("selectionMaxY", void 0), this.setPrivate("minX", void 0), this.setPrivate("minY", void 0), this.setPrivate("maxX", void 0), this.setPrivate("maxY", void 0)
-                        }
-                    }), Object.defineProperty(t.prototype, "createAxisRange", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e) {
-                            return this.axisRanges.push({
-                                axisDataItem: e
-                            })
                         }
                     }), Object.defineProperty(t, "className", {
                         enumerable: !0,
