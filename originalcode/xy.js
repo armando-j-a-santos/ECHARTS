@@ -1770,14 +1770,8 @@
                         writable: !0,
                         value: function() {
                             if (this.isHidden()) {
-                                var t = this.chart;
-                                t && (t.xAxes.each((function(e) {
-                                    e.handleCursorHide()
-                                })), t.yAxes.each((function(e) {
-                                    e.handleCursorHide()
-                                })), t.series.each((function(e) {
-                                    e.handleCursorHide()
-                                })))
+                                /////////////var t = this.chart;
+                                /////////////
                             }
                             e.prototype._onHide.call(this)
                         }
@@ -2276,14 +2270,6 @@
                         value: function() {
                             var e = this.get("tooltip");
                             e && e.show()
-                        }
-                    }), Object.defineProperty(t.prototype, "handleCursorHide", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            var e = this.get("tooltip");
-                            e && e.hide()
                         }
                     }), Object.defineProperty(t.prototype, "processSeriesDataItem", {
                         enumerable: !1,
@@ -5455,41 +5441,8 @@
                                 r = e.get("locationY", t.locationY),
                                 n = t.xAxis.getDataItemPositionX(e, t.xField, a, t.vcx),
                                 o = t.yAxis.getDataItemPositionY(e, t.yField, r, t.vcy);
-                            if (this._shouldInclude(n)) {
-                                var s = this.getPoint(n, o),
-                                    l = [s.x, s.y];
-                                if (s.x += this._x, s.y += this._y, e.set("point", s), t.fillVisible) {
-                                    var u = n,
-                                        h = o;
-                                    if (t.baseAxis === t.xAxis ? h = t.basePosY : t.baseAxis === t.yAxis && (u = t.basePosX), t.getOpen) {
-                                        var c = e.get(t.xOpenField),
-                                            p = e.get(t.yOpenField);
-                                        if (null != c && null != p) {
-                                            var d = e.get("openLocationX", t.openLocationX),
-                                                g = e.get("openLocationY", t.openLocationY);
-                                            if (t.stacked) {
-                                                var f = e.get("stackToItemX"),
-                                                    m = e.get("stackToItemY");
-                                                f ? (u = t.xAxis.getDataItemPositionX(f, t.xField, d, f.component.get("vcx")), b.isNaN(u) && (u = t.basePosX)) : u = t.yAxis === t.baseAxis ? t.basePosX : t.xAxis.getDataItemPositionX(e, t.xOpenField, d, t.vcx), m ? (h = t.yAxis.getDataItemPositionY(m, t.yField, g, m.component.get("vcy")), b.isNaN(h) && (h = t.basePosY)) : h = t.xAxis === t.baseAxis ? t.basePosY : t.yAxis.getDataItemPositionY(e, t.yOpenField, g, t.vcy)
-                                            } else u = t.xAxis.getDataItemPositionX(e, t.xOpenField, d, t.vcx), h = t.yAxis.getDataItemPositionY(e, t.yOpenField, g, t.vcy)
-                                        }
-                                    }
-                                    var v = this.getPoint(u, h);
-                                    l[2] = v.x, l[3] = v.y
-                                }
-                                if (t.minDistance > 0) {
-                                    var y = l[0],
-                                        _ = l[1],
-                                        x = l[2],
-                                        w = l[3],
-                                        P = this._previousPoint,
-                                        O = P[0],
-                                        T = P[1],
-                                        D = P[2],
-                                        j = P[3];
-                                    (Math.hypot(y - O, _ - T) > t.minDistance || x && w && Math.hypot(x - D, w - j) > t.minDistance) && (i.push(l), this._previousPoint = l)
-                                } else i.push(l)
-                            }
+                            /////////////
+                            /////////////
                         }
                     }), Object.defineProperty(t.prototype, "_endLine", {
                         enumerable: !1,
@@ -6497,20 +6450,6 @@
                                 y: a
                             }
                         }
-                    }), Object.defineProperty(t.prototype, "_shouldInclude", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e) {
-                            return !0
-                        }
-                    }), Object.defineProperty(t.prototype, "handleCursorHide", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            this.hideTooltip(), this.updateLegendValue(void 0), this.updateLegendMarker(void 0)
-                        }
                     }), Object.defineProperty(t, "className", {
                         enumerable: !0,
                         configurable: !0,
@@ -7411,35 +7350,8 @@
                                 u = t.yAxis.getDataItemPositionY(e, t.yField, n, t.vcy),
                                 h = t.xAxis.getDataItemPositionX(e, t.xField, o, t.vcx),
                                 c = t.yAxis.getDataItemPositionY(e, t.yField, s, t.vcy);
-                            if (this._shouldInclude(l)) {
-                                var p = this.getPoint(l, u),
-                                    b = [p.x, p.y],
-                                    d = this.getPoint(h, c),
-                                    g = [d.x, d.y];
-                                if (t.fillVisible) {
-                                    var f = l,
-                                        m = u,
-                                        v = h,
-                                        y = c;
-                                    if (t.baseAxis === t.xAxis ? (m = t.basePosY, y = t.basePosY) : t.baseAxis === t.yAxis && (f = t.basePosX, v = t.basePosX), t.getOpen) {
-                                        var _ = e.get(t.xOpenField),
-                                            x = e.get(t.yOpenField);
-                                        if (null != _ && null != x)
-                                            if (o = r = e.get("openLocationX", t.openLocationX), s = n = e.get("openLocationY", t.openLocationY), t.baseAxis === t.xAxis ? (r -= a, o += a) : t.baseAxis === t.yAxis && (n -= a, s += a), t.stacked) {
-                                                var w = e.get("stackToItemX"),
-                                                    P = e.get("stackToItemY");
-                                                w ? (f = t.xAxis.getDataItemPositionX(w, t.xField, r, w.component.get("vcx")), v = t.xAxis.getDataItemPositionX(w, t.xField, o, w.component.get("vcx"))) : t.yAxis === t.baseAxis ? (f = t.basePosX, v = t.basePosX) : t.baseAxis === t.yAxis && (f = t.xAxis.getDataItemPositionX(e, t.xOpenField, r, t.vcx), v = t.xAxis.getDataItemPositionX(e, t.xOpenField, o, t.vcx)), P ? (m = t.yAxis.getDataItemPositionY(P, t.yField, n, P.component.get("vcy")), y = t.yAxis.getDataItemPositionY(P, t.yField, s, P.component.get("vcy"))) : t.xAxis === t.baseAxis ? (m = t.basePosY, y = t.basePosY) : t.baseAxis === t.yAxis && (m = t.yAxis.getDataItemPositionY(e, t.yOpenField, n, t.vcy), y = t.yAxis.getDataItemPositionY(e, t.yOpenField, s, t.vcy))
-                                            } else f = t.xAxis.getDataItemPositionX(e, t.xOpenField, r, t.vcx), m = t.yAxis.getDataItemPositionY(e, t.yOpenField, n, t.vcy), v = t.xAxis.getDataItemPositionX(e, t.xOpenField, o, t.vcx), y = t.yAxis.getDataItemPositionY(e, t.yOpenField, s, t.vcy)
-                                    }
-                                    var O = this.getPoint(f, m),
-                                        T = this.getPoint(v, y);
-                                    b[2] = O.x, b[3] = O.y, g[2] = T.x, g[3] = T.y
-                                }
-                                i.push(b), i.push(g), e.set("point", {
-                                    x: b[0] + (g[0] - b[0]) / 2,
-                                    y: b[1] + (g[1] - b[1]) / 2
-                                })
-                            }
+                            /////////////
+                            /////////////
                             this.get("noRisers") && (t.points = [], t.segments.push(i))
                         }
                     }), Object.defineProperty(t, "classNames", {
