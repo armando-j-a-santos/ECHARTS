@@ -6047,12 +6047,28 @@
                             console.log('inside createLegendMarker (4604)');
                             this.updateLegendMarker()
                         }
-                    }), Object.defineProperty(t.prototype, "_markDirtyAxes", {           // can´t delete all. Needed 4604.
+                    }), Object.defineProperty(t.prototype, "show", {                    // didn't tried to delete
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
-                        value: function() {
-                            this._axesDirty = !0, this.markDirty()
+                        value: function(t) {
+                            return (0, a.mG)(this, void 0, void 0, (function() {
+                                var i, r = this;
+                                return (0, a.Jh)(this, (function(a) {
+                                    switch (a.label) {
+                                        case 0:
+                                            return this._fixVC(), (i = []).push(e.prototype.show.call(this, t).then((function() {
+                                                r._isShowing = !1;
+                                                var e = r.get("xAxis"),
+                                                    t = r.get("yAxis"),
+                                                    i = r.get("baseAxis");
+                                                t !== i && t.markDirtySelectionExtremes(), e !== i && e.markDirtySelectionExtremes()
+                                            }))), i.push(this.bulletsContainer.show(t)), i.push(this._sequencedShowHide(!0, t)), [4, Promise.all(i)];
+                                        case 1:
+                                            return a.sent(), [2]
+                                    }
+                                }))
+                            }))
                         }
                     }), Object.defineProperty(t.prototype, "hide", {                    // didn't tried to delete
                         enumerable: !1,
