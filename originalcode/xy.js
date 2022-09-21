@@ -2547,12 +2547,7 @@
                             value: []
                         }), t
                     }
-                    return (0, a.ZT)(t, e), Object.defineProperty(t, "className", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: "AxisLabelRadial"
-                    }), Object.defineProperty(t, "classNames", {
+                    return (0, a.ZT)(t, e), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
                         writable: !0,
@@ -6811,10 +6806,6 @@
                 AxisLabel: function() {
                     console.log('----->>>> AxisLabel');
                     return T.k
-                },
-                AxisLabelRadial: function() {
-                    console.log('----->>>> AxisLabelRadial');
-                    return D.p
                 },
                 AxisRenderer: function() {
                     console.log('----->>>> AxisRenderer');
