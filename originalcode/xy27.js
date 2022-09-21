@@ -5991,6 +5991,14 @@
                             var i = e.get("stackToItemX");
                             return i ? i.get(t, 0) + this.getStackedXValue(i, t) : 0
                         }
+                    }), Object.defineProperty(t.prototype, "createLegendMarker", {
+                        enumerable: !1,
+                        configurable: !0,
+                        writable: !0,
+                        value: function(e) {
+                            console.log('inside createLegendMarker (4604)');
+                            this.updateLegendMarker()
+                        }
                     }), Object.defineProperty(t.prototype, "_markDirtyAxes", {           // can´t delete all. Needed 4604.
                         enumerable: !1,
                         configurable: !0,
