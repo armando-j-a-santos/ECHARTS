@@ -1525,17 +1525,6 @@
                                 })), e._otherCharts = i
                             }
                         }
-                    }), Object.defineProperty(t.prototype, "_updateChildren", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            if (e.prototype._updateChildren.call(this), this._handleSyncWith(), this.isDirty("positionX") || this.isDirty("positionY")) {
-                                var t = this.get("positionX"),
-                                    i = this.get("positionY");
-                                null == t && null == i ? this.hide(0) : (this._movePoint = this.toGlobal(this._getPoint(this.get("positionX", 0), this.get("positionY", 0))), this.handleMove())
-                            }
-                        }
                     }), Object.defineProperty(t.prototype, "_updateXLine", {
                         enumerable: !1,
                         configurable: !0,
@@ -1781,14 +1770,8 @@
                         writable: !0,
                         value: function() {
                             if (this.isHidden()) {
-                                var t = this.chart;
-                                t && (t.xAxes.each((function(e) {
-                                    e.handleCursorHide()
-                                })), t.yAxes.each((function(e) {
-                                    e.handleCursorHide()
-                                })), t.series.each((function(e) {
-                                    e.handleCursorHide()
-                                })))
+                                /////////////var t = this.chart;
+                                /////////////
                             }
                             e.prototype._onHide.call(this)
                         }
@@ -2287,14 +2270,6 @@
                         value: function() {
                             var e = this.get("tooltip");
                             e && e.show()
-                        }
-                    }), Object.defineProperty(t.prototype, "handleCursorHide", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            var e = this.get("tooltip");
-                            e && e.hide()
                         }
                     }), Object.defineProperty(t.prototype, "processSeriesDataItem", {
                         enumerable: !1,
@@ -4713,6 +4688,7 @@
                         configurable: !0,
                         writable: !0,
                         value: function() {
+                            console.log("inside _updateChildren (757)");
                             var i = this,
                                 a = this.chart;
                             a && (this._ph = a.plotContainer.height(), this._pw = a.plotContainer.width());
@@ -5338,81 +5314,6 @@
                             var t = this.mainContainer.children.push(e.make());
                             return e.push(t), t
                         }
-                    }), Object.defineProperty(t.prototype, "_updateChildren", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            this._strokeTemplate = void 0, this._fillTemplate = void 0;
-                            var t = this.get("xAxis"),
-                                i = this.get("yAxis");
-                            if (this.isDirty("stroke")) {
-                                var a = this.get("stroke");
-                                this.strokes.template.set("stroke", a);
-                                var r = this._legendStroke;
-                                r && r.states.lookup("default").set("stroke", a)
-                            }
-                            if (this.isDirty("fill")) {
-                                var n = this.get("fill");
-                                this.fills.template.set("fill", n);
-                                var o = this._legendFill;
-                                o && o.states.lookup("default").set("fill", n)
-                            }
-                            if (this.isDirty("curveFactory")) {
-                                var s = this.get("curveFactory");
-                                s && (this._strokeGenerator.curve(s), this._fillGenerator.curve(s))
-                            }
-                            if (t.inited && i.inited) {
-                                if (this._axesDirty || this._valuesDirty || this._stackDirty || this.isDirty("vcx") || this.isDirty("vcy") || this._sizeDirty || this.isDirty("connect") || this.isDirty("curveFactory")) {
-                                    this.fills.each((function(e) {
-                                        e.setPrivate("visible", !1)
-                                    })), this.strokes.each((function(e) {
-                                        e.setPrivate("visible", !1)
-                                    })), this.axisRanges.each((function(e) {
-                                        var t = e.fills;
-                                        t && t.each((function(e) {
-                                            e.setPrivate("visible", !1)
-                                        }));
-                                        var i = e.strokes;
-                                        i && i.each((function(e) {
-                                            e.setPrivate("visible", !1)
-                                        }))
-                                    }));
-                                    var l = this.startIndex(),
-                                        u = this.strokes.template.get("templateField"),
-                                        h = this.fills.template.get("templateField"),
-                                        c = !0,
-                                        p = !0;
-                                    u && (c = !1), h && (p = !1);
-                                    for (var g = function(e) {
-                                            var t = f.dataItems[e],
-                                                i = !0,
-                                                a = t.dataContext;
-                                            if (u && a[u] && (c = !0), h && a[h] && (p = !0), d.each(f._valueFields, (function(e) {
-                                                    b.isNumber(t.get(e)) || (i = !1)
-                                                })), i && c && p) return l = e, "break"
-                                        }, f = this, m = l - 1; m >= 0 && "break" !== g(m); m--);
-                                    var v = this.dataItems.length,
-                                        y = this.endIndex();
-                                    if (y < v) {
-                                        y++;
-                                        var _ = function(e) {
-                                                var t = x.dataItems[e],
-                                                    i = !0;
-                                                if (d.each(x._valueFields, (function(e) {
-                                                        b.isNumber(t.get(e)) || (i = !1)
-                                                    })), i) return y = e + 1, "break"
-                                            },
-                                            x = this;
-                                        for (m = y; m < v && "break" !== _(m); m++);
-                                    }
-                                    if (l > 0 && l--, this._endIndex = y, this._clearGraphics(), this._sindex = 0, this._dindex = l, 1 == this.dataItems.length) this._startSegment(0);
-                                    else
-                                        for (; this._dindex < y - 1;) this._startSegment(this._dindex), this._sindex++
-                                }
-                            } else this._skipped = !0;
-                            e.prototype._updateChildren.call(this)
-                        }
                     }), Object.defineProperty(t.prototype, "_clearGraphics", {
                         enumerable: !1,
                         configurable: !0,
@@ -5540,41 +5441,8 @@
                                 r = e.get("locationY", t.locationY),
                                 n = t.xAxis.getDataItemPositionX(e, t.xField, a, t.vcx),
                                 o = t.yAxis.getDataItemPositionY(e, t.yField, r, t.vcy);
-                            if (this._shouldInclude(n)) {
-                                var s = this.getPoint(n, o),
-                                    l = [s.x, s.y];
-                                if (s.x += this._x, s.y += this._y, e.set("point", s), t.fillVisible) {
-                                    var u = n,
-                                        h = o;
-                                    if (t.baseAxis === t.xAxis ? h = t.basePosY : t.baseAxis === t.yAxis && (u = t.basePosX), t.getOpen) {
-                                        var c = e.get(t.xOpenField),
-                                            p = e.get(t.yOpenField);
-                                        if (null != c && null != p) {
-                                            var d = e.get("openLocationX", t.openLocationX),
-                                                g = e.get("openLocationY", t.openLocationY);
-                                            if (t.stacked) {
-                                                var f = e.get("stackToItemX"),
-                                                    m = e.get("stackToItemY");
-                                                f ? (u = t.xAxis.getDataItemPositionX(f, t.xField, d, f.component.get("vcx")), b.isNaN(u) && (u = t.basePosX)) : u = t.yAxis === t.baseAxis ? t.basePosX : t.xAxis.getDataItemPositionX(e, t.xOpenField, d, t.vcx), m ? (h = t.yAxis.getDataItemPositionY(m, t.yField, g, m.component.get("vcy")), b.isNaN(h) && (h = t.basePosY)) : h = t.xAxis === t.baseAxis ? t.basePosY : t.yAxis.getDataItemPositionY(e, t.yOpenField, g, t.vcy)
-                                            } else u = t.xAxis.getDataItemPositionX(e, t.xOpenField, d, t.vcx), h = t.yAxis.getDataItemPositionY(e, t.yOpenField, g, t.vcy)
-                                        }
-                                    }
-                                    var v = this.getPoint(u, h);
-                                    l[2] = v.x, l[3] = v.y
-                                }
-                                if (t.minDistance > 0) {
-                                    var y = l[0],
-                                        _ = l[1],
-                                        x = l[2],
-                                        w = l[3],
-                                        P = this._previousPoint,
-                                        O = P[0],
-                                        T = P[1],
-                                        D = P[2],
-                                        j = P[3];
-                                    (Math.hypot(y - O, _ - T) > t.minDistance || x && w && Math.hypot(x - D, w - j) > t.minDistance) && (i.push(l), this._previousPoint = l)
-                                } else i.push(l)
-                            }
+                            /////////////
+                            /////////////
                         }
                     }), Object.defineProperty(t.prototype, "_endLine", {
                         enumerable: !1,
@@ -6151,6 +6019,7 @@
                         configurable: !0,
                         writable: !0,
                         value: function() {
+                            console.log("inside _updateChildren (4604)");
                             e.prototype._updateChildren.call(this), this._x = this.x(), this._y = this.y(), this._makeRangeMask()
                         }
                     }), Object.defineProperty(t.prototype, "_stack", {
@@ -6580,20 +6449,6 @@
                                 x: i,
                                 y: a
                             }
-                        }
-                    }), Object.defineProperty(t.prototype, "_shouldInclude", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e) {
-                            return !0
-                        }
-                    }), Object.defineProperty(t.prototype, "handleCursorHide", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            this.hideTooltip(), this.updateLegendValue(void 0), this.updateLegendMarker(void 0)
                         }
                     }), Object.defineProperty(t, "className", {
                         enumerable: !0,
@@ -7384,13 +7239,6 @@
                         value: function() {
                             this._setDefault("curveFactory", (0, G.$)(this.get("tension", .5))), e.prototype._afterNew.call(this)
                         }
-                    }), Object.defineProperty(t.prototype, "_updateChildren", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            this.isDirty("tension") && (this.set("curveFactory", (0, G.$)(this.get("tension", .5))), this._valuesDirty = !0), e.prototype._updateChildren.call(this)
-                        }
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
@@ -7410,13 +7258,6 @@
                         value: function() {
                             this._setDefault("curveFactory", (0, E.G)(this.get("tension", .5))), e.prototype._afterNew.call(this)
                         }
-                    }), Object.defineProperty(t.prototype, "_updateChildren", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            this.isDirty("tension") && (this.set("curveFactory", (0, E.G)(this.get("tension", .5))), this._valuesDirty = !0), e.prototype._updateChildren.call(this)
-                        }
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
                         configurable: !0,
@@ -7435,13 +7276,6 @@
                         writable: !0,
                         value: function() {
                             this._setDefault("curveFactory", W.ZP.tension(this.get("tension", .5))), e.prototype._afterNew.call(this)
-                        }
-                    }), Object.defineProperty(t.prototype, "_updateChildren", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            this.isDirty("tension") && (this.set("curveFactory", W.ZP.tension(this.get("tension", .5))), this._valuesDirty = !0), e.prototype._updateChildren.call(this)
                         }
                     }), Object.defineProperty(t, "classNames", {
                         enumerable: !0,
@@ -7516,35 +7350,8 @@
                                 u = t.yAxis.getDataItemPositionY(e, t.yField, n, t.vcy),
                                 h = t.xAxis.getDataItemPositionX(e, t.xField, o, t.vcx),
                                 c = t.yAxis.getDataItemPositionY(e, t.yField, s, t.vcy);
-                            if (this._shouldInclude(l)) {
-                                var p = this.getPoint(l, u),
-                                    b = [p.x, p.y],
-                                    d = this.getPoint(h, c),
-                                    g = [d.x, d.y];
-                                if (t.fillVisible) {
-                                    var f = l,
-                                        m = u,
-                                        v = h,
-                                        y = c;
-                                    if (t.baseAxis === t.xAxis ? (m = t.basePosY, y = t.basePosY) : t.baseAxis === t.yAxis && (f = t.basePosX, v = t.basePosX), t.getOpen) {
-                                        var _ = e.get(t.xOpenField),
-                                            x = e.get(t.yOpenField);
-                                        if (null != _ && null != x)
-                                            if (o = r = e.get("openLocationX", t.openLocationX), s = n = e.get("openLocationY", t.openLocationY), t.baseAxis === t.xAxis ? (r -= a, o += a) : t.baseAxis === t.yAxis && (n -= a, s += a), t.stacked) {
-                                                var w = e.get("stackToItemX"),
-                                                    P = e.get("stackToItemY");
-                                                w ? (f = t.xAxis.getDataItemPositionX(w, t.xField, r, w.component.get("vcx")), v = t.xAxis.getDataItemPositionX(w, t.xField, o, w.component.get("vcx"))) : t.yAxis === t.baseAxis ? (f = t.basePosX, v = t.basePosX) : t.baseAxis === t.yAxis && (f = t.xAxis.getDataItemPositionX(e, t.xOpenField, r, t.vcx), v = t.xAxis.getDataItemPositionX(e, t.xOpenField, o, t.vcx)), P ? (m = t.yAxis.getDataItemPositionY(P, t.yField, n, P.component.get("vcy")), y = t.yAxis.getDataItemPositionY(P, t.yField, s, P.component.get("vcy"))) : t.xAxis === t.baseAxis ? (m = t.basePosY, y = t.basePosY) : t.baseAxis === t.yAxis && (m = t.yAxis.getDataItemPositionY(e, t.yOpenField, n, t.vcy), y = t.yAxis.getDataItemPositionY(e, t.yOpenField, s, t.vcy))
-                                            } else f = t.xAxis.getDataItemPositionX(e, t.xOpenField, r, t.vcx), m = t.yAxis.getDataItemPositionY(e, t.yOpenField, n, t.vcy), v = t.xAxis.getDataItemPositionX(e, t.xOpenField, o, t.vcx), y = t.yAxis.getDataItemPositionY(e, t.yOpenField, s, t.vcy)
-                                    }
-                                    var O = this.getPoint(f, m),
-                                        T = this.getPoint(v, y);
-                                    b[2] = O.x, b[3] = O.y, g[2] = T.x, g[3] = T.y
-                                }
-                                i.push(b), i.push(g), e.set("point", {
-                                    x: b[0] + (g[0] - b[0]) / 2,
-                                    y: b[1] + (g[1] - b[1]) / 2
-                                })
-                            }
+                            /////////////
+                            /////////////
                             this.get("noRisers") && (t.points = [], t.segments.push(i))
                         }
                     }), Object.defineProperty(t, "classNames", {
