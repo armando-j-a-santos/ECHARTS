@@ -2176,15 +2176,6 @@
                                 a && (a._setDataItem(e), e.setRaw("bullet", t), a.parent || this.bulletsContainer.children.push(a))
                             }
                         }
-                    }), Object.defineProperty(t.prototype, "_afterChanged", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            e.prototype._afterChanged.call(this);
-                            var t = this.chart;
-                            t && (t._updateChartLayout(), t.axisHeadersContainer.markDirtySize()), this.get("renderer")._updatePositions()
-                        }
                     }), Object.defineProperty(t.prototype, "disposeDataItem", {
                         enumerable: !1,
                         configurable: !0,
@@ -5928,7 +5919,7 @@
                                         var a = e.get(i);
                                         null != a && (s && (a += t.getStackedYValue(e, i)), t._min("minY", a), t._max("maxY", a))
                                     })), r.processSeriesDataItem(e, t._valueXFields), n.processSeriesDataItem(e, t._valueYFields)
-                                })), r._seriesValuesDirty = !0, n._seriesValuesDirty = !0, this.get("ignoreMinMax") || ((this.isPrivateDirty("minX") || this.isPrivateDirty("maxX")) && r.markDirtyExtremes(), (this.isPrivateDirty("minY") || this.isPrivateDirty("maxY")) && n.markDirtyExtremes()), this._markStakedDirtyStack()), (this.isDirty("vcx") || this.isDirty("vcy")) && this._markStakedDirtyStack(), this._dataGrouped || (r._groupSeriesData(this), n._groupSeriesData(this), this._dataGrouped = !0), this._valuesDirty || this.isPrivateDirty("startIndex") || this.isPrivateDirty("endIndex") || this.isDirty("vcx") || this.isDirty("vcy") || this._stackDirty) {
+                                })), r._seriesValuesDirty = !0, n._seriesValuesDirty = !0, this.get("ignoreMinMax") || ((this.isPrivateDirty("minX") || this.isPrivateDirty("maxX")) && r.markDirtyExtremes(), (this.isPrivateDirty("minY") || this.isPrivateDirty("maxY")) && n.markDirtyExtremes())), (this.isDirty("vcx") || this.isDirty("vcy")) , this._dataGrouped || (r._groupSeriesData(this), n._groupSeriesData(this), this._dataGrouped = !0), this._valuesDirty || this.isPrivateDirty("startIndex") || this.isPrivateDirty("endIndex") || this.isDirty("vcx") || this.isDirty("vcy") || this._stackDirty) {
                                 var l = this.startIndex(),
                                     u = this.endIndex(),
                                     h = this.get("minBulletDistance", 0);
@@ -6314,30 +6305,6 @@
                                     }
                                 }))
                             }))
-                        }
-                    }), Object.defineProperty(t.prototype, "_markDirtyStack", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            this._stackDirty = !0, this.markDirty(), this._markStakedDirtyStack()
-                        }
-                    }), Object.defineProperty(t.prototype, "_markStakedDirtyStack", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            var e = this._stackedSeries;
-                            e && h.each(e, (function(e, t) {
-                                t._stackDirty || t._markDirtyStack()
-                            }))
-                        }
-                    }), Object.defineProperty(t.prototype, "_afterChanged", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            e.prototype._afterChanged.call(this), this._skipped && (this._markDirtyAxes(), this._skipped = !1)
                         }
                     }), Object.defineProperty(t.prototype, "getPoint", {                // can´t delete all. Needed 757, 4604.
                         enumerable: !1,
