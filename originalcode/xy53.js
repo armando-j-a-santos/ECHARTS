@@ -5475,7 +5475,7 @@
                 },
                 ColumnSeries: function() {
                     console.log('----->>>> ColumnSeries');
-                    return L.d
+                    return '' ///////////// L.d
                 },
                 Grid: function() {
                     console.log('----->>>> Grid');
