@@ -5455,11 +5455,6 @@
                             configurable: !0,
                             writable: !0,
                             value: !1
-                        }), Object.defineProperty(t, "_selectionProcessed", {
-                            enumerable: !0,
-                            configurable: !0,
-                            writable: !0,
-                            value: !1
                         }), Object.defineProperty(t, "_dataSets", {
                             enumerable: !0,
                             configurable: !0,
@@ -5732,8 +5727,8 @@
                                 var l = this.startIndex(),
                                     u = this.endIndex(),
                                     h = this.get("minBulletDistance", 0);
-                                if (h > 0 && o && (o.get("renderer").axisLength() / (u - l) > h ? this._showBullets = !0 : this._showBullets = !1), (this._psi != l || this._pei != u || this.isDirty("vcx") || this.isDirty("vcy") || this._stackDirty || this._valuesDirty) && !this._selectionProcessed) {
-                                    this._selectionProcessed = !0;
+                                if (h > 0 && o && (o.get("renderer").axisLength() / (u - l) > h ? this._showBullets = !0 : this._showBullets = !1), (this._psi != l || this._pei != u || this.isDirty("vcx") || this.isDirty("vcy") || this._stackDirty || this._valuesDirty)) {
+                                    ///////////// this._selectionProcessed = !0;
                                     var b = this.get("vcx", 1),
                                         d = this.get("vcy", 1),
                                         g = this.get("stacked", !1),
