@@ -5585,16 +5585,6 @@
                             configurable: !0,
                             writable: !0,
                             value: void 0
-                        }), Object.defineProperty(t, "_tooltipFieldX", {
-                            enumerable: !0,
-                            configurable: !0,
-                            writable: !0,
-                            value: void 0
-                        }), Object.defineProperty(t, "_tooltipFieldY", {
-                            enumerable: !0,
-                            configurable: !0,
-                            writable: !0,
-                            value: void 0
                         }), t
                     }
                     return (0, a.ZT)(t, e), Object.defineProperty(t.prototype, "_afterNew", {       // needed in 757 , 4604  
@@ -5745,7 +5735,7 @@
                                 default:
                                     i = this._xField
                             }
-                            switch (this._tooltipFieldX = i, this.get("tooltipPositionY")) {
+                            switch (this.get("tooltipPositionY")) {
                                 case "open":
                                     a = this._yOpenField;
                                     break;
@@ -5758,7 +5748,7 @@
                                 default:
                                     a = this._yField
                             }
-                            this._tooltipFieldY = a, this.isDirty("baseAxis") , this.set("x", r.x() - p.relativeToValue(r.get("centerX", 0), r.width()) - r.parent.get("paddingLeft", 0)), this.set("y", n.y() - p.relativeToValue(n.get("centerY", 0), n.height()) - n.parent.get("paddingTop", 0)), this.bulletsContainer.set("y", this.y()), this.bulletsContainer.set("x", this.x());
+                            /////////////  this._tooltipFieldY = a, this.isDirty("baseAxis") , this.set("x", r.x() - p.relativeToValue(r.get("centerX", 0), r.width()) - r.parent.get("paddingLeft", 0)), this.set("y", n.y() - p.relativeToValue(n.get("centerY", 0), n.height()) - n.parent.get("paddingTop", 0)), this.bulletsContainer.set("y", this.y()), this.bulletsContainer.set("x", this.x());
                             var s = this.get("stacked");
                             if (this.isDirty("stacked") && (s ? this._valuesDirty && !this._dataProcessed || true : true), this._valuesDirty && !this._dataProcessed && (this._dataProcessed = !0, s , c.each(this.dataItems, (function(e) {
                                     c.each(t._valueXShowFields, (function(i) {
