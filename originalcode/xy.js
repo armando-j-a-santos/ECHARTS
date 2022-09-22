@@ -4859,7 +4859,7 @@
                 }
             });
             var a = i(5125),
-                r = i(62),
+                ///////////// r = i(62),
                 n = i(2976),
                 o = i(5769),
                 s = i(7144),
@@ -4895,7 +4895,7 @@
                         writable: !0,
                         value: function(t, i) {
                             e.prototype._updateGraphics.call(this, t, i);
-                            var a, r, n, o, s, l, u, h, c, p = this.getRaw("xAxis"),
+                            var a, n, o, s, l, u, h, c, p = this.getRaw("xAxis"),
                                 b = this.getRaw("yAxis"),
                                 d = this.getRaw("baseAxis"),
                                 g = this.get("vcy", 1),
@@ -4907,7 +4907,7 @@
                             if (b === d) {
                                 var x = p.getDataItemPositionX(t, this._xOpenField, 1, f),
                                     w = p.getDataItemPositionX(t, this._xField, 1, f);
-                                r = p.getDataItemPositionX(t, this._xLowField, 1, f), l = p.getDataItemPositionX(t, this._xHighField, 1, f), s = Math.max(x, w), a = Math.min(x, w);
+                                /////////////r = p.getDataItemPositionX(t, this._xLowField, 1, f), l = p.getDataItemPositionX(t, this._xHighField, 1, f), s = Math.max(x, w), a = Math.min(x, w);
                                 var P = this._aLocationY0 + _ - .5,
                                     O = this._aLocationY1 + v - .5;
                                 o = n = b.getDataItemPositionY(t, this._yField, P + (O - P) / 2, g), u = n, h = n, c = "horizontal"
@@ -4916,7 +4916,7 @@
                                     D = b.getDataItemPositionY(t, this._yField, 1, g);
                                 o = b.getDataItemPositionY(t, this._yLowField, 1, g), h = b.getDataItemPositionY(t, this._yHighField, 1, g), u = Math.max(T, D), n = Math.min(T, D), P = this._aLocationX0 + y - .5, O = this._aLocationX1 + m - .5, r = a = p.getDataItemPositionX(t, this._xField, P + (O - P) / 2, f), s = a, l = a, c = "vertical"
                             }
-                            this._updateCandleGraphics(t, a, r, n, o, s, l, u, h, c)
+                            this._updateCandleGraphics(t, a, n, o, s, l, u, h, c)
                         }
                     }), Object.defineProperty(t.prototype, "_processAxisRange", {
                         enumerable: !1,
@@ -4934,9 +4934,9 @@
                         enumerable: !0,
                         configurable: !0,
                         writable: !0,
-                        value: r.d.classNames.concat([t.className])
+                        value: '' /////////////r.d.classNames.concat([t.className])
                     }), t
-                }(r.d)
+                }/////////////(r.d)
         },
         62: function(e, t, i) {
             console.log("inside xy [6450].62");
@@ -6271,7 +6271,7 @@
                         enumerable: !0,
                         configurable: !0,
                         writable: !0,
-                        value: X.$.classNames.concat([t.className])
+                        value: '' ///////////// X.$.classNames.concat([t.className])
                     }), t
                 }(X.$),
                 L = i(62),
