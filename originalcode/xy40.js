@@ -5728,36 +5728,13 @@
                                 c = "Show";
                             "ValueAxis" === e.className ? (this._xField = this.get(i + o + c), this._xOpenField = this.get(l + a + o + c), this._xLowField = this.get(u + a + o + c), this._xHighField = this.get(h + a + o + c)) : (this._xField = i + o, this._xOpenField = l + a + o, this._xLowField = u + a + o, this._xHighField = h + a + o), "ValueAxis" === t.className ? (this._yField = this.get(r + s + c), this._yOpenField = this.get(l + n + s + c), this._yLowField = this.get(u + n + s + c), this._yHighField = this.get(h + n + s + c)) : (this._yField = r + s, this._yOpenField = l + n + s, this._yLowField = u + n + s, this._yHighField = h + n + s)
                         }
-                    }), Object.defineProperty(t.prototype, "_fixVC", {
+                    }), Object.defineProperty(t.prototype, "_prepareChildren", {            // needed in 757 , 4604
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
                         value: function() {
-                            var e = this.get("xAxis"),
-                                t = this.get("yAxis"),
-                                i = this.get("baseAxis"),
-                                a = this.states.lookup("hidden"),
-                                r = this.get("sequencedInterpolation");
-                            if (a) {
-                                var n = 0;
-                                r && (n = .999999999999), e === i ? a.set("vcy", n) : (t === i || a.set("vcy", n), a.set("vcx", n))
-                            }
-                        }
-                    }), Object.defineProperty(t.prototype, "_handleMaskBullets", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            this.isDirty("maskBullets") && this.bulletsContainer.set("maskContent", this.get("maskBullets"))
-                        }
-                    }), Object.defineProperty(t.prototype, "_prepareChildren", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            console.log('inside _prepareChildren (4604)');
                             var t = this;
-                            e.prototype._prepareChildren.call(this), (this.isDirty("valueYShow") || this.isDirty("valueXShow")) && (this._updateFields(), this._makeFieldNames(), this._valuesDirty = !0), this.set("width", this.get("xAxis").width()), this.set("height", this.get("yAxis").height()), this._handleMaskBullets();
+                            e.prototype._prepareChildren.call(this), (this.isDirty("valueYShow") || this.isDirty("valueXShow")) && (this._updateFields(), this._makeFieldNames(), this._valuesDirty = !0), this.set("width", this.get("xAxis").width()), this.set("height", this.get("yAxis").height());
                             var i, a, r = this.get("xAxis"),
                                 n = this.get("yAxis"),
                                 o = this.get("baseAxis");
@@ -5787,7 +5764,7 @@
                                 default:
                                     a = this._yField
                             }
-                            this._tooltipFieldY = a, this.isDirty("baseAxis") && this._fixVC(), this.set("x", r.x() - p.relativeToValue(r.get("centerX", 0), r.width()) - r.parent.get("paddingLeft", 0)), this.set("y", n.y() - p.relativeToValue(n.get("centerY", 0), n.height()) - n.parent.get("paddingTop", 0)), this.bulletsContainer.set("y", this.y()), this.bulletsContainer.set("x", this.x());
+                            this._tooltipFieldY = a, this.isDirty("baseAxis") , this.set("x", r.x() - p.relativeToValue(r.get("centerX", 0), r.width()) - r.parent.get("paddingLeft", 0)), this.set("y", n.y() - p.relativeToValue(n.get("centerY", 0), n.height()) - n.parent.get("paddingTop", 0)), this.bulletsContainer.set("y", this.y()), this.bulletsContainer.set("x", this.x());
                             var s = this.get("stacked");
                             if (this.isDirty("stacked") && (s ? this._valuesDirty && !this._dataProcessed || true : true), this._valuesDirty && !this._dataProcessed && (this._dataProcessed = !0, s , c.each(this.dataItems, (function(e) {
                                     c.each(t._valueXShowFields, (function(i) {
@@ -5918,7 +5895,7 @@
                                 return (0, a.Jh)(this, (function(a) {
                                     switch (a.label) {
                                         case 0:
-                                            return this._fixVC(), (i = []).push(e.prototype.show.call(this, t).then((function() {
+                                            return (i = []).push(e.prototype.show.call(this, t).then((function() {
                                                 r._isShowing = !1;
                                                 var e = r.get("xAxis"),
                                                     t = r.get("yAxis"),
@@ -5941,7 +5918,7 @@
                                 return (0, a.Jh)(this, (function(a) {
                                     switch (a.label) {
                                         case 0:
-                                            return this._fixVC(), (i = []).push(e.prototype.hide.call(this, t).then((function() {
+                                            return (i = []).push(e.prototype.hide.call(this, t).then((function() {
                                                 r._isHiding = !1
                                             }))), i.push(this.bulletsContainer.hide(t)), i.push(this._sequencedShowHide(!1, t)), [4, Promise.all(i)];
                                         case 1:
