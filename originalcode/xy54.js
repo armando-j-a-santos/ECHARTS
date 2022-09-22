@@ -4938,6 +4938,68 @@
                     }), t
                 }/////////////(r.d)
         },
+        62: function(e, t, i) {
+            console.log("inside xy [6450].62");
+            i.d(t, {
+                d: function() {
+                    return u
+                }
+            });
+            var a = i(5125),
+                r = i(757),
+                n = i(5769),
+                o = i(7144),
+                s = i(3497),
+                l = i(7652),
+                u = function(e) {
+                    function t() {
+                        var t = null !== e && e.apply(this, arguments) || this;
+                        return Object.defineProperty(t, "columns", {
+                            enumerable: !0,
+                            configurable: !0,
+                            writable: !0,
+                            value: new o.o(n.YS.new({}), (function() {
+                                return s.c._new(t._root, {
+                                    position: "absolute",
+                                    themeTags: l.mergeTags(t.columns.template.get("themeTags", []), ["series", "column"])
+                                }, [t.columns.template])
+                            }))
+                        }), t
+                    }
+                    return (0, a.ZT)(t, e), Object.defineProperty(t.prototype, "makeColumn", {
+                        enumerable: !1,
+                        configurable: !0,
+                        writable: !0,
+                        value: function(e, t) {
+                            var i = this.mainContainer.children.push(t.make());
+                            return i._setDataItem(e), t.push(i), i
+                        }
+                    }), Object.defineProperty(t.prototype, "_processAxisRange", {
+                        enumerable: !1,
+                        configurable: !0,
+                        writable: !0,
+                        value: function(t) {
+                            var i = this;
+                            e.prototype._processAxisRange.call(this, t), t.columns = new o.o(n.YS.new({}), (function() {
+                                return s.c._new(i._root, {
+                                    position: "absolute",
+                                    themeTags: l.mergeTags(t.columns.template.get("themeTags", []), ["series", "column"])
+                                }, [i.columns.template, t.columns.template])
+                            }))
+                        }
+                    }), Object.defineProperty(t, "className", {
+                        enumerable: !0,
+                        configurable: !0,
+                        writable: !0,
+                        value: "ColumnSeries"
+                    }), Object.defineProperty(t, "classNames", {
+                        enumerable: !0,
+                        configurable: !0,
+                        writable: !0,
+                        value: r.d.classNames.concat([t.className])
+                    }), t
+                }(r.d)
+        },
         4604: function(e, t, i) {
             console.log("inside xy [6450].4604");
             i.d(t, {
@@ -5475,7 +5537,7 @@
                 },
                 ColumnSeries: function() {
                     console.log('----->>>> ColumnSeries');
-                    return '' ///////////// L.d
+                    return L.d
                 },
                 Grid: function() {
                     console.log('----->>>> Grid');
@@ -6209,10 +6271,10 @@
                         enumerable: !0,
                         configurable: !0,
                         writable: !0,
-                        value: '' /////////////X.$.classNames.concat([t.className])
+                        value: X.$.classNames.concat([t.className])
                     }), t
                 }(X.$),
-                ///////////// L = i(62),
+                L = i(62),
                 ///////////// V = i(2338),
                 G = i(5892),
                 U = function(e) {
