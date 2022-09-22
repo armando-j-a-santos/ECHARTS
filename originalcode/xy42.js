@@ -4617,6 +4617,18 @@
                         value: function(e, t) {
                             return this.makeColumn(t, e)
                         }
+                    }), Object.defineProperty(t.prototype, "_makeFieldNames", {
+                        enumerable: !1,
+                        configurable: !0,
+                        writable: !0,
+                        value: function() {
+                            e.prototype._makeFieldNames.call(this);
+                            var t = this.get("xAxis"),
+                                i = this.get("yAxis"),
+                                a = "CategoryAxis",
+                                r = "ValueAxis";
+                            t.isType(a) && (this.get("openCategoryXField") || (this._xOpenField = this._xField)), t.isType(r) && (this.get("openValueXField") || (this._xOpenField = this._xField)), i.isType(a) && (this.get("openCategoryYField") || (this._yOpenField = this._yField)), i.isType(r) && (this.get("openValueYField") || (this._yOpenField = this._yField))
+                        }
                     }), Object.defineProperty(t.prototype, "_prepareChildren", {
                         enumerable: !1,
                         configurable: !0,
@@ -5611,7 +5623,7 @@
                             this.states.create("hidden", {
                                 opacity: 1,
                                 visible: !1
-                            })
+                            }), this._makeFieldNames()
                         }
                     }), Object.defineProperty(t.prototype, "_processAxisRange", {
                         enumerable: !1,
@@ -5690,13 +5702,40 @@
                             var i, a, r = (a = t, null == (i = this.getPrivate(e)) ? a : null == a ? i : a > i ? a : i);
                             this.setPrivate(e, r)
                         }
+                    }), Object.defineProperty(t.prototype, "_shouldMakeBullet", {
+                        enumerable: !1,
+                        configurable: !0,
+                        writable: !0,
+                        value: function(e) {
+                            return !(!this.get("xAxis").inited || !this.get("yAxis").inited) && null != e.get(this._xField) && null != e.get(this._yField)
+                        }
+                    }), Object.defineProperty(t.prototype, "_makeFieldNames", {
+                        enumerable: !1,
+                        configurable: !0,
+                        writable: !0,
+                        value: function() {
+                            console.log('inside _makeFieldNames (4604)');
+                            var e = this.get("xAxis"),
+                                t = this.get("yAxis"),
+                                i = e.getPrivate("name"),
+                                a = p.capitalizeFirst(i),
+                                r = t.getPrivate("name"),
+                                n = p.capitalizeFirst(r),
+                                o = e.get("renderer").getPrivate("letter"),
+                                s = t.get("renderer").getPrivate("letter"),
+                                l = "open",
+                                u = "low",
+                                h = "high",
+                                c = "Show";
+                            "ValueAxis" === e.className ? (this._xField = this.get(i + o + c), this._xOpenField = this.get(l + a + o + c), this._xLowField = this.get(u + a + o + c), this._xHighField = this.get(h + a + o + c)) : (this._xField = i + o, this._xOpenField = l + a + o, this._xLowField = u + a + o, this._xHighField = h + a + o), "ValueAxis" === t.className ? (this._yField = this.get(r + s + c), this._yOpenField = this.get(l + n + s + c), this._yLowField = this.get(u + n + s + c), this._yHighField = this.get(h + n + s + c)) : (this._yField = r + s, this._yOpenField = l + n + s, this._yLowField = u + n + s, this._yHighField = h + n + s)
+                        }
                     }), Object.defineProperty(t.prototype, "_prepareChildren", {            // needed in 757 , 4604
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
                         value: function() {
                             var t = this;
-                            e.prototype._prepareChildren.call(this), (this.isDirty("valueYShow") || this.isDirty("valueXShow")) && (this._updateFields(), this._valuesDirty = !0), this.set("width", this.get("xAxis").width()), this.set("height", this.get("yAxis").height());
+                            e.prototype._prepareChildren.call(this), (this.isDirty("valueYShow") || this.isDirty("valueXShow")) && (this._updateFields(), this._makeFieldNames(), this._valuesDirty = !0), this.set("width", this.get("xAxis").width()), this.set("height", this.get("yAxis").height());
                             var i, a, r = this.get("xAxis"),
                                 n = this.get("yAxis"),
                                 o = this.get("baseAxis");
