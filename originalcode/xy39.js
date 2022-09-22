@@ -5755,6 +5755,7 @@
                         configurable: !0,
                         writable: !0,
                         value: function() {
+                            console.log('inside _prepareChildren (4604)');
                             var t = this;
                             e.prototype._prepareChildren.call(this), (this.isDirty("valueYShow") || this.isDirty("valueXShow")) && (this._updateFields(), this._makeFieldNames(), this._valuesDirty = !0), this.set("width", this.get("xAxis").width()), this.set("height", this.get("yAxis").height()), this._handleMaskBullets();
                             var i, a, r = this.get("xAxis"),
@@ -5830,7 +5831,7 @@
                                 }
                             }
                         }
-                    }), Object.defineProperty(t.prototype, "_makeRangeMask", {
+                    }), Object.defineProperty(t.prototype, "_makeRangeMask", {          // needed in 757 , 4604  for _updateChildren
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
@@ -5855,7 +5856,7 @@
                                 }))), t.markDirty(), t._markDirtyKey("fill")
                             } else this.mainContainer._display.mask = null
                         }
-                    }), Object.defineProperty(t.prototype, "_updateChildren", {
+                    }), Object.defineProperty(t.prototype, "_updateChildren", {         // needed in 757 , 4604
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
