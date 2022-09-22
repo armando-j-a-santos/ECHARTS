@@ -5495,42 +5495,27 @@
                             configurable: !0,
                             writable: !0,
                             value: !1
-                        }), Object.defineProperty(t, "_couldStackTo", {
-                            enumerable: !0,
-                            configurable: !0,
-                            writable: !0,
-                            value: []
-                        }), Object.defineProperty(t, "_reallyStackedTo", {
-                            enumerable: !0,
-                            configurable: !0,
-                            writable: !0,
-                            value: {}
-                        }), Object.defineProperty(t, "_stackedSeries", {
-                            enumerable: !0,
-                            configurable: !0,
-                            writable: !0,
-                            value: {}
-                        }), Object.defineProperty(t, "_aLocationX0", {
+                        }), Object.defineProperty(t, "_aLocationX0", {                              // needed in 757 , 4604 
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: 0
-                        }), Object.defineProperty(t, "_aLocationX1", {
+                        }), Object.defineProperty(t, "_aLocationX1", {                              // needed in 757 , 4604 
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: 1
-                        }), Object.defineProperty(t, "_aLocationY0", {
+                        }), Object.defineProperty(t, "_aLocationY0", {                              // needed in 757 , 4604 
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: 0
-                        }), Object.defineProperty(t, "_aLocationY1", {
+                        }), Object.defineProperty(t, "_aLocationY1", {                              // needed in 757 , 4604 
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: 1
-                        }), Object.defineProperty(t, "_showBullets", {
+                        }), Object.defineProperty(t, "_showBullets", {                              // needed in 757 , 4604 
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
