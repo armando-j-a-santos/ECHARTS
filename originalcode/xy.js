@@ -3442,7 +3442,7 @@
                                             }
                                         })), m && a.get("originals").push(b)), n = T
                                     })), f && x && f(x, i)
-                                })), e._dataSetId && this.markDirtySize()
+                                })), this.markDirtySize()
                             }
                         }
                     }), Object.defineProperty(t.prototype, "getGroupInterval", {
@@ -5535,52 +5535,42 @@
                             configurable: !0,
                             writable: !0,
                             value: !0
-                        }), Object.defineProperty(t, "valueXFields", {
+                        }), Object.defineProperty(t, "valueXFields", {                              // needed in 757 , 4604 
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: ["valueX", "openValueX", "lowValueX", "highValueX"]
-                        }), Object.defineProperty(t, "valueYFields", {
+                        }), Object.defineProperty(t, "valueYFields", {                              // needed in 757 , 4604 
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: ["valueY", "openValueY", "lowValueY", "highValueY"]
-                        }), Object.defineProperty(t, "_valueXFields", {
+                        }), Object.defineProperty(t, "_valueXFields", {                             // needed in 757 , 4604 
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: void 0
-                        }), Object.defineProperty(t, "_valueYFields", {
+                        }), Object.defineProperty(t, "_valueYFields", {                             // needed in 757 , 4604 
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: void 0
-                        }), Object.defineProperty(t, "_valueXShowFields", {
+                        }), Object.defineProperty(t, "_valueXShowFields", {                         // needed in 757 , 4604 
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: void 0
-                        }), Object.defineProperty(t, "_valueYShowFields", {
+                        }), Object.defineProperty(t, "_valueYShowFields", {                         // needed in 757 , 4604 
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: void 0
-                        }), Object.defineProperty(t, "__valueXShowFields", {
+                        }), Object.defineProperty(t, "__valueXShowFields", {                        // needed in 757 , 4604  
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: void 0
-                        }), Object.defineProperty(t, "__valueYShowFields", {
-                            enumerable: !0,
-                            configurable: !0,
-                            writable: !0,
-                            value: void 0
-                        }), Object.defineProperty(t, "_emptyDataItem", {
-                            enumerable: !0,
-                            configurable: !0,
-                            writable: !0,
-                            value: new r.z(t, void 0, {})
-                        }), Object.defineProperty(t, "_dataSetId", {
+                        }), Object.defineProperty(t, "__valueYShowFields", {                        // needed in 757 , 4604  
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
