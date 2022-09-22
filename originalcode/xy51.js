@@ -4859,7 +4859,7 @@
                 }
             });
             var a = i(5125),
-                r = i(62),
+                ///////////// r = i(62),
                 n = i(2976),
                 o = i(5769),
                 s = i(7144),
@@ -4895,7 +4895,7 @@
                         writable: !0,
                         value: function(t, i) {
                             e.prototype._updateGraphics.call(this, t, i);
-                            var a, r, n, o, s, l, u, h, c, p = this.getRaw("xAxis"),
+                            var a, n, o, s, l, u, h, c, p = this.getRaw("xAxis"),
                                 b = this.getRaw("yAxis"),
                                 d = this.getRaw("baseAxis"),
                                 g = this.get("vcy", 1),
@@ -4907,7 +4907,7 @@
                             if (b === d) {
                                 var x = p.getDataItemPositionX(t, this._xOpenField, 1, f),
                                     w = p.getDataItemPositionX(t, this._xField, 1, f);
-                                r = p.getDataItemPositionX(t, this._xLowField, 1, f), l = p.getDataItemPositionX(t, this._xHighField, 1, f), s = Math.max(x, w), a = Math.min(x, w);
+                                /////////////r = p.getDataItemPositionX(t, this._xLowField, 1, f), l = p.getDataItemPositionX(t, this._xHighField, 1, f), s = Math.max(x, w), a = Math.min(x, w);
                                 var P = this._aLocationY0 + _ - .5,
                                     O = this._aLocationY1 + v - .5;
                                 o = n = b.getDataItemPositionY(t, this._yField, P + (O - P) / 2, g), u = n, h = n, c = "horizontal"
@@ -4916,7 +4916,7 @@
                                     D = b.getDataItemPositionY(t, this._yField, 1, g);
                                 o = b.getDataItemPositionY(t, this._yLowField, 1, g), h = b.getDataItemPositionY(t, this._yHighField, 1, g), u = Math.max(T, D), n = Math.min(T, D), P = this._aLocationX0 + y - .5, O = this._aLocationX1 + m - .5, r = a = p.getDataItemPositionX(t, this._xField, P + (O - P) / 2, f), s = a, l = a, c = "vertical"
                             }
-                            this._updateCandleGraphics(t, a, r, n, o, s, l, u, h, c)
+                            this._updateCandleGraphics(t, a, n, o, s, l, u, h, c)
                         }
                     }), Object.defineProperty(t.prototype, "_processAxisRange", {
                         enumerable: !1,
@@ -4934,71 +4934,9 @@
                         enumerable: !0,
                         configurable: !0,
                         writable: !0,
-                        value: r.d.classNames.concat([t.className])
+                        value: '' /////////////r.d.classNames.concat([t.className])
                     }), t
-                }(r.d)
-        },
-        62: function(e, t, i) {
-            console.log("inside xy [6450].62");
-            i.d(t, {
-                d: function() {
-                    return u
-                }
-            });
-            var a = i(5125),
-                r = i(757),
-                n = i(5769),
-                o = i(7144),
-                s = i(3497),
-                l = i(7652),
-                u = function(e) {
-                    function t() {
-                        var t = null !== e && e.apply(this, arguments) || this;
-                        return Object.defineProperty(t, "columns", {
-                            enumerable: !0,
-                            configurable: !0,
-                            writable: !0,
-                            value: new o.o(n.YS.new({}), (function() {
-                                return s.c._new(t._root, {
-                                    position: "absolute",
-                                    themeTags: l.mergeTags(t.columns.template.get("themeTags", []), ["series", "column"])
-                                }, [t.columns.template])
-                            }))
-                        }), t
-                    }
-                    return (0, a.ZT)(t, e), Object.defineProperty(t.prototype, "makeColumn", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e, t) {
-                            var i = this.mainContainer.children.push(t.make());
-                            return i._setDataItem(e), t.push(i), i
-                        }
-                    }), Object.defineProperty(t.prototype, "_processAxisRange", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(t) {
-                            var i = this;
-                            e.prototype._processAxisRange.call(this, t), t.columns = new o.o(n.YS.new({}), (function() {
-                                return s.c._new(i._root, {
-                                    position: "absolute",
-                                    themeTags: l.mergeTags(t.columns.template.get("themeTags", []), ["series", "column"])
-                                }, [i.columns.template, t.columns.template])
-                            }))
-                        }
-                    }), Object.defineProperty(t, "className", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: "ColumnSeries"
-                    }), Object.defineProperty(t, "classNames", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: r.d.classNames.concat([t.className])
-                    }), t
-                }(r.d)
+                }/////////////(r.d)
         },
         4604: function(e, t, i) {
             console.log("inside xy [6450].4604");
@@ -6274,7 +6212,7 @@
                         value: X.$.classNames.concat([t.className])
                     }), t
                 }(X.$),
-                L = i(62),
+                ///////////// L = i(62),
                 ///////////// V = i(2338),
                 G = i(5892),
                 U = function(e) {
