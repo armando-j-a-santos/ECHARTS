@@ -4698,7 +4698,7 @@
                                     }
                                     for (var I = w + 1; I < _; I++) this._toggleColumn(this.dataItems[I], !1)
                                 }
-                            } else this._skipped = !0;
+                            } ///////////// else this._skipped = !0;
                             this.updateLegendMarker(), e.prototype._updateChildren.call(this)
                         }
                     }), Object.defineProperty(t.prototype, "_createGraphics", {
@@ -5465,36 +5465,31 @@
                             configurable: !0,
                             writable: !0,
                             value: {}
-                        }), Object.defineProperty(t, "_mainContainerMask", {
+                        }), Object.defineProperty(t, "_mainContainerMask", {                        // needed in 757 , 4604
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: void 0
-                        }), Object.defineProperty(t, "_x", {
+                        }), Object.defineProperty(t, "_x", {                                        // needed in 757 , 4604
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: 0
-                        }), Object.defineProperty(t, "_y", {
+                        }), Object.defineProperty(t, "_y", {                                        // needed in 757 , 4604)
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: 0
-                        }), Object.defineProperty(t, "mainContainer", {
+                        }), Object.defineProperty(t, "mainContainer", {                             // needed in 757 , 4604
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: t.children.push(s.W.new(t._root, {}))
-                        }), Object.defineProperty(t, "axisRanges", {
+                        }), Object.defineProperty(t, "axisRanges", {                                // needed in 757 , 4604 
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: new o.aV
-                        }), Object.defineProperty(t, "_skipped", {
-                            enumerable: !0,
-                            configurable: !0,
-                            writable: !0,
-                            value: !1
                         }), Object.defineProperty(t, "_aLocationX0", {                              // needed in 757 , 4604 
                             enumerable: !0,
                             configurable: !0,
