@@ -5455,11 +5455,6 @@
                             configurable: !0,
                             writable: !0,
                             value: !1
-                        }), Object.defineProperty(t, "_dataSets", {
-                            enumerable: !0,
-                            configurable: !0,
-                            writable: !0,
-                            value: {}
                         }), Object.defineProperty(t, "_mainContainerMask", {                        // needed in 757 , 4604
                             enumerable: !0,
                             configurable: !0,
