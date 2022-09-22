@@ -5332,17 +5332,17 @@
                             configurable: !0,
                             writable: !0,
                             value: void 0
-                        }), Object.defineProperty(t, "_yField", {
+                        }), Object.defineProperty(t, "_yField", {                                   // needed in 757 , 4604
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: void 0
-                        }), Object.defineProperty(t, "_xOpenField", {
+                        }), Object.defineProperty(t, "_xOpenField", {                               // needed in 757 , 4604
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: void 0
-                        }), Object.defineProperty(t, "_yOpenField", {
+                        }), Object.defineProperty(t, "_yOpenField", {                               // needed in 757 , 4604
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
