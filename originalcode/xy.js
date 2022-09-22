@@ -5597,7 +5597,7 @@
                             value: void 0
                         }), t
                     }
-                    return (0, a.ZT)(t, e), Object.defineProperty(t.prototype, "_afterNew", {
+                    return (0, a.ZT)(t, e), Object.defineProperty(t.prototype, "_afterNew", {       // needed in 757 , 4604  
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
@@ -5625,7 +5625,7 @@
                                 visible: !1
                             }), this._makeFieldNames()
                         }
-                    }), Object.defineProperty(t.prototype, "_processAxisRange", {
+                    }), Object.defineProperty(t.prototype, "_processAxisRange", {           // needed in 757 , 4604  
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
@@ -5646,7 +5646,7 @@
                                 o && t.set("mask", o), a._seriesAxisRanges.push(i)
                             }
                         }
-                    }), Object.defineProperty(t.prototype, "_removeAxisRange", {
+                    }), Object.defineProperty(t.prototype, "_removeAxisRange", {             // needed in 757 , 4604  
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
@@ -5657,7 +5657,7 @@
                             var a = e.container;
                             a && a.dispose()
                         }
-                    }), Object.defineProperty(t.prototype, "_updateFields", {
+                    }), Object.defineProperty(t.prototype, "_updateFields", {                 // needed in 757 , 4604    
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
@@ -5677,7 +5677,7 @@
                                 }
                             }))
                         }
-                    }), Object.defineProperty(t.prototype, "_dispose", {
+                    }), Object.defineProperty(t.prototype, "_dispose", {                     // needed in 757 , 4604
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
@@ -5686,7 +5686,7 @@
                             var t = this.chart;
                             t && t.series.removeValue(this), c.removeFirst(this.get("xAxis").series, this), c.removeFirst(this.get("yAxis").series, this)
                         }
-                    }), Object.defineProperty(t.prototype, "_min", {
+                    }), Object.defineProperty(t.prototype, "_min", {                        // needed in 757 , 4604
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
@@ -5694,20 +5694,13 @@
                             var i, a, r = (a = t, null == (i = this.getPrivate(e)) ? a : null == a ? i : a < i ? a : i);
                             this.setPrivate(e, r)
                         }
-                    }), Object.defineProperty(t.prototype, "_max", {
+                    }), Object.defineProperty(t.prototype, "_max", {                        // needed in 757 , 4604
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
                         value: function(e, t) {
                             var i, a, r = (a = t, null == (i = this.getPrivate(e)) ? a : null == a ? i : a > i ? a : i);
                             this.setPrivate(e, r)
-                        }
-                    }), Object.defineProperty(t.prototype, "_shouldMakeBullet", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e) {
-                            return !(!this.get("xAxis").inited || !this.get("yAxis").inited) && null != e.get(this._xField) && null != e.get(this._yField)
                         }
                     }), Object.defineProperty(t.prototype, "_makeFieldNames", {             // needed in 757 , 4604
                         enumerable: !1,
