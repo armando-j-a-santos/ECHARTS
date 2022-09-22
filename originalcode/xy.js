@@ -3367,84 +3367,6 @@
                                 }
                             }
                         }
-                    }), Object.defineProperty(t.prototype, "_groupSeriesData", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e) {
-                            var t = this;
-                            if (this.get("groupData") && !e.get("groupDataDisabled")) {
-                                this._dataGrouped = !0, this._seriesDataGrouped = !0;
-                                var i = [],
-                                    a = this.baseMainDuration(),
-                                    n = this.get("groupIntervals");
-                                l.each(n, (function(e) {
-                                    c.getIntervalDuration(e) > a && i.push(e)
-                                })), e._dataSets = {};
-                                var s, h = this.getPrivate("name") + this.get("renderer").getPrivate("letter"),
-                                    p = e.get("baseAxis");
-                                e.get("xAxis") === p ? s = e._valueYFields : e.get("yAxis") === p && (s = e._valueXFields);
-                                var b = e._mainDataItems,
-                                    d = this.get("baseInterval"),
-                                    g = d.timeUnit + d.count;
-                                e._dataSets[g] = b;
-                                var f = e.get("groupDataCallback"),
-                                    m = e.get("groupDataWithOriginals", !1);
-                                f && (m = !0), l.each(i, (function(i) {
-                                    var a, n = -1 / 0,
-                                        p = i.timeUnit + i.count;
-                                    e._dataSets[p] = [];
-                                    var d = {},
-                                        g = {},
-                                        v = {},
-                                        y = {};
-                                    l.each(s, (function(t) {
-                                        d[t] = 0, g[t] = 0, v[t] = e.get(t + "Grouped"), y[t] = t + "Working"
-                                    }));
-                                    var _, x, w = c.getDuration(i.timeUnit);
-                                    b[0] && (_ = new Date(b[0].get(h))), l.each(b, (function(b) {
-                                        var P, O = b.get(h),
-                                            T = c.round(new Date(O), i.timeUnit, i.count, t._root.locale.firstDayOfWeek, t._root.utc, _, t._root.timezone).getTime();
-                                        n < T - w / 24 ? (P = u.copy(b.dataContext), (a = new r.z(e, P, e._makeDataItem(P))).setRaw(h, T), e._dataSets[p].push(a), l.each(s, (function(e) {
-                                            var t = b.get(e);
-                                            o.isNumber(t) && (a.setRaw(e, t), a.setRaw(y[e], t), g[e]++, d[e] += t)
-                                        })), m && a.set("originals", [b]), f && x && f(x, i), x = a) : (l.each(s, (function(e) {
-                                            var t = v[e],
-                                                i = b.get(e);
-                                            if (void 0 !== i) {
-                                                var r = a.get(e);
-                                                switch (t) {
-                                                    case "close":
-                                                        a.setRaw(e, i);
-                                                        break;
-                                                    case "sum":
-                                                        a.setRaw(e, r + i);
-                                                        break;
-                                                    case "open":
-                                                        break;
-                                                    case "low":
-                                                        i < r && a.setRaw(e, i);
-                                                        break;
-                                                    case "high":
-                                                        i > r && a.setRaw(e, i);
-                                                        break;
-                                                    case "average":
-                                                        g[e]++, d[e] += i;
-                                                        var n = d[e] / g[e];
-                                                        a.setRaw(e, n);
-                                                        break;
-                                                    case "extreme":
-                                                        Math.abs(i) > Math.abs(r) && a.setRaw(e, i)
-                                                }
-                                                a.setRaw(y[e], a.get(e));
-                                                var o = u.copy(b.dataContext);
-                                                o[h] = T, a.dataContext = o
-                                            }
-                                        })), m && a.get("originals").push(b)), n = T
-                                    })), f && x && f(x, i)
-                                })), this.markDirtySize()
-                            }
-                        }
                     }), Object.defineProperty(t.prototype, "getGroupInterval", {
                         enumerable: !1,
                         configurable: !0,
@@ -5425,32 +5347,32 @@
                             configurable: !0,
                             writable: !0,
                             value: void 0
-                        }), Object.defineProperty(t, "_xLowField", {
+                        }), Object.defineProperty(t, "_xLowField", {                                // needed in 757 , 4604
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: void 0
-                        }), Object.defineProperty(t, "_xHighField", {
+                        }), Object.defineProperty(t, "_xHighField", {                               // needed in 757 , 4604
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: void 0
-                        }), Object.defineProperty(t, "_yLowField", {
+                        }), Object.defineProperty(t, "_yLowField", {                                // needed in 757 , 4604
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: void 0
-                        }), Object.defineProperty(t, "_yHighField", {
+                        }), Object.defineProperty(t, "_yHighField", {                               // needed in 757 , 4604
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: void 0
-                        }), Object.defineProperty(t, "_axesDirty", {
+                        }), Object.defineProperty(t, "_axesDirty", {                                // needed in 757 , 4604
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: !1
-                        }), Object.defineProperty(t, "_stackDirty", {
+                        }), Object.defineProperty(t, "_stackDirty", {                               // needed in 757 , 4604
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
