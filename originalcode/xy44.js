@@ -3442,7 +3442,7 @@
                                             }
                                         })), m && a.get("originals").push(b)), n = T
                                     })), f && x && f(x, i)
-                                })), e._dataSetId && this.markDirtySize()
+                                })), this.markDirtySize()
                             }
                         }
                     }), Object.defineProperty(t.prototype, "getGroupInterval", {
@@ -4698,7 +4698,7 @@
                                     }
                                     for (var I = w + 1; I < _; I++) this._toggleColumn(this.dataItems[I], !1)
                                 }
-                            } else this._skipped = !0;
+                            } ///////////// else this._skipped = !0;
                             this.updateLegendMarker(), e.prototype._updateChildren.call(this)
                         }
                     }), Object.defineProperty(t.prototype, "_createGraphics", {
@@ -5455,132 +5455,97 @@
                             configurable: !0,
                             writable: !0,
                             value: !1
-                        }), Object.defineProperty(t, "_selectionProcessed", {
-                            enumerable: !0,
-                            configurable: !0,
-                            writable: !0,
-                            value: !1
                         }), Object.defineProperty(t, "_dataSets", {
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: {}
-                        }), Object.defineProperty(t, "_mainContainerMask", {
+                        }), Object.defineProperty(t, "_mainContainerMask", {                        // needed in 757 , 4604
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: void 0
-                        }), Object.defineProperty(t, "_x", {
+                        }), Object.defineProperty(t, "_x", {                                        // needed in 757 , 4604
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: 0
-                        }), Object.defineProperty(t, "_y", {
+                        }), Object.defineProperty(t, "_y", {                                        // needed in 757 , 4604)
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: 0
-                        }), Object.defineProperty(t, "mainContainer", {
+                        }), Object.defineProperty(t, "mainContainer", {                             // needed in 757 , 4604
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: t.children.push(s.W.new(t._root, {}))
-                        }), Object.defineProperty(t, "axisRanges", {
+                        }), Object.defineProperty(t, "axisRanges", {                                // needed in 757 , 4604 
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: new o.aV
-                        }), Object.defineProperty(t, "_skipped", {
-                            enumerable: !0,
-                            configurable: !0,
-                            writable: !0,
-                            value: !1
-                        }), Object.defineProperty(t, "_couldStackTo", {
-                            enumerable: !0,
-                            configurable: !0,
-                            writable: !0,
-                            value: []
-                        }), Object.defineProperty(t, "_reallyStackedTo", {
-                            enumerable: !0,
-                            configurable: !0,
-                            writable: !0,
-                            value: {}
-                        }), Object.defineProperty(t, "_stackedSeries", {
-                            enumerable: !0,
-                            configurable: !0,
-                            writable: !0,
-                            value: {}
-                        }), Object.defineProperty(t, "_aLocationX0", {
+                        }), Object.defineProperty(t, "_aLocationX0", {                              // needed in 757 , 4604 
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: 0
-                        }), Object.defineProperty(t, "_aLocationX1", {
+                        }), Object.defineProperty(t, "_aLocationX1", {                              // needed in 757 , 4604 
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: 1
-                        }), Object.defineProperty(t, "_aLocationY0", {
+                        }), Object.defineProperty(t, "_aLocationY0", {                              // needed in 757 , 4604 
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: 0
-                        }), Object.defineProperty(t, "_aLocationY1", {
+                        }), Object.defineProperty(t, "_aLocationY1", {                              // needed in 757 , 4604 
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: 1
-                        }), Object.defineProperty(t, "_showBullets", {
+                        }), Object.defineProperty(t, "_showBullets", {                              // needed in 757 , 4604 
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: !0
-                        }), Object.defineProperty(t, "valueXFields", {
+                        }), Object.defineProperty(t, "valueXFields", {                              // needed in 757 , 4604 
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: ["valueX", "openValueX", "lowValueX", "highValueX"]
-                        }), Object.defineProperty(t, "valueYFields", {
+                        }), Object.defineProperty(t, "valueYFields", {                              // needed in 757 , 4604 
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: ["valueY", "openValueY", "lowValueY", "highValueY"]
-                        }), Object.defineProperty(t, "_valueXFields", {
+                        }), Object.defineProperty(t, "_valueXFields", {                             // needed in 757 , 4604 
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: void 0
-                        }), Object.defineProperty(t, "_valueYFields", {
+                        }), Object.defineProperty(t, "_valueYFields", {                             // needed in 757 , 4604 
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: void 0
-                        }), Object.defineProperty(t, "_valueXShowFields", {
+                        }), Object.defineProperty(t, "_valueXShowFields", {                         // needed in 757 , 4604 
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: void 0
-                        }), Object.defineProperty(t, "_valueYShowFields", {
+                        }), Object.defineProperty(t, "_valueYShowFields", {                         // needed in 757 , 4604 
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: void 0
-                        }), Object.defineProperty(t, "__valueXShowFields", {
+                        }), Object.defineProperty(t, "__valueXShowFields", {                        // needed in 757 , 4604  
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
                             value: void 0
-                        }), Object.defineProperty(t, "__valueYShowFields", {
-                            enumerable: !0,
-                            configurable: !0,
-                            writable: !0,
-                            value: void 0
-                        }), Object.defineProperty(t, "_emptyDataItem", {
-                            enumerable: !0,
-                            configurable: !0,
-                            writable: !0,
-                            value: new r.z(t, void 0, {})
-                        }), Object.defineProperty(t, "_dataSetId", {
+                        }), Object.defineProperty(t, "__valueYShowFields", {                        // needed in 757 , 4604  
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
@@ -5762,8 +5727,8 @@
                                 var l = this.startIndex(),
                                     u = this.endIndex(),
                                     h = this.get("minBulletDistance", 0);
-                                if (h > 0 && o && (o.get("renderer").axisLength() / (u - l) > h ? this._showBullets = !0 : this._showBullets = !1), (this._psi != l || this._pei != u || this.isDirty("vcx") || this.isDirty("vcy") || this._stackDirty || this._valuesDirty) && !this._selectionProcessed) {
-                                    this._selectionProcessed = !0;
+                                if (h > 0 && o && (o.get("renderer").axisLength() / (u - l) > h ? this._showBullets = !0 : this._showBullets = !1), (this._psi != l || this._pei != u || this.isDirty("vcx") || this.isDirty("vcy") || this._stackDirty || this._valuesDirty)) {
+                                    ///////////// this._selectionProcessed = !0;
                                     var b = this.get("vcx", 1),
                                         d = this.get("vcy", 1),
                                         g = this.get("stacked", !1),
