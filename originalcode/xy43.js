@@ -5585,19 +5585,9 @@
                             configurable: !0,
                             writable: !0,
                             value: void 0
-                        }), Object.defineProperty(t, "_tooltipFieldX", {
-                            enumerable: !0,
-                            configurable: !0,
-                            writable: !0,
-                            value: void 0
-                        }), Object.defineProperty(t, "_tooltipFieldY", {
-                            enumerable: !0,
-                            configurable: !0,
-                            writable: !0,
-                            value: void 0
                         }), t
                     }
-                    return (0, a.ZT)(t, e), Object.defineProperty(t.prototype, "_afterNew", {
+                    return (0, a.ZT)(t, e), Object.defineProperty(t.prototype, "_afterNew", {       // needed in 757 , 4604  
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
@@ -5625,7 +5615,7 @@
                                 visible: !1
                             }), this._makeFieldNames()
                         }
-                    }), Object.defineProperty(t.prototype, "_processAxisRange", {
+                    }), Object.defineProperty(t.prototype, "_processAxisRange", {           // needed in 757 , 4604  
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
@@ -5646,7 +5636,7 @@
                                 o && t.set("mask", o), a._seriesAxisRanges.push(i)
                             }
                         }
-                    }), Object.defineProperty(t.prototype, "_removeAxisRange", {
+                    }), Object.defineProperty(t.prototype, "_removeAxisRange", {             // needed in 757 , 4604  
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
@@ -5657,7 +5647,7 @@
                             var a = e.container;
                             a && a.dispose()
                         }
-                    }), Object.defineProperty(t.prototype, "_updateFields", {
+                    }), Object.defineProperty(t.prototype, "_updateFields", {                 // needed in 757 , 4604    
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
@@ -5677,7 +5667,7 @@
                                 }
                             }))
                         }
-                    }), Object.defineProperty(t.prototype, "_dispose", {
+                    }), Object.defineProperty(t.prototype, "_dispose", {                     // needed in 757 , 4604
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
@@ -5686,7 +5676,7 @@
                             var t = this.chart;
                             t && t.series.removeValue(this), c.removeFirst(this.get("xAxis").series, this), c.removeFirst(this.get("yAxis").series, this)
                         }
-                    }), Object.defineProperty(t.prototype, "_min", {
+                    }), Object.defineProperty(t.prototype, "_min", {                        // needed in 757 , 4604
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
@@ -5694,7 +5684,7 @@
                             var i, a, r = (a = t, null == (i = this.getPrivate(e)) ? a : null == a ? i : a < i ? a : i);
                             this.setPrivate(e, r)
                         }
-                    }), Object.defineProperty(t.prototype, "_max", {
+                    }), Object.defineProperty(t.prototype, "_max", {                        // needed in 757 , 4604
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
@@ -5702,14 +5692,7 @@
                             var i, a, r = (a = t, null == (i = this.getPrivate(e)) ? a : null == a ? i : a > i ? a : i);
                             this.setPrivate(e, r)
                         }
-                    }), Object.defineProperty(t.prototype, "_shouldMakeBullet", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e) {
-                            return !(!this.get("xAxis").inited || !this.get("yAxis").inited) && null != e.get(this._xField) && null != e.get(this._yField)
-                        }
-                    }), Object.defineProperty(t.prototype, "_makeFieldNames", {
+                    }), Object.defineProperty(t.prototype, "_makeFieldNames", {             // needed in 757 , 4604
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
@@ -5752,7 +5735,7 @@
                                 default:
                                     i = this._xField
                             }
-                            switch (this._tooltipFieldX = i, this.get("tooltipPositionY")) {
+                            switch (this.get("tooltipPositionY")) {
                                 case "open":
                                     a = this._yOpenField;
                                     break;
@@ -5765,7 +5748,7 @@
                                 default:
                                     a = this._yField
                             }
-                            this._tooltipFieldY = a, this.isDirty("baseAxis") , this.set("x", r.x() - p.relativeToValue(r.get("centerX", 0), r.width()) - r.parent.get("paddingLeft", 0)), this.set("y", n.y() - p.relativeToValue(n.get("centerY", 0), n.height()) - n.parent.get("paddingTop", 0)), this.bulletsContainer.set("y", this.y()), this.bulletsContainer.set("x", this.x());
+                            /////////////  this._tooltipFieldY = a, this.isDirty("baseAxis") , this.set("x", r.x() - p.relativeToValue(r.get("centerX", 0), r.width()) - r.parent.get("paddingLeft", 0)), this.set("y", n.y() - p.relativeToValue(n.get("centerY", 0), n.height()) - n.parent.get("paddingTop", 0)), this.bulletsContainer.set("y", this.y()), this.bulletsContainer.set("x", this.x());
                             var s = this.get("stacked");
                             if (this.isDirty("stacked") && (s ? this._valuesDirty && !this._dataProcessed || true : true), this._valuesDirty && !this._dataProcessed && (this._dataProcessed = !0, s , c.each(this.dataItems, (function(e) {
                                     c.each(t._valueXShowFields, (function(i) {
