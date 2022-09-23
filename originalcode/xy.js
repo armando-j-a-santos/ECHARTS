@@ -4851,93 +4851,6 @@
                     }), t
                 }(r.c)
         },
-        2312: function(e, t, i) {
-            console.log("inside xy [6450].2312");
-            i.d(t, {
-                $: function() {
-                    return h
-                }
-            });
-            var a = i(5125),
-                ///////////// r = i(62),
-                n = i(2976),
-                o = i(5769),
-                s = i(7144),
-                l = i(7652),
-                u = i(5071),
-                h = function(e) {
-                    function t() {
-                        var t = null !== e && e.apply(this, arguments) || this;
-                        return Object.defineProperty(t, "columns", {
-                            enumerable: !0,
-                            configurable: !0,
-                            writable: !0,
-                            value: new s.o(o.YS.new({
-                                themeTags: ["autocolor"]
-                            }), (function() {
-                                return n.j._new(t._root, {
-                                    /////////////themeTags: l.mergeTags(t.columns.template.get("themeTags", []), ["candlestick", "series", "column"])
-                                }, [t.columns.template])
-                            }))
-                        }), t
-                    }
-                    return (0, a.ZT)(t, e), Object.defineProperty(t.prototype, "makeColumn", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e, t) {
-                            var i = this.mainContainer.children.push(t.make());
-                            return i._setDataItem(e), t.push(i), i
-                        }
-                    }), Object.defineProperty(t.prototype, "_updateGraphics", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(t, i) {
-                            e.prototype._updateGraphics.call(this, t, i);
-                            var a, n, o, s, l, u, h, c, p = this.getRaw("xAxis"),
-                                b = this.getRaw("yAxis"),
-                                d = this.getRaw("baseAxis"),
-                                g = this.get("vcy", 1),
-                                f = this.get("vcx", 1),
-                                m = this.get("locationX", t.get("locationX", .5)),
-                                v = this.get("locationY", t.get("locationY", .5)),
-                                y = this.get("openLocationX", t.get("openLocationX", m)),
-                                _ = this.get("openLocationY", t.get("openLocationY", v));
-                            if (b === d) {
-                                var x = p.getDataItemPositionX(t, this._xOpenField, 1, f),
-                                    w = p.getDataItemPositionX(t, this._xField, 1, f);
-                                /////////////r = p.getDataItemPositionX(t, this._xLowField, 1, f), l = p.getDataItemPositionX(t, this._xHighField, 1, f), s = Math.max(x, w), a = Math.min(x, w);
-                                var P = this._aLocationY0 + _ - .5,
-                                    O = this._aLocationY1 + v - .5;
-                                o = n = b.getDataItemPositionY(t, this._yField, P + (O - P) / 2, g), u = n, h = n, c = "horizontal"
-                            } else {
-                                var T = b.getDataItemPositionY(t, this._yOpenField, 1, g),
-                                    D = b.getDataItemPositionY(t, this._yField, 1, g);
-                                o = b.getDataItemPositionY(t, this._yLowField, 1, g), h = b.getDataItemPositionY(t, this._yHighField, 1, g), u = Math.max(T, D), n = Math.min(T, D), P = this._aLocationX0 + y - .5, O = this._aLocationX1 + m - .5, r = a = p.getDataItemPositionX(t, this._xField, P + (O - P) / 2, f), s = a, l = a, c = "vertical"
-                            }
-                            this._updateCandleGraphics(t, a, n, o, s, l, u, h, c)
-                        }
-                    }), Object.defineProperty(t.prototype, "_processAxisRange", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(t) {
-                            var i = this;
-                            e.prototype._processAxisRange.call(this, t), t.columns = new s.o(o.YS.new({}), (function() {
-                                return n.j._new(i._root, {
-                                    /////////////themeTags: l.mergeTags(t.columns.template.get("themeTags", []), ["candlestick", "series", "column"])
-                                }, [i.columns.template, t.columns.template])
-                            }))
-                        }
-                    }), Object.defineProperty(t, "classNames", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: '' /////////////r.d.classNames.concat([t.className])
-                    }), t
-                }/////////////(r.d)
-        },
         62: function(e, t, i) {
             console.log("inside xy [6450].62");
             i.d(t, {
@@ -6200,7 +6113,7 @@
                 M = i(7909),
                 C = i(4604),
                 Y = i(2976),
-                X = i(2312),
+               ///////////// X = i(2312),
                 S = function(e) {
                     function t() {
                         return null !== e && e.apply(this, arguments) || this
@@ -6273,7 +6186,7 @@
                         writable: !0,
                         value: '' ///////////// X.$.classNames.concat([t.className])
                     }), t
-                }(X.$),
+                }, /////////////(X.$),
                 L = i(62),
                 ///////////// V = i(2338),
                 G = i(5892),
