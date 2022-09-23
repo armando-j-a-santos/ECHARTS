@@ -1975,11 +1975,11 @@
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
-                            value: new o.o(n.YS.new({}), (function() {
-                                return u.k._new(t._root, {
+                            value: void 0 /////////////new o.o(n.YS.new({}), (function() {
+                                /////////////return u.k._new(t._root, {
                                     /////////////themeTags: h.mergeTags(t.labels.template.get("themeTags", []), t.get("themeTags", []))
-                                }, [t.labels.template])
-                            }))
+                                /////////////}, [t.labels.template])
+                            /////////////}))
                         }), Object.defineProperty(t, "axis", {
                             enumerable: !0,
                             configurable: !0,
