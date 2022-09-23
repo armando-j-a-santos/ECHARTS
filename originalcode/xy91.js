@@ -9,7 +9,7 @@
                 }
             });
             var a = i(5125),
-                /////////////r = i(55),
+                r = i(55),
                 n = i(8777),
                 o = i(7142),
                 s = i(5829),
@@ -188,8 +188,8 @@
                         writable: !0,
                         value: function() {
                             var t = this;
-                            /////////////this._defaultThemes.push(r.l.new(this._root)), e.prototype._afterNew.call(this), this._disposers.push(this.xAxes), this._disposers.push(this.yAxes);
-                            this._defaultThemes.push(this._root), e.prototype._afterNew.call(this), this._disposers.push(this.xAxes), this._disposers.push(this.yAxes);
+                            console.log('[6450].6901 r.l.new(this._root) ---->' + r.l.new(this._root));
+                            this._defaultThemes.push(r.l.new(this._root)), e.prototype._afterNew.call(this), this._disposers.push(this.xAxes), this._disposers.push(this.yAxes);
                             var i = this._root,
                                 a = this._root.verticalLayout,
                                 n = this.zoomOutButton;
@@ -957,7 +957,6 @@
                     }), t
                 }(s.j)
         },
-        /*
         55: function(e, t, i) {
             console.log("inside xy [6450].55");
             i.d(t, {
@@ -1355,7 +1354,6 @@
                     }), t
                 }(r.Q)
         },
-        */
         6515: function(e, t, i) {
             console.log("inside xy [6450].6515");
             i.d(t, {
@@ -5180,8 +5178,8 @@
                         writable: !0,
                         value: V.e.classNames.concat([t.className])
                     }), t
-                } /////////////(V.e),
-                ///////////// J = i(55)
+                }, /////////////(V.e),
+                J = i(55)
         },
         7825: function(e, t, i) {
             console.log("inside xy [6450].7825");
