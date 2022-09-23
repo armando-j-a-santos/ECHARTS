@@ -2020,10 +2020,10 @@
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
-                        value: function(e, t) {
-                            var i = this.labels.make();
-                            return i.set("themeTags", h.mergeTags(i.get("themeTags"), t)), this.axis.labelsContainer.children.moveValue(i, 0), i._setDataItem(e), e.setRaw("label", i), this.labels.push(i), i
-                        }
+                        value: void 0 /////////////function(e, t) {
+                            /////////////var i = this.labels.make();
+                            /////////////return i.set("themeTags", h.mergeTags(i.get("themeTags"), t)), this.axis.labelsContainer.children.moveValue(i, 0), i._setDataItem(e), e.setRaw("label", i), this.labels.push(i), i
+                        /////////////}
                     }), Object.defineProperty(t.prototype, "axisLength", {
                         enumerable: !1,
                         configurable: !0,
