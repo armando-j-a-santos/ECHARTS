@@ -2723,7 +2723,7 @@
                         value: function() {
                             e.prototype._changed.call(this);
                             var t = this.axis;
-                            t.ghostLabel.setPrivate("visible", !this.get("inside"));
+                            ///////////// t.ghostLabel.setPrivate("visible", !this.get("inside"));
                             var i = "opposite",
                                 a = "inside";
                             if (this.isDirty(i) || this.isDirty(a)) {
