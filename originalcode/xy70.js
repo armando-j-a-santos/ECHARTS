@@ -2440,11 +2440,11 @@
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
-                            value: new o.o(n.YS.new({}), (function() {
-                                return l.r._new(t._root, {
-                                    themeTags: h.mergeTags(t.grid.template.get("themeTags", []), t.get("themeTags", []))
-                                }, [t.grid.template])
-                            }))
+                            value: new o.o(n.YS.new({})) ///////////// , (function() {
+                                /////////////return l.r._new(t._root, {
+                                /////////////    themeTags: h.mergeTags(t.grid.template.get("themeTags", []), t.get("themeTags", []))
+                                /////////////}, [t.grid.template])
+                            /////////////}))
                         }), Object.defineProperty(t, "axisFills", {
                             enumerable: !0,
                             configurable: !0,
