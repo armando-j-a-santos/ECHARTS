@@ -2023,10 +2023,10 @@
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
-                        value: function(e, t) {
-                            var i = this.ticks.make();
-                            return i._setDataItem(e), e.setRaw("tick", i), i.set("themeTags", h.mergeTags(i.get("themeTags"), t)), this.axis.labelsContainer.children.push(i), this.ticks.push(i), i
-                        }
+                        value: void 0 /////////////function(e, t) {
+                        /////////////    var i = this.ticks.make();
+                        /////////////    return i._setDataItem(e), e.setRaw("tick", i), i.set("themeTags", h.mergeTags(i.get("themeTags"), t)), this.axis.labelsContainer.children.push(i), this.ticks.push(i), i
+                        /////////////}
                     }), Object.defineProperty(t.prototype, "makeGrid", {
                         enumerable: !1,
                         configurable: !0,
