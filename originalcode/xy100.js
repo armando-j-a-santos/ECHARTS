@@ -1977,7 +1977,7 @@
                             writable: !0,
                             value: new o.o(n.YS.new({}), (function() {
                                 return u.k._new(t._root, {
-                                    themeTags: h.mergeTags(t.labels.template.get("themeTags", []), t.get("themeTags", []))
+                                    /////////////themeTags: h.mergeTags(t.labels.template.get("themeTags", []), t.get("themeTags", []))
                                 }, [t.labels.template])
                             }))
                         }), Object.defineProperty(t, "axis", {
