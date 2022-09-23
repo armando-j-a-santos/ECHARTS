@@ -1979,11 +1979,11 @@
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
-                            value: new o.o(n.YS.new({}), (function() {
-                                return s.T._new(t._root, {
-                                    themeTags: h.mergeTags(t.ticks.template.get("themeTags", []), t.get("themeTags", []))
-                                }, [t.ticks.template])
-                            }))
+                            value: new o.o(n.YS.new({})) /////////////, (function() {
+                                /////////////return s.T._new(t._root, {
+                                /////////////    themeTags: h.mergeTags(t.ticks.template.get("themeTags", []), t.get("themeTags", []))
+                                /////////////}, [t.ticks.template])
+                            /////////////}))
                         }), Object.defineProperty(t, "grid", {
                             enumerable: !0,
                             configurable: !0,
