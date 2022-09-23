@@ -1519,7 +1519,7 @@
                                 }
                             })));
                             var i = this.get("renderer");
-                            /////////////i && (i.axis = this, i.processAxis()), this.children.push(i), this.ghostLabel = i.makeLabel(new r.z(this, void 0, {}), []), this.ghostLabel.adapters.disable("text"), this.ghostLabel.set("opacity", 0)
+                            i && (i.axis = this, i.processAxis()), this.children.push(i), this.ghostLabel = i.makeLabel(new r.z(this, void 0, {}), []), this.ghostLabel.adapters.disable("text"), this.ghostLabel.set("opacity", 0)
                         }
                     }), Object.defineProperty(t.prototype, "zoom", {
                         enumerable: !1,
@@ -1875,6 +1875,35 @@
                     }), t
                 }(r._)
         },
+        /*
+        9084: function(e, t, i) {
+            console.log("inside xy [6450].9084");
+            i.d(t, {
+                p: function() {
+                    return n
+                }
+            });
+            var a = i(5125),
+                r = i(815),
+                n = function(e) {
+                    function t() {
+                        var t = null !== e && e.apply(this, arguments) || this;
+                        return Object.defineProperty(t, "_tickPoints", {
+                            enumerable: !0,
+                            configurable: !0,
+                            writable: !0,
+                            value: []
+                        }), t
+                    }
+                    return (0, a.ZT)(t, e), Object.defineProperty(t, "classNames", {
+                        enumerable: !0,
+                        configurable: !0,
+                        writable: !0,
+                        value: r.x.classNames.concat([t.className])
+                    }), t
+                }(r.x)
+        },
+        */
         6275: function(e, t, i) {
             console.log("inside xy [6450].6275");
             i.d(t, {
@@ -1887,8 +1916,8 @@
                 n = i(5769),
                 o = i(7144),
                 s = i(4714),
-                ///////////// l = i(8943),
-                ///////////// u = i(6293),
+                /////////////	l = i(8943),
+                u = i(6293),
                 h = i(7652),
                 c = function(e) {
                     function t() {
@@ -1975,11 +2004,11 @@
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
-                            value: void 0 /////////////new o.o(n.YS.new({}), (function() {
-                                /////////////return u.k._new(t._root, {
-                                    /////////////themeTags: h.mergeTags(t.labels.template.get("themeTags", []), t.get("themeTags", []))
-                                /////////////}, [t.labels.template])
-                            /////////////}))
+                            value: new o.o(n.YS.new({}), (function() {
+                                return u.k._new(t._root, {
+                                    themeTags: h.mergeTags(t.labels.template.get("themeTags", []), t.get("themeTags", []))
+                                }, [t.labels.template])
+                            }))
                         }), Object.defineProperty(t, "axis", {
                             enumerable: !0,
                             configurable: !0,
@@ -2020,10 +2049,10 @@
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
-                        value: void 0 /////////////function(e, t) {
-                            /////////////var i = this.labels.make();
-                            /////////////return i.set("themeTags", h.mergeTags(i.get("themeTags"), t)), this.axis.labelsContainer.children.moveValue(i, 0), i._setDataItem(e), e.setRaw("label", i), this.labels.push(i), i
-                        /////////////}
+                        value: function(e, t) {
+                            var i = this.labels.make();
+                            return i.set("themeTags", h.mergeTags(i.get("themeTags"), t)), this.axis.labelsContainer.children.moveValue(i, 0), i._setDataItem(e), e.setRaw("label", i), this.labels.push(i), i
+                        }
                     }), Object.defineProperty(t.prototype, "axisLength", {
                         enumerable: !1,
                         configurable: !0,
@@ -4932,8 +4961,8 @@
                         value: P.JH.classNames.concat([t.className])
                     }), t
                 }(P.JH),
-                ///////////// T = i(6293),
-                ///////////// D = i(9084),
+                T = i(6293),
+                //////////// D = i(9084),
                 j = i(4714),
                 ///////////// A = i(8943),
                 k = i(6275),
