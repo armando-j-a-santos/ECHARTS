@@ -1519,7 +1519,7 @@
                                 }
                             })));
                             var i = this.get("renderer");
-                            i && (i.axis = this, i.processAxis()), this.children.push(i), this.ghostLabel = i.makeLabel(new r.z(this, void 0, {}), []), this.ghostLabel.adapters.disable("text"), this.ghostLabel.set("opacity", 0)
+                            /////////////i && (i.axis = this, i.processAxis()), this.children.push(i), this.ghostLabel = i.makeLabel(new r.z(this, void 0, {}), []), this.ghostLabel.adapters.disable("text"), this.ghostLabel.set("opacity", 0)
                         }
                     }), Object.defineProperty(t.prototype, "zoom", {
                         enumerable: !1,
