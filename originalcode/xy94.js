@@ -188,9 +188,7 @@
                         writable: !0,
                         value: function() {
                             var t = this;
-                            console.log('[6450].6901 r.l.new(this._root) ---->' + r.l.new(this._root));
-                            //this._defaultThemes.push(r.l.new(this._root)), e.prototype._afterNew.call(this), this._disposers.push(this.xAxes), this._disposers.push(this.yAxes);
-                            this._defaultThemes.push(l.new(this._root)), e.prototype._afterNew.call(this), this._disposers.push(this.xAxes), this._disposers.push(this.yAxes);
+                            this._defaultThemes.push(r.l.new(this._root)), e.prototype._afterNew.call(this), this._disposers.push(this.xAxes), this._disposers.push(this.yAxes);
                             var i = this._root,
                                 a = this._root.verticalLayout,
                                 n = this.zoomOutButton;
@@ -1915,8 +1913,8 @@
                 r = i(1479),
                 n = i(5769),
                 o = i(7144),
-                s = i(4714),
-                /////////////	l = i(8943),
+                ///////////// s = i(4714),
+                ///////////// l = i(8943),
                 u = i(6293),
                 h = i(7652),
                 c = function(e) {
@@ -2775,6 +2773,7 @@
                     }), t
                 }(r.Y)
         },
+        /*
         4714: function(e, t, i) {
             console.log("inside xy [6450].4714");
             i.d(t, {
@@ -2802,6 +2801,7 @@
                     }), t
                 }(r.d)
         },
+        */
         7261: function(e, t, i) {
             console.log("inside xy [6450].7261");
             i.d(t, {
@@ -4963,8 +4963,8 @@
                 }(P.JH),
                 T = i(6293),
                 D = i(9084),
-                j = i(4714),
-                /////////////	A = i(8943),
+                ///////////// j = i(4714),
+                ///////////// A = i(8943),
                 k = i(6275),
                 I = i(6284),
                 M = i(7909),
