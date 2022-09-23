@@ -1695,7 +1695,7 @@
                         writable: !0,
                         value: function(e, t) {
                             var i = this.get("renderer");
-                            e.get("label") || i.makeLabel(e, t), e.get("grid") || i.makeGrid(e, t), e.get("tick") || i.makeTick(e, t), e.get("axisFill") || i.makeAxisFill(e, t), this._processBullet(e)
+                            /////////////e.get("label") || i.makeLabel(e, t), e.get("grid") || i.makeGrid(e, t), e.get("tick") || i.makeTick(e, t), e.get("axisFill") || i.makeAxisFill(e, t), this._processBullet(e)
                         }
                     }), Object.defineProperty(t.prototype, "_processBullet", {
                         enumerable: !1,
