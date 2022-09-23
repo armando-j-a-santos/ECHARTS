@@ -1364,7 +1364,7 @@
                 r = i(8777),
                 n = i(6245),
                 o = i(1479),
-                s = i(8943),
+                /////////////	s = i(8943),
                 l = i(5040),
                 u = i(7652),
                 h = i(751),
@@ -2366,7 +2366,7 @@
                 n = i(5769),
                 o = i(7144),
                 s = i(4714),
-                l = i(8943),
+                /////////////	l = i(8943),
                 u = i(6293),
                 h = i(7652),
                 c = function(e) {
@@ -2440,11 +2440,7 @@
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
-                            value: new o.o(n.YS.new({}), (function() {
-                                return l.r._new(t._root, {
-                                    themeTags: h.mergeTags(t.grid.template.get("themeTags", []), t.get("themeTags", []))
-                                }, [t.grid.template])
-                            }))
+                            value: new o.o(n.YS.new({}))
                         }), Object.defineProperty(t, "axisFills", {
                             enumerable: !0,
                             configurable: !0,
@@ -2488,8 +2484,8 @@
                         configurable: !0,
                         writable: !0,
                         value: function(e, t) {
-                            var i = this.grid.make();
-                            return i._setDataItem(e), e.setRaw("grid", i), i.set("themeTags", h.mergeTags(i.get("themeTags"), t)), this.axis.gridContainer.children.push(i), this.grid.push(i), i
+                            /////////////var i = this.grid.make();
+                            return t
                         }
                     }), Object.defineProperty(t.prototype, "makeAxisFill", {
                         enumerable: !1,
@@ -3692,39 +3688,6 @@
                         value: n.m.classNames.concat([t.className])
                     }), t
                 }(n.m)
-        },
-        8943: function(e, t, i) {
-            console.log("inside xy [6450].8943");
-            i.d(t, {
-                r: function() {
-                    return n
-                }
-            });
-            var a = i(5125),
-                r = i(1479),
-                n = function(e) {
-                    function t() {
-                        return null !== e && e.apply(this, arguments) || this
-                    }
-                    return (0, a.ZT)(t, e), Object.defineProperty(t.prototype, "_beforeChanged", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            e.prototype._beforeChanged.call(this), (this.isPrivateDirty("width") || this.isPrivateDirty("height")) && (this._clear = !0)
-                        }
-                    }), Object.defineProperty(t, "className", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: "Grid"
-                    }), Object.defineProperty(t, "classNames", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: r.T.classNames.concat([t.className])
-                    }), t
-                }(r.T)
         },
         7261: function(e, t, i) {
             console.log("inside xy [6450].7261");
@@ -5888,7 +5851,7 @@
                 T = i(6293),
                 D = i(9084),
                 j = i(4714),
-                A = i(8943),
+                /////////////	A = i(8943),
                 k = i(6275),
                 I = i(6284),
                 M = i(7909),
