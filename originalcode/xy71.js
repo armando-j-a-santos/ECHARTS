@@ -2488,8 +2488,8 @@
                         configurable: !0,
                         writable: !0,
                         value: function(e, t) {
-                            var i = this.grid.make();
-                            return i._setDataItem(e), e.setRaw("grid", i), i.set("themeTags", h.mergeTags(i.get("themeTags"), t)), this.axis.gridContainer.children.push(i), this.grid.push(i), i
+                            /////////////var i = this.grid.make();
+                            return t
                         }
                     }), Object.defineProperty(t.prototype, "makeAxisFill", {
                         enumerable: !1,
