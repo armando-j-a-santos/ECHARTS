@@ -189,8 +189,8 @@
                         value: function() {
                             var t = this;
                             console.log('[6450].6901 r.l.new(this._root) ---->' + r.l.new(this._root));
-                            this._defaultThemes.push(r.l.new(this._root)), e.prototype._afterNew.call(this), this._disposers.push(this.xAxes), this._disposers.push(this.yAxes);
-                            this._defaultThemes.push(this._root), e.prototype._afterNew.call(this), this._disposers.push(this.xAxes), this._disposers.push(this.yAxes);
+                            //this._defaultThemes.push(r.l.new(this._root)), e.prototype._afterNew.call(this), this._disposers.push(this.xAxes), this._disposers.push(this.yAxes);
+                            this._defaultThemes.push(l.new(this._root)), e.prototype._afterNew.call(this), this._disposers.push(this.xAxes), this._disposers.push(this.yAxes);
                             var i = this._root,
                                 a = this._root.verticalLayout,
                                 n = this.zoomOutButton;
