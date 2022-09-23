@@ -4814,131 +4814,6 @@
                     }), t
                 }(r.o)
         },
-        2976: function(e, t, i) {
-            console.log("inside xy [6450].2976");
-            i.d(t, {
-                j: function() {
-                    return n
-                }
-            });
-            var a = i(5125),
-                r = i(3497),
-                n = function(e) {
-                    function t() {
-                        return null !== e && e.apply(this, arguments) || this
-                    }
-                    return (0, a.ZT)(t, e), Object.defineProperty(t.prototype, "_beforeChanged", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            e.prototype._beforeChanged.call(this), (this.isDirty("lowX0") || this.isDirty("lowY0") || this.isDirty("lowX1") || this.isDirty("lowY1") || this.isDirty("highX0") || this.isDirty("highX1") || this.isDirty("highY0") || this.isDirty("highY1")) && (this._clear = !0)
-                        }
-                    }), Object.defineProperty(t.prototype, "_draw", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            e.prototype._draw.call(this);
-                            var t = this._display;
-                            t.moveTo(this.get("lowX0", 0), this.get("lowY0", 0)), t.lineTo(this.get("lowX1", 0), this.get("lowY1", 0)), t.moveTo(this.get("highX0", 0), this.get("highY0", 0)), t.lineTo(this.get("highX1", 0), this.get("highY1", 0))
-                        }
-                    }), Object.defineProperty(t, "classNames", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: r.c.classNames.concat([t.className])
-                    }), t
-                }(r.c)
-        },
-        /*
-        2312: function(e, t, i) {
-            console.log("inside xy [6450].2312");
-            i.d(t, {
-                $: function() {
-                    return h
-                }
-            });
-            var a = i(5125),
-                ///////////// r = i(62),
-                n = i(2976),
-                o = i(5769),
-                s = i(7144),
-                l = i(7652),
-                u = i(5071),
-                h = function(e) {
-                    function t() {
-                        var t = null !== e && e.apply(this, arguments) || this;
-                        return Object.defineProperty(t, "columns", {
-                            enumerable: !0,
-                            configurable: !0,
-                            writable: !0,
-                            value: new s.o(o.YS.new({
-                                themeTags: ["autocolor"]
-                            }), (function() {
-                                return n.j._new(t._root, {
-                                    /////////////themeTags: l.mergeTags(t.columns.template.get("themeTags", []), ["candlestick", "series", "column"])
-                                }, [t.columns.template])
-                            }))
-                        }), t
-                    }
-                    return (0, a.ZT)(t, e), Object.defineProperty(t.prototype, "makeColumn", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(e, t) {
-                            var i = this.mainContainer.children.push(t.make());
-                            return i._setDataItem(e), t.push(i), i
-                        }
-                    }), Object.defineProperty(t.prototype, "_updateGraphics", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(t, i) {
-                            e.prototype._updateGraphics.call(this, t, i);
-                            var a, n, o, s, l, u, h, c, p = this.getRaw("xAxis"),
-                                b = this.getRaw("yAxis"),
-                                d = this.getRaw("baseAxis"),
-                                g = this.get("vcy", 1),
-                                f = this.get("vcx", 1),
-                                m = this.get("locationX", t.get("locationX", .5)),
-                                v = this.get("locationY", t.get("locationY", .5)),
-                                y = this.get("openLocationX", t.get("openLocationX", m)),
-                                _ = this.get("openLocationY", t.get("openLocationY", v));
-                            if (b === d) {
-                                var x = p.getDataItemPositionX(t, this._xOpenField, 1, f),
-                                    w = p.getDataItemPositionX(t, this._xField, 1, f);
-                                /////////////r = p.getDataItemPositionX(t, this._xLowField, 1, f), l = p.getDataItemPositionX(t, this._xHighField, 1, f), s = Math.max(x, w), a = Math.min(x, w);
-                                var P = this._aLocationY0 + _ - .5,
-                                    O = this._aLocationY1 + v - .5;
-                                o = n = b.getDataItemPositionY(t, this._yField, P + (O - P) / 2, g), u = n, h = n, c = "horizontal"
-                            } else {
-                                var T = b.getDataItemPositionY(t, this._yOpenField, 1, g),
-                                    D = b.getDataItemPositionY(t, this._yField, 1, g);
-                                o = b.getDataItemPositionY(t, this._yLowField, 1, g), h = b.getDataItemPositionY(t, this._yHighField, 1, g), u = Math.max(T, D), n = Math.min(T, D), P = this._aLocationX0 + y - .5, O = this._aLocationX1 + m - .5, r = a = p.getDataItemPositionX(t, this._xField, P + (O - P) / 2, f), s = a, l = a, c = "vertical"
-                            }
-                            this._updateCandleGraphics(t, a, n, o, s, l, u, h, c)
-                        }
-                    }), Object.defineProperty(t.prototype, "_processAxisRange", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function(t) {
-                            var i = this;
-                            e.prototype._processAxisRange.call(this, t), t.columns = new s.o(o.YS.new({}), (function() {
-                                return n.j._new(i._root, {
-                                    /////////////themeTags: l.mergeTags(t.columns.template.get("themeTags", []), ["candlestick", "series", "column"])
-                                }, [i.columns.template, t.columns.template])
-                            }))
-                        }
-                    }), Object.defineProperty(t, "classNames", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: '' /////////////r.d.classNames.concat([t.className])
-                    }), t
-                }/////////////(r.d)
-        }, */
         62: function(e, t, i) {
             console.log("inside xy [6450].62");
             i.d(t, {
@@ -6200,8 +6075,8 @@
                 I = i(6284),
                 M = i(7909),
                 C = i(4604),
-                Y = i(2976),
-               ///////////// X = i(2312),
+                ///////////// Y = i(2976),
+                ///////////// X = i(2312),
                 S = function(e) {
                     function t() {
                         return null !== e && e.apply(this, arguments) || this
@@ -6227,7 +6102,7 @@
                         enumerable: !0,
                         configurable: !0,
                         writable: !0,
-                        value: Y.j.classNames.concat([t.className])
+                        value: '' ///////////// Y.j.classNames.concat([t.className])
                     }), t
                 }(Y.j),
                 F = i(5769),
