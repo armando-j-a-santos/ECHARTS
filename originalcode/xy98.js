@@ -1695,7 +1695,7 @@
                         writable: !0,
                         value: function(e, t) {
                             var i = this.get("renderer");
-                            /////////////e.get("label") || i.makeLabel(e, t), e.get("grid") || i.makeGrid(e, t), e.get("tick") || i.makeTick(e, t), e.get("axisFill") || i.makeAxisFill(e, t), this._processBullet(e)
+                            e.get("label") || i.makeLabel(e, t), e.get("grid") || i.makeGrid(e, t), e.get("tick") || i.makeTick(e, t), e.get("axisFill") || i.makeAxisFill(e, t), this._processBullet(e)
                         }
                     }), Object.defineProperty(t.prototype, "_processBullet", {
                         enumerable: !1,
@@ -1913,8 +1913,8 @@
                 r = i(1479),
                 n = i(5769),
                 o = i(7144),
-                ///////////// s = i(4714),
-                ///////////// l = i(8943),
+                s = i(4714),
+                /////////////	l = i(8943),
                 u = i(6293),
                 h = i(7652),
                 c = function(e) {
@@ -1979,11 +1979,11 @@
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
-                            value: new o.o(n.YS.new({})) /////////////, (function() {
-                                /////////////return s.T._new(t._root, {
-                                /////////////    themeTags: h.mergeTags(t.ticks.template.get("themeTags", []), t.get("themeTags", []))
-                                /////////////}, [t.ticks.template])
-                            /////////////}))
+                            value: new o.o(n.YS.new({}), (function() {
+                                return s.T._new(t._root, {
+                                    themeTags: h.mergeTags(t.ticks.template.get("themeTags", []), t.get("themeTags", []))
+                                }, [t.ticks.template])
+                            }))
                         }), Object.defineProperty(t, "grid", {
                             enumerable: !0,
                             configurable: !0,
@@ -2023,10 +2023,10 @@
                         enumerable: !1,
                         configurable: !0,
                         writable: !0,
-                        value: void 0 /////////////function(e, t) {
-                        /////////////    var i = this.ticks.make();
-                        /////////////    return i._setDataItem(e), e.setRaw("tick", i), i.set("themeTags", h.mergeTags(i.get("themeTags"), t)), this.axis.labelsContainer.children.push(i), this.ticks.push(i), i
-                        /////////////}
+                        value: function(e, t) {
+                            var i = this.ticks.make();
+                            return i._setDataItem(e), e.setRaw("tick", i), i.set("themeTags", h.mergeTags(i.get("themeTags"), t)), this.axis.labelsContainer.children.push(i), this.ticks.push(i), i
+                        }
                     }), Object.defineProperty(t.prototype, "makeGrid", {
                         enumerable: !1,
                         configurable: !0,
@@ -2773,7 +2773,6 @@
                     }), t
                 }(r.Y)
         },
-        /*
         4714: function(e, t, i) {
             console.log("inside xy [6450].4714");
             i.d(t, {
@@ -2801,7 +2800,6 @@
                     }), t
                 }(r.d)
         },
-        */
         7261: function(e, t, i) {
             console.log("inside xy [6450].7261");
             i.d(t, {
@@ -4962,8 +4960,8 @@
                     }), t
                 }(P.JH),
                 T = i(6293),
-                D = i(9084),
-                ///////////// j = i(4714),
+                ///////////// D = i(9084),
+                j = i(4714),
                 ///////////// A = i(8943),
                 k = i(6275),
                 I = i(6284),
