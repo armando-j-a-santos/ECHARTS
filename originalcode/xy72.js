@@ -2440,11 +2440,7 @@
                             enumerable: !0,
                             configurable: !0,
                             writable: !0,
-                            value: new o.o(n.YS.new({})) ///////////// , (function() {
-                                /////////////return l.r._new(t._root, {
-                                /////////////    themeTags: h.mergeTags(t.grid.template.get("themeTags", []), t.get("themeTags", []))
-                                /////////////}, [t.grid.template])
-                            /////////////}))
+                            value: new o.o(n.YS.new({}))
                         }), Object.defineProperty(t, "axisFills", {
                             enumerable: !0,
                             configurable: !0,
@@ -3256,6 +3252,7 @@
                     }), t
                 }(r.d)
         },
+        /*
         5638: function(e, t, i) {
             console.log("inside xy [6450].5638");
             i.d(t, {
@@ -3692,40 +3689,6 @@
                         value: n.m.classNames.concat([t.className])
                     }), t
                 }(n.m)
-        },
-        /*
-        8943: function(e, t, i) {
-            console.log("inside xy [6450].8943");
-            i.d(t, {
-                r: function() {
-                    return n
-                }
-            });
-            var a = i(5125),
-                r = i(1479),
-                n = function(e) {
-                    function t() {
-                        return null !== e && e.apply(this, arguments) || this
-                    }
-                    return (0, a.ZT)(t, e), Object.defineProperty(t.prototype, "_beforeChanged", {
-                        enumerable: !1,
-                        configurable: !0,
-                        writable: !0,
-                        value: function() {
-                            e.prototype._beforeChanged.call(this), (this.isPrivateDirty("width") || this.isPrivateDirty("height")) && (this._clear = !0)
-                        }
-                    }), Object.defineProperty(t, "className", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: "Grid"
-                    }), Object.defineProperty(t, "classNames", {
-                        enumerable: !0,
-                        configurable: !0,
-                        writable: !0,
-                        value: r.T.classNames.concat([t.className])
-                    }), t
-                }(r.T)
         },
         */
         7261: function(e, t, i) {
@@ -5754,7 +5717,7 @@
                         value: f.classNames.concat([t.className])
                     }), t
                 }(f),
-                y = i(5638),
+                ///////////// y = i(5638),
                 ///////////// _ = i(8701),
                 x = i(7261),
                 w = function(e) {
