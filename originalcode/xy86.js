@@ -1353,6 +1353,7 @@
                     }), t
                 }(r.Q)
         },
+        /*
         3355: function(e, t, i) {
             console.log("inside xy [6450].3355");
             i.d(t, {
@@ -1805,7 +1806,7 @@
                     }), t
                 }(r.W)
         },
-        /*
+        */
         6515: function(e, t, i) {
             console.log("inside xy [6450].6515");
             i.d(t, {
@@ -2301,7 +2302,6 @@
                     }), t
                 }(r.w)
         },
-        */
         6293: function(e, t, i) {
             console.log("inside xy [6450].6293");
             i.d(t, {
@@ -2723,7 +2723,7 @@
                         value: function() {
                             e.prototype._changed.call(this);
                             var t = this.axis;
-                            /////////////t.ghostLabel.setPrivate("visible", !this.get("inside"));
+                            t.ghostLabel.setPrivate("visible", !this.get("inside"));
                             var i = "opposite",
                                 a = "inside";
                             if (this.isDirty(i) || this.isDirty(a)) {
@@ -2734,7 +2734,7 @@
                                 })), this.root._markDirtyRedraw();
                                 t.markDirtySize()
                             }
-                            /////////////this.thumb.setPrivate("height", t.labelsContainer.height())
+                            this.thumb.setPrivate("height", t.labelsContainer.height())
                         }
                     }), Object.defineProperty(t.prototype, "_getPan", {
                         enumerable: !1,
@@ -3263,7 +3263,7 @@
             });
             var a = i(5125),
                 r = i(9361),
-                ///////////// n = i(6515),
+                n = i(6515),
                 o = i(7449),
                 s = i(5040),
                 l = i(5071),
@@ -3848,7 +3848,7 @@
                         writable: !0,
                         value: n.R.classNames.concat([t.className])
                     }), t
-                } /////////////(n.R)
+                }(n.R)
         },
         757: function(e, t, i) {
             console.log("inside xy [6450].757");
@@ -4847,9 +4847,9 @@
                         value: n.L.classNames.concat([t.className])
                     }), t
                 }(n.L),
-                u = i(3355),
+                /////////////u = i(3355),
                 h = i(757),
-                ///////////// c = i(6515),
+                c = i(6515),
                 p = i(5071),
                 b = i(5040),
                 d = i(751),
@@ -5167,7 +5167,7 @@
                         writable: !0,
                         value: c.R.classNames.concat([t.className])
                     }), t
-                }, /////////////(c.R),
+                }(c.R),
                 m = i(1926),
                 v = function(e) {
                     function t() {
@@ -5277,7 +5277,7 @@
                         enumerable: !0,
                         configurable: !0,
                         writable: !0,
-                        value: '' /////////////f.classNames.concat([t.className])
+                        value: f.classNames.concat([t.className])
                     }), t
                 }(f),
                 ///////////// y = i(5638),
@@ -5377,7 +5377,7 @@
                         enumerable: !0,
                         configurable: !0,
                         writable: !0,
-                        value: '' ///////////// x.m.classNames.concat([t.className])
+                        value: x.m.classNames.concat([t.className])
                     }), t
                 }(x.m),
                 P = i(6331),
