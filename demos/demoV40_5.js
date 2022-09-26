@@ -22,7 +22,7 @@
         <div id="my_data">
             <b>Pie of a Pie (Exploding Pie Chart).</b> 
             <br><-- Libraries --></br>
-            <br>src=https://cdn.amcharts.com/lib/5/index.js     src=https://cdn.amcharts.com/lib/5/percent.js     src=https://cdn.amcharts.com/lib/5/themes/Animated.js</br>
+            <br>src=https://cdn.amcharts.com/lib/5/index.js⠀⠀⠀⠀src=https://cdn.amcharts.com/lib/5/percent.js⠀⠀⠀⠀src=https://cdn.amcharts.com/lib/5/themes/Animated.js</br>
         </div>
         <div id="chartdiv40"></div>
       </div>
@@ -31,7 +31,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewDemoV40_4 extends HTMLElement {
+  class NewDemoV40_5 extends HTMLElement {
     constructor () {
       super()
 
@@ -366,6 +366,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-demov40', NewDemoV40_4)
+  customElements.define('com-sap-sample-asantos-new-demov40', NewDemoV40_5)
   
 })() // END of function --> (function () {
