@@ -24,7 +24,7 @@
             <br><-- Libraries --></br>
             <br>src=https://cdn.amcharts.com/lib/5/index.js</br>
             <br>src=https://cdn.amcharts.com/lib/5/map.js</br>
-            <br>src=https://cdn.amcharts.com/lib/5/worldLow.js</br>
+            <br>src=https://cdn.amcharts.com/lib/5/geodata/worldLow.js</br>
             <br>src=https://cdn.amcharts.com/lib/5/themes/Animated.js</br>
         </div>
         <div id="chartdiv60"></div>
@@ -34,7 +34,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewDemoV60_1 extends HTMLElement {
+  class NewDemoV60_2 extends HTMLElement {
     constructor () {
       super()
 
@@ -80,7 +80,7 @@
         // Library: worldLow.js
         new Promise(resolve => {
             let script = document.createElement('script')
-            script.src = 'https://cdn.amcharts.com/lib/5/worldLow.js'
+            script.src = 'https://cdn.amcharts.com/lib/5/geodata/worldLow.js'
             script.onload = () => {
               resolve(script)
               console.log('loaded worldLow.js')
@@ -283,6 +283,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-demov60', NewDemoV60_1)
+  customElements.define('com-sap-sample-asantos-new-demov60', NewDemoV60_2)
   
 })() // END of function --> (function () {
