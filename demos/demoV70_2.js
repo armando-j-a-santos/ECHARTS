@@ -12,7 +12,7 @@
         color: black;
       }
       
-      #chartdiv70 {
+      #chartdiv {
         width: 100%;
         height: 400px;
       }
@@ -26,14 +26,14 @@
             <br>src=https://cdn.amcharts.com/lib/4/charts.js</br>
             <br>src=https://cdn.amcharts.com/lib/4/themes/animated.js</br>
         </div>
-        <div id="chartdiv70"></div>
+        <div id="chartdiv"></div>
       </div>
     `
   
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewDemoV70_1 extends HTMLElement {
+  class NewDemoV70_2 extends HTMLElement {
     constructor () {
       super()
 
@@ -50,7 +50,7 @@
         // Build the neceasry div tag with name: chartdiv, to be used later on the following code
         console.log("onCustomWidgetAfterUpdate")
         const div = document.createElement('div')
-        div.innerHTML = '<div id="chartdiv70" style="width: 100%; height: 400px;"></div>'
+        div.innerHTML = '<div id="chartdiv" style="width: 100%; height: 400px;"></div>'
         this._shadowRoot.appendChild(div)
       
         // Load necessary libraries
@@ -101,7 +101,7 @@
       }
       
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     
-      var mychartdiv = this._shadowRoot.getElementById('chartdiv70')
+      var mychartdiv = this._shadowRoot.getElementById('chartdiv')
       //console.log(mychartdiv) 
         
         //***
@@ -197,6 +197,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-demov70', NewDemoV70_1)
+  customElements.define('com-sap-sample-asantos-new-demov70', NewDemoV70_2)
   
 })() // END of function --> (function () {
