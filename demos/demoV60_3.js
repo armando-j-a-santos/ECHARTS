@@ -22,10 +22,7 @@
         <div id="my_data">
             <b>Map with animated bubbles.</b> 
             <br><-- Libraries --></br>
-            <br>src=https://cdn.amcharts.com/lib/5/index.js</br>
-            <br>src=https://cdn.amcharts.com/lib/5/map.js</br>
-            <br>src=https://cdn.amcharts.com/lib/5/geodata/worldLow.js</br>
-            <br>src=https://cdn.amcharts.com/lib/5/themes/Animated.js</br>
+            <br>src=https://cdn.amcharts.com/lib/5/index.js⠀⠀⠀src=https://cdn.amcharts.com/lib/5/map.js⠀⠀⠀src=https://cdn.amcharts.com/lib/5/geodata/worldLow.js⠀⠀⠀src=https://cdn.amcharts.com/lib/5/themes/Animated.js</br>
         </div>
         <div id="chartdiv60"></div>
       </div>
@@ -34,7 +31,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewDemoV60_2 extends HTMLElement {
+  class NewDemoV60_3 extends HTMLElement {
     constructor () {
       super()
 
@@ -283,6 +280,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-demov60', NewDemoV60_2)
+  customElements.define('com-sap-sample-asantos-new-demov60', NewDemoV60_3)
   
 })() // END of function --> (function () {
