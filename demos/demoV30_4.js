@@ -33,7 +33,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewDemoV30_3 extends HTMLElement {
+  class NewDemoV30_4 extends HTMLElement {
     constructor () {
       super()
 
@@ -141,7 +141,7 @@
 
 
         // cointainer to hold both charts
-        var container = am4core.create("chartdiv30", am4core.Container);
+        var container = am4core.create(mychartdiv, am4core.Container);
         container.width = am4core.percent(100);
         container.height = am4core.percent(100);
         container.layout = "horizontal";
@@ -366,6 +366,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-demov30', NewDemoV30_3)
+  customElements.define('com-sap-sample-asantos-new-demov30', NewDemoV30_4)
   
 })() // END of function --> (function () {
