@@ -14,7 +14,7 @@
       
       #chartdiv40 {
         width: 100%;
-        height: 400px;
+        height: 500px;
       }
             
       </style>
@@ -22,9 +22,9 @@
         <div id="my_data">
             <b>Pie of a Pie (Exploding Pie Chart).</b> 
             <br><-- Libraries --></br>
-            <br>src=https://cdn.amcharts.com/lib/5/index.js</br>
-            <br>src=https://cdn.amcharts.com/lib/5/xy.js</br>
-            <br>src=https://cdn.amcharts.com/lib/5/themes/Animated.js</br>
+            <br>src=https://cdn.amcharts.com/lib/5/index.js
+            src=https://cdn.amcharts.com/lib/5/percent.js
+            src=https://cdn.amcharts.com/lib/5/themes/Animated.js</br>
         </div>
         <div id="chartdiv40"></div>
       </div>
@@ -33,7 +33,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewDemoV40_2 extends HTMLElement {
+  class NewDemoV40_3 extends HTMLElement {
     constructor () {
       super()
 
@@ -50,7 +50,7 @@
         // Build the neceasry div tag with name: chartdiv, to be used later on the following code
         console.log("onCustomWidgetAfterUpdate")
         const div = document.createElement('div')
-        div.innerHTML = '<div id="chartdiv40" style="width: 100%; height: 400px;"></div>'
+        div.innerHTML = '<div id="chartdiv40" style="width: 100%; height: 500px;"></div>'
         this._shadowRoot.appendChild(div)
       
         // Load necessary libraries
@@ -368,6 +368,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-demov40', NewDemoV40_2)
+  customElements.define('com-sap-sample-asantos-new-demov40', NewDemoV40_3)
   
 })() // END of function --> (function () {
