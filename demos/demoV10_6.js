@@ -20,11 +20,11 @@
       </style>
       <div id="root" style="width: 100%; height: 100%;">
         <div id="my_data">
-            Real-time Data Sorting. 
-            <-- Libraries -->
-            src=https://cdn.amcharts.com/lib/5/index.js
-            src=https://cdn.amcharts.com/lib/5/xy.js
-            src=https://cdn.amcharts.com/lib/5/themes/Animated.js
+            <b>Real-time Data Sorting.</b> 
+            <br><-- Libraries --></br>
+            <br>src=https://cdn.amcharts.com/lib/5/index.js</br>
+            <br>src=https://cdn.amcharts.com/lib/5/xy.js</br>
+            <br>src=https://cdn.amcharts.com/lib/5/themes/Animated.js</br>
         </div>
         <div id="chartdiv10"></div>
       </div>
@@ -33,7 +33,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewDemoV10_5 extends HTMLElement {
+  class NewDemoV10_6 extends HTMLElement {
     constructor () {
       super()
 
@@ -339,6 +339,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-demov10', NewDemoV10_5)
+  customElements.define('com-sap-sample-asantos-new-demov10', NewDemoV10_6)
   
 })() // END of function --> (function () {
