@@ -12,7 +12,7 @@
         color: black;
       }
       
-      #chartdiv10 {
+      #chartdiv50 {
         width: 100%;
         height: 550px;
       }
@@ -33,7 +33,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewDemoV50_1 extends HTMLElement {
+  class NewDemoV50_2 extends HTMLElement {
     constructor () {
       super()
 
@@ -1770,6 +1770,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-demov50', NewDemoV50_1)
+  customElements.define('com-sap-sample-asantos-new-demov50', NewDemoV50_2)
   
 })() // END of function --> (function () {
