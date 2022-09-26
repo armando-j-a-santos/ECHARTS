@@ -26,14 +26,14 @@
             src=https://cdn.amcharts.com/lib/5/xy.js
             src=https://cdn.amcharts.com/lib/5/themes/Animated.js
         </div>
-        <div id="chartdiv"></div>
+        <div id="chartdiv10"></div>
       </div>
     `
   
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewDemoV10_2 extends HTMLElement {
+  class NewDemoV10_3 extends HTMLElement {
     constructor () {
       super()
 
@@ -339,6 +339,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-demov10', NewDemoV10_2)
+  customElements.define('com-sap-sample-asantos-new-demov10', NewDemoV10_3)
   
 })() // END of function --> (function () {
