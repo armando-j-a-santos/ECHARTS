@@ -33,7 +33,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class NewDemoV10_1 extends HTMLElement {
+  class NewDemoV10_2 extends HTMLElement {
     constructor () {
       super()
 
@@ -92,7 +92,7 @@
     // ------------------
     // Scripting methods
     // ------------------
-    async render (resultSet) {
+    async render () {
       
       this._placeholder = this._root.querySelector('#placeholder')
       if (this._placeholder) {
@@ -339,6 +339,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-new-demov1', NewDemoV10_1)
+  customElements.define('com-sap-sample-asantos-new-demov10', NewDemoV10_2)
   
 })() // END of function --> (function () {
