@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class amchartsParams_6 extends HTMLElement {
+  class amchartsParams_7 extends HTMLElement {
     constructor () {
       super()
 
@@ -103,7 +103,7 @@
       }
       
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     
-      var mychartdiv = this._shadowRoot.getElementById('chartdiv30')
+      var mychartdiv = this._shadowRoot.getElementById('chartdiv')
       
       console.log('newJSONSets:')
       console.log(newJSONSets)
@@ -496,6 +496,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-amchartspar', amchartsParams_6)
+  customElements.define('com-sap-sample-asantos-amchartspar', amchartsParams_7)
   
 })() // END of function --> (function () {
