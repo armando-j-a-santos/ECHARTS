@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class amchartsParams_8 extends HTMLElement {
+  class amchartsParams_9 extends HTMLElement {
     constructor () {
       super()
 
@@ -113,7 +113,7 @@
         am4core.ready(function() {
           
         // Themes begin
-        am4core.useTheme(am4themes_animated);
+        ///////////am4core.useTheme(am4themes_animated);
         // Themes end
         
         var chart = am4core.create("chartdiv", am4charts.XYChart);
@@ -498,6 +498,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-amchartspar', amchartsParams_8)
+  customElements.define('com-sap-sample-asantos-amchartspar', amchartsParams_9)
   
 })() // END of function --> (function () {
