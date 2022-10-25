@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class amchartsParams_14 extends HTMLElement {
+  class amchartsParams_15 extends HTMLElement {
     constructor () {
       super()
 
@@ -122,7 +122,7 @@
 
         // #############
             // Variables definition
-            var CAct_Dark = "#0460a9";
+            var CAct_Dark = myConfig.CAct_Dark;
             var CAct_Light =  "#68a0cb";
 
             var CNonAct_Col1_Dark = "#776644";
@@ -500,6 +500,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-amchartspar', amchartsParams_14)
+  customElements.define('com-sap-sample-asantos-amchartspar', amchartsParams_15)
   
 })() // END of function --> (function () {
