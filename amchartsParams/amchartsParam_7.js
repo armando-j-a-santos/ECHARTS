@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class amchartsParams_17 extends HTMLElement {
+  class amchartsParams_18 extends HTMLElement {
     constructor () {
       super()
 
@@ -113,7 +113,7 @@
           
           var myConfig = JSON.parse(newJSONSets);
           console.log(myConfig.CAct_Dark);
-          var x = '"' + myConfig.CAct_Dark + '"';
+          var x = myConfig.CAct_Dark;
 
 
         // Themes begin
@@ -502,6 +502,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-amchartspar', amchartsParams_17)
+  customElements.define('com-sap-sample-asantos-amchartspar', amchartsParams_18)
   
 })() // END of function --> (function () {
