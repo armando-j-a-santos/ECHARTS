@@ -35,7 +35,6 @@
       this._shadowRoot.appendChild(template.content.cloneNode(true))
 
       this._root = this._shadowRoot.getElementById('root')
-
       this._props = ''
     }
   
@@ -107,6 +106,8 @@
       
       console.log('newJSONSets:')
       console.log(newJSONSets)
+
+      console.log(newJSONSets.CAct_Dark)
         
         //***
 
