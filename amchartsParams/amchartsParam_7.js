@@ -95,7 +95,7 @@
     // ------------------
     // Scripting methods
     // ------------------
-    async setConfig (newJSONSets) {
+    async setConfigChart (newJSONSets) {
       this._placeholder = this._root.querySelector('#placeholder')
       if (this._placeholder) {
         this._root.removeChild(this._placeholder)
