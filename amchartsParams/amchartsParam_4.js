@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class amchartsParams_3 extends HTMLElement {
+  class amchartsParams_4 extends HTMLElement {
     constructor () {
       super()
 
@@ -56,17 +56,27 @@
               console.log('loaded core.js')
             }
             this._shadowRoot.appendChild(script)
-        })
-        
-        // Library: charts.js
-        new Promise(resolve => {
-            let script = document.createElement('script')
-            script.src = 'https://cdn.amcharts.com/lib/4/charts.js'
-            script.onload = () => {
-              resolve(script)
-              console.log('loaded charts.js')
-            }
-            this._shadowRoot.appendChild(script)
+          
+            // ###########################################################################################################
+            // NOTE:
+            // To avoid error: am4internal_webpackJsonp is not defined.
+            // The issue is due to the fact that the library charts.js is being loaded first than the libray core.js and
+            // core.js NEEDS to be loaded in first place ALWAYS.
+            // So, the workaround is to load first core.js and after create a a timeout (like a Timer in SAC) that
+            // waits 1 second and only after that loads the second libarary needed charts.js.
+            // ###########################################################################################################
+         
+            let delay = 1000; // delay 1 second
+            let timer = null; // Will hold a reference to the timer
+            let script1 = document.createElement('script')
+            timer = setTimeout(function(){
+                    script1.src = 'https://cdn.amcharts.com/lib/4/charts.j'
+                    script1.onload = () => {
+                      resolve(script1)
+                      console.log('loaded charts.js')
+                    }            
+                }, delay);
+              this._shadowRoot.appendChild(script1)
         })
 
         // Library: animated.js
@@ -360,6 +370,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-amchartspar', amchartsParams_3)
+  customElements.define('com-sap-sample-asantos-amchartspar', amchartsParams_4)
   
 })() // END of function --> (function () {
