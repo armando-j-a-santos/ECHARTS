@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class amchartsParams_4 extends HTMLElement {
+  class amchartsParams_5 extends HTMLElement {
     constructor () {
       super()
 
@@ -70,7 +70,7 @@
             let timer = null; // Will hold a reference to the timer
             let script1 = document.createElement('script')
             timer = setTimeout(function(){
-                    script1.src = 'https://cdn.amcharts.com/lib/4/charts.j'
+                    script1.src = 'https://cdn.amcharts.com/lib/4/charts.js'
                     script1.onload = () => {
                       resolve(script1)
                       console.log('loaded charts.js')
@@ -370,6 +370,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-amchartspar', amchartsParams_4)
+  customElements.define('com-sap-sample-asantos-amchartspar', amchartsParams_5)
   
 })() // END of function --> (function () {
