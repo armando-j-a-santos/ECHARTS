@@ -107,14 +107,15 @@
       console.log('newJSONSets:')
       console.log(newJSONSets)
 
-      var myConfig = JSON.parse(newJSONSets);
-      console.log(myConfig.CAct_Dark)
-        
-      let x = '"' + myConfig.CAct_Dark + '"';
         //***
 
         am4core.ready(function() {
           
+          var myConfig = JSON.parse(newJSONSets);
+          console.log(myConfig.CAct_Dark);
+          var x = '"' + myConfig.CAct_Dark + '"';
+
+
         // Themes begin
         ///////////am4core.useTheme(am4themes_animated);
         // Themes end
