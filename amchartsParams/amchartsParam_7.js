@@ -105,7 +105,7 @@
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     
       var mychartdiv = this._shadowRoot.getElementById('chartdiv')
       
-      console.log('newJSONSets:')
+      console.log('newJSONSets>>>>>>')
       console.log(newJSONSets)
         
         //***
