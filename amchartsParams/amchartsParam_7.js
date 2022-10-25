@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class amchartsParams_11 extends HTMLElement {
+  class amchartsParams_12 extends HTMLElement {
     constructor () {
       super()
 
@@ -35,7 +35,8 @@
       this._shadowRoot.appendChild(template.content.cloneNode(true))
 
       this._root = this._shadowRoot.getElementById('root')
-      this._props = {}
+
+      this._props = ''
     }
   
     //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
@@ -90,7 +91,6 @@
             this._shadowRoot.appendChild(script)
         })
     }
-
     
     // ------------------
     // Scripting methods
@@ -105,7 +105,7 @@
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     
       var mychartdiv = this._shadowRoot.getElementById('chartdiv')
       
-      console.log('newJSONSets::::')
+      console.log('newJSONSets:')
       console.log(newJSONSets)
         
         //***
@@ -498,6 +498,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-amchartspar', amchartsParams_11)
+  customElements.define('com-sap-sample-asantos-amchartspar', amchartsParams_12)
   
 })() // END of function --> (function () {
