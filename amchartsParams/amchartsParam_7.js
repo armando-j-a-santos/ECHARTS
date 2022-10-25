@@ -110,6 +110,7 @@
       var myConfig = JSON.parse(newJSONSets);
       console.log(myConfig.CAct_Dark)
         
+      let x = '"' + myConfig.CAct_Dark + '"';
         //***
 
         am4core.ready(function() {
@@ -122,7 +123,7 @@
 
         // #############
             // Variables definition
-            var CAct_Dark = "#f2f542";
+            var CAct_Dark = x;
             var CAct_Light =  "#68a0cb";
 
             var CNonAct_Col1_Dark = "#776644";
