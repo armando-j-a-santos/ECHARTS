@@ -122,7 +122,7 @@
 
         // #############
             // Variables definition
-            var CAct_Dark = myConfig.CAct_Dark;
+            var CAct_Dark = '"' + myConfig.CAct_Dark + '"';
             var CAct_Light =  "#68a0cb";
 
             var CNonAct_Col1_Dark = "#776644";
