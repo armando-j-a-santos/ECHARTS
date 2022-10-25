@@ -116,7 +116,7 @@
         ///////////am4core.useTheme(am4themes_animated);
         // Themes end
         
-        var chart = am4core.create("chartdiv", am4charts.XYChart);
+        var chart = am4core.create(mychartdiv, am4charts.XYChart);
 
         // #############
             // Variables definition
