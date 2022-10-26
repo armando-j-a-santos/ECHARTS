@@ -26,7 +26,7 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class amchartsParams_20 extends HTMLElement {
+  class amchartsParams_21 extends HTMLElement {
     constructor () {
       super()
 
@@ -111,9 +111,8 @@
 
         am4core.ready(function() {
           
-          var myConfig = JSON.parse(newJSONSets);
-          console.log(myConfig.CAct_Dark);
-          var x = String(myConfig.CAct_Dark);
+          var chartConfigurations = JSON.parse(newJSONSets);
+          console.log(chartConfigurations.CAct_Dark);
 
 
         // Themes begin
@@ -124,7 +123,7 @@
 
         // #############
             // Variables definition
-            var CAct_Dark = x;
+            var CAct_Dark = String(chartConfigurations.CAct_Dark);
             var CAct_Light =  "#68a0cb";
 
             var CNonAct_Col1_Dark = "#776644";
@@ -502,6 +501,6 @@
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-asantos-amchartspar', amchartsParams_20)
+  customElements.define('com-sap-sample-asantos-amchartspar', amchartsParams_21)
   
 })() // END of function --> (function () {
